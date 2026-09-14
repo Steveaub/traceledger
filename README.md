@@ -151,6 +151,8 @@ python scripts/bootstrap_models.py
 Tests and benchmarks:
 
 ```bash
+python -m ruff format --check atlas scripts tests
+python -m ruff check atlas scripts tests
 python -m pytest -q
 python -m atlas.evaluate --stage baseline
 python -m atlas.evaluate --stage all
@@ -169,6 +171,10 @@ python -m atlas.ingest reviewed-note.md --project PRJ-001 --output data/ingested
 
 Docker evidence-only demo: `docker compose up --build` after downloading retrieval models. The container is non-root and mounts models read-only; its port is loopback-bound. Docker is not installed on the build machine, so container execution remains unverified. To enable local generation inside Docker, add its optional dependencies explicitly.
 
+### Optional hosted demo
+
+A CPU-only Hugging Face Spaces deployment bundle is provided under [deploy/huggingface](deploy/huggingface). Prepare its allowlisted files with `python scripts/prepare_space.py dist/huggingface-release`, then upload that directory to a Docker Space. The landing page starts the fictional Project Alpha investigation, and the API enforces evidence-only answers. No public instance has been deployed or verified yet. See [hosted security assumptions](docs/security.md#hosted-evidence-only-demo).
+
 ## Security and operations
 
 Read [the threat model](docs/security.md). Demo mode exposes only fictional project data and public references. Private deployment defaults to bearer authentication and per-project authorization. Logs omit source text, queries and tokens. A request ID provides local tracing; distributed telemetry, identity federation, parser sandboxing and durable audit storage remain future work. Heuristic injection filtering is not a complete security boundary; no-tool execution and conservative evidence validation are the stronger controls.
@@ -179,6 +185,8 @@ Independent human annotations; a larger disjoint real-document benchmark; the fu
 
 ## Project documentation
 
-[Usage examples](docs/usage-examples.md) · [architecture diagrams](docs/architecture.md) · [failure analysis](docs/failure-analysis.md) · [checkpoint ledger](docs/checkpoints.md).
+[Usage examples](docs/usage-examples.md) · [architecture diagrams](docs/architecture.md) · [failure analysis](docs/failure-analysis.md) · [checkpoint ledger](docs/checkpoints.md) · [architecture PNG](docs/images/architecture.png) · [human-review sample and rubric](evaluation/human-review/README.md).
+
+The thirty-answer human-review sample is prepared but unlabelled. No human agreement result is claimed. `scripts/render_report.py` writes generated summaries under `reports/` without replacing this README or the curated failure analysis.
 
 Code and original synthetic records are MIT licensed. Third-party models and datasets retain their own licenses and attribution; see [dataset notes](docs/datasets.md). Built with AI assistance; review and reproduce the system before presenting it as your own engineering work.

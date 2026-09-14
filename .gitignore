@@ -37,3 +37,4 @@ reports/runs/*.json
 !reports/runs/20260913T230055-a56c60a5ef97.json
 CODEX-BRIEF.md
 .test-tmp*/
+dist/

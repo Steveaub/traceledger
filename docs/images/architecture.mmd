@@ -1,0 +1,16 @@
+flowchart TD
+  UI[Question + selected sources + project] --> ACL[Server-owned project access]
+  ACL --> Mode{Quick answer or investigate?}
+  Mode -->|Quick| Router[Existing measured retrieval]
+  Mode -->|Investigate| Controller[Bounded deterministic controller]
+  Controller --> Search[Hybrid search + reranking]
+  Controller --> Thread[Read accessible thread siblings]
+  Controller --> Graph[Follow source-backed identifiers]
+  Search --> Observe[Observe evidence and remaining facets]
+  Thread --> Observe
+  Graph --> Observe
+  Observe -->|More evidence needed and budget remains| Controller
+  Observe -->|Stop| Validate[Select literal passages + flag gaps]
+  Validate --> Result[Answer + citations + activity trail]
+  Router --> Result
+  Result --> Eval[Offline matched-cohort evaluations]

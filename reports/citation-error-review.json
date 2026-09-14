@@ -1,0 +1,1236 @@
+{
+  "source": "reports/heldout.json",
+  "source_sha256": "2207d6028c6089d4b304f8bc080cd96f0b9c98cb2d0853a359911b5955f840e0",
+  "scope": "All citations rejected by document-level relevance labels in selected heldout run",
+  "review_type": "AI-assisted categorization; not human judgments",
+  "counts": {
+    "right_project_wrong_artifact": 55,
+    "wrong_project": 61,
+    "other": 6
+  },
+  "not_assessed": [
+    "off-question passages within gold documents; invisible to document-level rejection filter"
+  ],
+  "labels": [
+    {
+      "question_id": "PRJ-007-direct",
+      "citation_id": 1,
+      "query": "Which equipment and vendor does Project Granite use?",
+      "doc_id": "PRJ-007-routine_2",
+      "quote": "Project Granite week 3 coordination log: site access, fencing and document control are progressing.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-007-direct",
+      "citation_id": 2,
+      "query": "Which equipment and vendor does Project Granite use?",
+      "doc_id": "PRJ-007-routine_2",
+      "quote": " Vendor Summit Electric joined the meeting.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-007-direct",
+      "citation_id": 3,
+      "query": "Which equipment and vendor does Project Granite use?",
+      "doc_id": "PRJ-007-routine_0",
+      "quote": "Project Granite week 1 coordination log: site access, fencing and document control are progressing.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-007-direct",
+      "citation_id": 4,
+      "query": "Which equipment and vendor does Project Granite use?",
+      "doc_id": "PRJ-007-routine_0",
+      "quote": " Vendor Summit Electric joined the meeting.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-007-exact",
+      "citation_id": 3,
+      "query": "What requirement does CR-007 modify?",
+      "doc_id": "PRJ-001-change",
+      "quote": "Change CR-001 on Project Alpha revises acceptance requirement REQ-001.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-007-exact",
+      "citation_id": 4,
+      "query": "What requirement does CR-007 modify?",
+      "doc_id": "PRJ-006-change",
+      "quote": "Change CR-006 on Project Falcon revises acceptance requirement REQ-006.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-007-exact",
+      "citation_id": 5,
+      "query": "What requirement does CR-007 modify?",
+      "doc_id": "PRJ-007-decision",
+      "quote": " The board accepted the schedule change only after reviewing the incident and change CR-007.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-007-exact",
+      "citation_id": 6,
+      "query": "What requirement does CR-007 modify?",
+      "doc_id": "PRJ-002-change",
+      "quote": "Change CR-002 on Project Beta revises acceptance requirement REQ-002.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-007-decision",
+      "citation_id": 3,
+      "query": "Why did DEC-007 move the milestone?",
+      "doc_id": "PRJ-002-incident",
+      "quote": " The commissioning milestone slipped by 3 weeks.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-007-decision",
+      "citation_id": 4,
+      "query": "Why did DEC-007 move the milestone?",
+      "doc_id": "PRJ-006-incident",
+      "quote": " The commissioning milestone slipped by 4 weeks.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-007-decision",
+      "citation_id": 5,
+      "query": "Why did DEC-007 move the milestone?",
+      "doc_id": "PRJ-010-incident",
+      "quote": " The commissioning milestone slipped by 5 weeks.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-007-risk",
+      "citation_id": 1,
+      "query": "What triggers RISK-007 and what response is planned?",
+      "doc_id": "PRJ-001-risk",
+      "quote": " Response: require witnessed factory acceptance before shipment.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-007-risk",
+      "citation_id": 2,
+      "query": "What triggers RISK-007 and what response is planned?",
+      "doc_id": "PRJ-008-risk",
+      "quote": " Response: complete an independent protection coordination review.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-007-risk",
+      "citation_id": 5,
+      "query": "What triggers RISK-007 and what response is planned?",
+      "doc_id": "PRJ-002-risk",
+      "quote": " Response: validate firmware interoperability in a hardware-in-the-loop test.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-007-risk",
+      "citation_id": 6,
+      "query": "What triggers RISK-007 and what response is planned?",
+      "doc_id": "PRJ-003-risk",
+      "quote": " Response: inspect replacement seals and repeat the endurance test.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-007-conflict",
+      "citation_id": 2,
+      "query": "What is the current commissioning delay for Project Granite?",
+      "doc_id": "PRJ-007-risk",
+      "quote": "Risk RISK-007 for Project Granite: repeat PUMP-310 acceptance failure could delay energization.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-007-change_impact",
+      "citation_id": 4,
+      "query": "Trace the requirement and incident linked to CR-007.",
+      "doc_id": "PRJ-007-decision",
+      "quote": " The board accepted the schedule change only after reviewing the incident and change CR-007.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-007-multi_hop",
+      "citation_id": 5,
+      "query": "Which active projects use the equipment affected by INC-007, and what lesson follows that incident?",
+      "doc_id": "PRJ-007-decision",
+      "quote": " DEC-007 responds to INC-007.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-007-multi_hop",
+      "citation_id": 6,
+      "query": "Which active projects use the equipment affected by INC-007, and what lesson follows that incident?",
+      "doc_id": "PRJ-007-decision",
+      "quote": " The board accepted the schedule change only after reviewing the incident and change CR-007.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-007-multi_hop",
+      "citation_id": 7,
+      "query": "Which active projects use the equipment affected by INC-007, and what lesson follows that incident?",
+      "doc_id": "PRJ-007-change",
+      "quote": " CR-007 addresses INC-007.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-008-direct",
+      "citation_id": 1,
+      "query": "Which equipment and vendor does Project Harbor use?",
+      "doc_id": "PRJ-008-routine_2",
+      "quote": "Project Harbor week 3 coordination log: site access, fencing and document control are progressing.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-008-direct",
+      "citation_id": 2,
+      "query": "Which equipment and vendor does Project Harbor use?",
+      "doc_id": "PRJ-008-routine_2",
+      "quote": " Vendor Tidal Systems joined the meeting.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-008-direct",
+      "citation_id": 3,
+      "query": "Which equipment and vendor does Project Harbor use?",
+      "doc_id": "PRJ-008-routine_0",
+      "quote": "Project Harbor week 1 coordination log: site access, fencing and document control are progressing.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-008-direct",
+      "citation_id": 4,
+      "query": "Which equipment and vendor does Project Harbor use?",
+      "doc_id": "PRJ-008-routine_0",
+      "quote": " Vendor Tidal Systems joined the meeting.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-008-exact",
+      "citation_id": 3,
+      "query": "What requirement does CR-008 modify?",
+      "doc_id": "PRJ-001-change",
+      "quote": "Change CR-001 on Project Alpha revises acceptance requirement REQ-001.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-008-exact",
+      "citation_id": 4,
+      "query": "What requirement does CR-008 modify?",
+      "doc_id": "PRJ-009-change",
+      "quote": "Change CR-009 on Project Iris revises acceptance requirement REQ-009.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-008-exact",
+      "citation_id": 5,
+      "query": "What requirement does CR-008 modify?",
+      "doc_id": "PRJ-010-change",
+      "quote": "Change CR-010 on Project Juniper revises acceptance requirement REQ-010.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-008-exact",
+      "citation_id": 6,
+      "query": "What requirement does CR-008 modify?",
+      "doc_id": "PRJ-006-change",
+      "quote": "Change CR-006 on Project Falcon revises acceptance requirement REQ-006.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-008-decision",
+      "citation_id": 3,
+      "query": "Why did DEC-008 move the milestone?",
+      "doc_id": "PRJ-002-incident",
+      "quote": " The commissioning milestone slipped by 3 weeks.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-008-decision",
+      "citation_id": 4,
+      "query": "Why did DEC-008 move the milestone?",
+      "doc_id": "PRJ-006-incident",
+      "quote": " The commissioning milestone slipped by 4 weeks.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-008-decision",
+      "citation_id": 5,
+      "query": "Why did DEC-008 move the milestone?",
+      "doc_id": "PRJ-010-incident",
+      "quote": " The commissioning milestone slipped by 5 weeks.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-008-risk",
+      "citation_id": 3,
+      "query": "What triggers RISK-008 and what response is planned?",
+      "doc_id": "PRJ-001-risk",
+      "quote": " Response: require witnessed factory acceptance before shipment.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-008-risk",
+      "citation_id": 4,
+      "query": "What triggers RISK-008 and what response is planned?",
+      "doc_id": "PRJ-009-risk",
+      "quote": " Response: require witnessed factory acceptance before shipment.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-008-risk",
+      "citation_id": 5,
+      "query": "What triggers RISK-008 and what response is planned?",
+      "doc_id": "PRJ-003-risk",
+      "quote": " Response: inspect replacement seals and repeat the endurance test.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-008-risk",
+      "citation_id": 6,
+      "query": "What triggers RISK-008 and what response is planned?",
+      "doc_id": "PRJ-002-risk",
+      "quote": " Response: validate firmware interoperability in a hardware-in-the-loop test.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-008-change_impact",
+      "citation_id": 4,
+      "query": "Trace the requirement and incident linked to CR-008.",
+      "doc_id": "PRJ-008-decision",
+      "quote": " The board accepted the schedule change only after reviewing the incident and change CR-008.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-008-multi_hop",
+      "citation_id": 5,
+      "query": "Which active projects use the equipment affected by INC-008, and what lesson follows that incident?",
+      "doc_id": "PRJ-008-decision",
+      "quote": " DEC-008 responds to INC-008.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-008-multi_hop",
+      "citation_id": 6,
+      "query": "Which active projects use the equipment affected by INC-008, and what lesson follows that incident?",
+      "doc_id": "PRJ-008-decision",
+      "quote": " The board accepted the schedule change only after reviewing the incident and change CR-008.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-008-multi_hop",
+      "citation_id": 7,
+      "query": "Which active projects use the equipment affected by INC-008, and what lesson follows that incident?",
+      "doc_id": "PRJ-008-change",
+      "quote": " CR-008 addresses INC-008.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-009-direct",
+      "citation_id": 1,
+      "query": "Which equipment and vendor does Project Iris use?",
+      "doc_id": "PRJ-009-routine_2",
+      "quote": "Project Iris week 3 coordination log: site access, fencing and document control are progressing.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-009-direct",
+      "citation_id": 2,
+      "query": "Which equipment and vendor does Project Iris use?",
+      "doc_id": "PRJ-009-routine_2",
+      "quote": " Vendor Northstar Power joined the meeting.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-009-direct",
+      "citation_id": 3,
+      "query": "Which equipment and vendor does Project Iris use?",
+      "doc_id": "PRJ-009-routine_0",
+      "quote": "Project Iris week 1 coordination log: site access, fencing and document control are progressing.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-009-direct",
+      "citation_id": 4,
+      "query": "Which equipment and vendor does Project Iris use?",
+      "doc_id": "PRJ-009-routine_0",
+      "quote": " Vendor Northstar Power joined the meeting.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-009-exact",
+      "citation_id": 3,
+      "query": "What requirement does CR-009 modify?",
+      "doc_id": "PRJ-001-change",
+      "quote": "Change CR-001 on Project Alpha revises acceptance requirement REQ-001.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-009-exact",
+      "citation_id": 4,
+      "query": "What requirement does CR-009 modify?",
+      "doc_id": "PRJ-010-change",
+      "quote": "Change CR-010 on Project Juniper revises acceptance requirement REQ-010.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-009-exact",
+      "citation_id": 5,
+      "query": "What requirement does CR-009 modify?",
+      "doc_id": "PRJ-009-rfi",
+      "quote": " Engineering references change CR-009.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-009-exact",
+      "citation_id": 6,
+      "query": "What requirement does CR-009 modify?",
+      "doc_id": "PRJ-006-change",
+      "quote": "Change CR-006 on Project Falcon revises acceptance requirement REQ-006.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-009-decision",
+      "citation_id": 3,
+      "query": "Why did DEC-009 move the milestone?",
+      "doc_id": "PRJ-002-incident",
+      "quote": " The commissioning milestone slipped by 3 weeks.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-009-decision",
+      "citation_id": 4,
+      "query": "Why did DEC-009 move the milestone?",
+      "doc_id": "PRJ-006-incident",
+      "quote": " The commissioning milestone slipped by 4 weeks.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-009-decision",
+      "citation_id": 5,
+      "query": "Why did DEC-009 move the milestone?",
+      "doc_id": "PRJ-010-incident",
+      "quote": " The commissioning milestone slipped by 5 weeks.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-009-risk",
+      "citation_id": 3,
+      "query": "What triggers RISK-009 and what response is planned?",
+      "doc_id": "PRJ-001-risk",
+      "quote": " Response: require witnessed factory acceptance before shipment.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-009-risk",
+      "citation_id": 4,
+      "query": "What triggers RISK-009 and what response is planned?",
+      "doc_id": "PRJ-004-risk",
+      "quote": " Response: complete an independent protection coordination review.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-009-risk",
+      "citation_id": 5,
+      "query": "What triggers RISK-009 and what response is planned?",
+      "doc_id": "PRJ-003-risk",
+      "quote": " Response: inspect replacement seals and repeat the endurance test.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-009-risk",
+      "citation_id": 6,
+      "query": "What triggers RISK-009 and what response is planned?",
+      "doc_id": "PRJ-008-risk",
+      "quote": " Response: complete an independent protection coordination review.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-009-change_impact",
+      "citation_id": 4,
+      "query": "Trace the requirement and incident linked to CR-009.",
+      "doc_id": "PRJ-009-decision",
+      "quote": " The board accepted the schedule change only after reviewing the incident and change CR-009.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-009-multi_hop",
+      "citation_id": 5,
+      "query": "Which active projects use the equipment affected by INC-009, and what lesson follows that incident?",
+      "doc_id": "PRJ-009-decision",
+      "quote": " DEC-009 responds to INC-009.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-009-multi_hop",
+      "citation_id": 6,
+      "query": "Which active projects use the equipment affected by INC-009, and what lesson follows that incident?",
+      "doc_id": "PRJ-009-decision",
+      "quote": " The board accepted the schedule change only after reviewing the incident and change CR-009.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-009-multi_hop",
+      "citation_id": 7,
+      "query": "Which active projects use the equipment affected by INC-009, and what lesson follows that incident?",
+      "doc_id": "PRJ-009-change",
+      "quote": " CR-009 addresses INC-009.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-010-direct",
+      "citation_id": 1,
+      "query": "Which equipment and vendor does Project Juniper use?",
+      "doc_id": "PRJ-010-routine_2",
+      "quote": "Project Juniper week 3 coordination log: site access, fencing and document control are progressing.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-010-direct",
+      "citation_id": 2,
+      "query": "Which equipment and vendor does Project Juniper use?",
+      "doc_id": "PRJ-010-routine_2",
+      "quote": " Vendor Meridian Controls joined the meeting.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-010-direct",
+      "citation_id": 3,
+      "query": "Which equipment and vendor does Project Juniper use?",
+      "doc_id": "PRJ-010-routine_0",
+      "quote": "Project Juniper week 1 coordination log: site access, fencing and document control are progressing.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-010-direct",
+      "citation_id": 4,
+      "query": "Which equipment and vendor does Project Juniper use?",
+      "doc_id": "PRJ-010-routine_0",
+      "quote": " Vendor Meridian Controls joined the meeting.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-010-exact",
+      "citation_id": 3,
+      "query": "What requirement does CR-010 modify?",
+      "doc_id": "PRJ-001-change",
+      "quote": "Change CR-001 on Project Alpha revises acceptance requirement REQ-001.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-010-exact",
+      "citation_id": 4,
+      "query": "What requirement does CR-010 modify?",
+      "doc_id": "PRJ-012-change",
+      "quote": "Change CR-012 on Project Laurel revises acceptance requirement REQ-012.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-010-exact",
+      "citation_id": 5,
+      "query": "What requirement does CR-010 modify?",
+      "doc_id": "PRJ-002-change",
+      "quote": "Change CR-002 on Project Beta revises acceptance requirement REQ-002.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-010-exact",
+      "citation_id": 6,
+      "query": "What requirement does CR-010 modify?",
+      "doc_id": "PRJ-004-change",
+      "quote": "Change CR-004 on Project Delta revises acceptance requirement REQ-004.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-010-decision",
+      "citation_id": 3,
+      "query": "Why did DEC-010 move the milestone?",
+      "doc_id": "PRJ-002-incident",
+      "quote": " The commissioning milestone slipped by 3 weeks.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-010-decision",
+      "citation_id": 5,
+      "query": "Why did DEC-010 move the milestone?",
+      "doc_id": "PRJ-006-incident",
+      "quote": " The commissioning milestone slipped by 4 weeks.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-010-risk",
+      "citation_id": 3,
+      "query": "What triggers RISK-010 and what response is planned?",
+      "doc_id": "PRJ-001-risk",
+      "quote": " Response: require witnessed factory acceptance before shipment.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-010-risk",
+      "citation_id": 4,
+      "query": "What triggers RISK-010 and what response is planned?",
+      "doc_id": "PRJ-003-risk",
+      "quote": " Response: inspect replacement seals and repeat the endurance test.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-010-risk",
+      "citation_id": 5,
+      "query": "What triggers RISK-010 and what response is planned?",
+      "doc_id": "PRJ-002-risk",
+      "quote": " Response: validate firmware interoperability in a hardware-in-the-loop test.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-010-risk",
+      "citation_id": 6,
+      "query": "What triggers RISK-010 and what response is planned?",
+      "doc_id": "PRJ-012-risk",
+      "quote": " Response: complete an independent protection coordination review.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-010-change_impact",
+      "citation_id": 4,
+      "query": "Trace the requirement and incident linked to CR-010.",
+      "doc_id": "PRJ-010-decision",
+      "quote": " The board accepted the schedule change only after reviewing the incident and change CR-010.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-010-multi_hop",
+      "citation_id": 5,
+      "query": "Which active projects use the equipment affected by INC-010, and what lesson follows that incident?",
+      "doc_id": "PRJ-010-decision",
+      "quote": " DEC-010 responds to INC-010.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-010-multi_hop",
+      "citation_id": 6,
+      "query": "Which active projects use the equipment affected by INC-010, and what lesson follows that incident?",
+      "doc_id": "PRJ-010-decision",
+      "quote": " The board accepted the schedule change only after reviewing the incident and change CR-010.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-010-multi_hop",
+      "citation_id": 7,
+      "query": "Which active projects use the equipment affected by INC-010, and what lesson follows that incident?",
+      "doc_id": "PRJ-010-change",
+      "quote": " CR-010 addresses INC-010.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-direct",
+      "citation_id": 1,
+      "query": "Which equipment and vendor does Project Kestrel use?",
+      "doc_id": "PRJ-011-routine_2",
+      "quote": "Project Kestrel week 3 coordination log: site access, fencing and document control are progressing.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-direct",
+      "citation_id": 2,
+      "query": "Which equipment and vendor does Project Kestrel use?",
+      "doc_id": "PRJ-011-routine_2",
+      "quote": " Vendor Summit Electric joined the meeting.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-direct",
+      "citation_id": 3,
+      "query": "Which equipment and vendor does Project Kestrel use?",
+      "doc_id": "PRJ-011-routine_0",
+      "quote": "Project Kestrel week 1 coordination log: site access, fencing and document control are progressing.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-direct",
+      "citation_id": 4,
+      "query": "Which equipment and vendor does Project Kestrel use?",
+      "doc_id": "PRJ-011-routine_0",
+      "quote": " Vendor Summit Electric joined the meeting.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-exact",
+      "citation_id": 3,
+      "query": "What requirement does CR-011 modify?",
+      "doc_id": "PRJ-001-change",
+      "quote": "Change CR-001 on Project Alpha revises acceptance requirement REQ-001.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-exact",
+      "citation_id": 4,
+      "query": "What requirement does CR-011 modify?",
+      "doc_id": "PRJ-010-change",
+      "quote": "Change CR-010 on Project Juniper revises acceptance requirement REQ-010.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-exact",
+      "citation_id": 5,
+      "query": "What requirement does CR-011 modify?",
+      "doc_id": "PRJ-012-change",
+      "quote": "Change CR-012 on Project Laurel revises acceptance requirement REQ-012.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-exact",
+      "citation_id": 6,
+      "query": "What requirement does CR-011 modify?",
+      "doc_id": "PRJ-011-rfi",
+      "quote": " Engineering references change CR-011.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-lesson",
+      "citation_id": 3,
+      "query": "What should we learn from Project Kestrel before releasing a purchase order?",
+      "doc_id": "PRJ-011-handover",
+      "quote": "Project Kestrel handover checklist: archive drawings, training records, test certificates and lessons learned.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-lesson",
+      "citation_id": 4,
+      "query": "What should we learn from Project Kestrel before releasing a purchase order?",
+      "doc_id": "PRJ-011-handover",
+      "quote": " Resolve outstanding change requests and name an operations owner before final acceptance.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-decision",
+      "citation_id": 3,
+      "query": "Why did DEC-011 move the milestone?",
+      "doc_id": "PRJ-002-incident",
+      "quote": " The commissioning milestone slipped by 3 weeks.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-decision",
+      "citation_id": 4,
+      "query": "Why did DEC-011 move the milestone?",
+      "doc_id": "PRJ-010-incident",
+      "quote": " The commissioning milestone slipped by 5 weeks.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-decision",
+      "citation_id": 5,
+      "query": "Why did DEC-011 move the milestone?",
+      "doc_id": "PRJ-006-incident",
+      "quote": " The commissioning milestone slipped by 4 weeks.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-risk",
+      "citation_id": 1,
+      "query": "What triggers RISK-011 and what response is planned?",
+      "doc_id": "PRJ-001-risk",
+      "quote": " Response: require witnessed factory acceptance before shipment.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-risk",
+      "citation_id": 4,
+      "query": "What triggers RISK-011 and what response is planned?",
+      "doc_id": "PRJ-002-risk",
+      "quote": " Response: validate firmware interoperability in a hardware-in-the-loop test.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-risk",
+      "citation_id": 5,
+      "query": "What triggers RISK-011 and what response is planned?",
+      "doc_id": "PRJ-003-risk",
+      "quote": " Response: inspect replacement seals and repeat the endurance test.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-risk",
+      "citation_id": 6,
+      "query": "What triggers RISK-011 and what response is planned?",
+      "doc_id": "PRJ-010-risk",
+      "quote": " Response: validate firmware interoperability in a hardware-in-the-loop test.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-change_impact",
+      "citation_id": 4,
+      "query": "Trace the requirement and incident linked to CR-011.",
+      "doc_id": "PRJ-011-decision",
+      "quote": " The board accepted the schedule change only after reviewing the incident and change CR-011.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-multi_hop",
+      "citation_id": 5,
+      "query": "Which active projects use the equipment affected by INC-011, and what lesson follows that incident?",
+      "doc_id": "PRJ-011-decision",
+      "quote": " DEC-011 responds to INC-011.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-multi_hop",
+      "citation_id": 6,
+      "query": "Which active projects use the equipment affected by INC-011, and what lesson follows that incident?",
+      "doc_id": "PRJ-011-decision",
+      "quote": " The board accepted the schedule change only after reviewing the incident and change CR-011.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-011-multi_hop",
+      "citation_id": 7,
+      "query": "Which active projects use the equipment affected by INC-011, and what lesson follows that incident?",
+      "doc_id": "PRJ-011-change",
+      "quote": " CR-011 addresses INC-011.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-012-direct",
+      "citation_id": 1,
+      "query": "Which equipment and vendor does Project Laurel use?",
+      "doc_id": "PRJ-012-routine_2",
+      "quote": "Project Laurel week 3 coordination log: site access, fencing and document control are progressing.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-012-direct",
+      "citation_id": 2,
+      "query": "Which equipment and vendor does Project Laurel use?",
+      "doc_id": "PRJ-012-routine_2",
+      "quote": " Vendor Tidal Systems joined the meeting.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-012-direct",
+      "citation_id": 3,
+      "query": "Which equipment and vendor does Project Laurel use?",
+      "doc_id": "PRJ-012-routine_0",
+      "quote": "Project Laurel week 1 coordination log: site access, fencing and document control are progressing.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-012-direct",
+      "citation_id": 4,
+      "query": "Which equipment and vendor does Project Laurel use?",
+      "doc_id": "PRJ-012-routine_0",
+      "quote": " Vendor Tidal Systems joined the meeting.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-012-exact",
+      "citation_id": 3,
+      "query": "What requirement does CR-012 modify?",
+      "doc_id": "PRJ-001-change",
+      "quote": "Change CR-001 on Project Alpha revises acceptance requirement REQ-001.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-012-exact",
+      "citation_id": 4,
+      "query": "What requirement does CR-012 modify?",
+      "doc_id": "PRJ-010-change",
+      "quote": "Change CR-010 on Project Juniper revises acceptance requirement REQ-010.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-012-exact",
+      "citation_id": 5,
+      "query": "What requirement does CR-012 modify?",
+      "doc_id": "PRJ-012-rfi",
+      "quote": " Engineering references change CR-012.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-012-exact",
+      "citation_id": 6,
+      "query": "What requirement does CR-012 modify?",
+      "doc_id": "PRJ-002-change",
+      "quote": "Change CR-002 on Project Beta revises acceptance requirement REQ-002.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-012-decision",
+      "citation_id": 1,
+      "query": "Why did DEC-012 move the milestone?",
+      "doc_id": "PRJ-002-incident",
+      "quote": " The commissioning milestone slipped by 3 weeks.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-012-decision",
+      "citation_id": 4,
+      "query": "Why did DEC-012 move the milestone?",
+      "doc_id": "PRJ-010-incident",
+      "quote": " The commissioning milestone slipped by 5 weeks.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-012-decision",
+      "citation_id": 5,
+      "query": "Why did DEC-012 move the milestone?",
+      "doc_id": "PRJ-006-incident",
+      "quote": " The commissioning milestone slipped by 4 weeks.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-012-risk",
+      "citation_id": 3,
+      "query": "What triggers RISK-012 and what response is planned?",
+      "doc_id": "PRJ-001-risk",
+      "quote": " Response: require witnessed factory acceptance before shipment.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-012-risk",
+      "citation_id": 4,
+      "query": "What triggers RISK-012 and what response is planned?",
+      "doc_id": "PRJ-002-risk",
+      "quote": " Response: validate firmware interoperability in a hardware-in-the-loop test.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-012-risk",
+      "citation_id": 5,
+      "query": "What triggers RISK-012 and what response is planned?",
+      "doc_id": "PRJ-003-risk",
+      "quote": " Response: inspect replacement seals and repeat the endurance test.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-012-risk",
+      "citation_id": 6,
+      "query": "What triggers RISK-012 and what response is planned?",
+      "doc_id": "PRJ-004-risk",
+      "quote": " Response: complete an independent protection coordination review.",
+      "bucket": "wrong_project",
+      "reason": "The cited project differs from the requested incident, risk, change or decision project.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-012-change_impact",
+      "citation_id": 4,
+      "query": "Trace the requirement and incident linked to CR-012.",
+      "doc_id": "PRJ-012-decision",
+      "quote": " The board accepted the schedule change only after reviewing the incident and change CR-012.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-012-multi_hop",
+      "citation_id": 5,
+      "query": "Which active projects use the equipment affected by INC-012, and what lesson follows that incident?",
+      "doc_id": "PRJ-012-decision",
+      "quote": " DEC-012 responds to INC-012.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-012-multi_hop",
+      "citation_id": 6,
+      "query": "Which active projects use the equipment affected by INC-012, and what lesson follows that incident?",
+      "doc_id": "PRJ-012-decision",
+      "quote": " The board accepted the schedule change only after reviewing the incident and change CR-012.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "PRJ-012-multi_hop",
+      "citation_id": 7,
+      "query": "Which active projects use the equipment affected by INC-012, and what lesson follows that incident?",
+      "doc_id": "PRJ-012-change",
+      "quote": " CR-012 addresses INC-012.",
+      "bucket": "right_project_wrong_artifact",
+      "reason": "Same-project context does not supply the requested fact; the gold artifact is missing from this citation.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "absent-4",
+      "citation_id": 1,
+      "query": "What is the secret access token for the grid controller?",
+      "doc_id": "doe-microgrid-systems",
+      "quote": "interacting with the main utility grid (\u201cgrid connected\u201d) and operating independently (\u201cislanded\u201d) during power outages or emergencies; (2) they can leverage all localized sources of affordable, reliable and secure energy resources to meet local demand, while also providing grid support; and (3) they can function intelligently, using advanced controllers to orchestrate the balancing of local energy resources and demand, supporting grid interconnection requirements while optimizing power delivery to end-users.",
+      "bucket": "other",
+      "reason": "Unsupported question was answered with topical text rather than abstaining.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "absent-4",
+      "citation_id": 2,
+      "query": "What is the secret access token for the grid controller?",
+      "doc_id": "doe-microgrid-systems",
+      "quote": "Microgrids are deployed across key sectors to bolster reliability and resilience during grid outages.",
+      "bucket": "other",
+      "reason": "Unsupported question was answered with topical text rather than abstaining.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "absent-5",
+      "citation_id": 1,
+      "query": "What is the final approved contract value of Project Alpha?",
+      "doc_id": "PRJ-001-status",
+      "quote": "Current Project Alpha status: commissioning is delayed 6 weeks.",
+      "bucket": "other",
+      "reason": "Unsupported question was answered with topical text rather than abstaining.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "absent-5",
+      "citation_id": 2,
+      "query": "What is the final approved contract value of Project Alpha?",
+      "doc_id": "PRJ-001-status",
+      "quote": " The approved recovery plan tracks CR-001, RISK-001 and MS-001.",
+      "bucket": "other",
+      "reason": "Unsupported question was answered with topical text rather than abstaining.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "absent-5",
+      "citation_id": 3,
+      "query": "What is the final approved contract value of Project Alpha?",
+      "doc_id": "PRJ-001-change",
+      "quote": "Change CR-001 on Project Alpha revises acceptance requirement REQ-001.",
+      "bucket": "other",
+      "reason": "Unsupported question was answered with topical text rather than abstaining.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    },
+    {
+      "question_id": "absent-5",
+      "citation_id": 4,
+      "query": "What is the final approved contract value of Project Alpha?",
+      "doc_id": "PRJ-001-change",
+      "quote": " Approved scope: require witnessed factory acceptance before shipment.",
+      "bucket": "other",
+      "reason": "Unsupported question was answered with topical text rather than abstaining.",
+      "reviewer_type": "AI-assisted; human validation pending"
+    }
+  ]
+}

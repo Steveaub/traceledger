@@ -1,6 +1,6 @@
 # Security boundaries and deployment assumptions
 
-The application defaults to authenticated access. Server-side bearer-token configuration maps each principal to allowed projects. Request bodies cannot supply an ACL. Public references are readable by authenticated principals; synthetic private project records are scoped before vector ranking, BM25 candidate selection, graph traversal, source lookup and cache access. Unauthorized source IDs return 404. The demo explicitly enables unauthenticated access to fictional projects and should remain bound to loopback.
+The application defaults to authenticated access. Server-side bearer-token configuration maps each principal to allowed projects. Request bodies cannot supply an ACL. Public references are readable by authenticated principals; synthetic private project records are scoped before vector ranking, BM25 candidate selection, graph traversal, source lookup and cache access. Unauthorized source IDs return 404. The demo explicitly enables unauthenticated access to fictional projects and is bound to loopback for local use. The optional hosted demo uses the restricted deployment described below.
 
 Documents never execute commands, select tools, access the network, or change instructions. Ingestion accepts reviewed local TXT/Markdown/PDF only, caps file/page/text sizes and quarantines common prompt-injection patterns. Retrieval excludes suspicious chunks from answer assembly. This pattern screen is heuristic and will miss obfuscated attacks. The stronger boundary is no tools, no secrets in model context, ACL filtering and literal output validation. Arbitrary paraphrases are rejected even if they might be correct.
 
@@ -12,3 +12,7 @@ Tests cover forbidden scope, graph edge provenance, shared-equipment traversal l
 
 
 Evaluation history endpoints require an evaluator role in private mode. Demo mode exposes only runs explicitly marked as demo artifacts. Restricted run files are omitted from release archives. Run IDs are validated before filesystem lookup; comparisons require identical evaluation cohorts. History is append-only through application code, not cryptographically immutable storage.
+
+## Hosted evidence-only demo
+
+The Hugging Face build includes only bundled fictional records and public references. `ATLAS_HOSTED_DEMO=1` together with `ATLAS_DEMO=1` rejects local generation. It runs one worker with proxy headers disabled: caller-supplied forwarded IP headers do not establish identity. All anonymous visitors share one 30-request-per-minute budget; this is a global demo limit, not a per-visitor guarantee. Expired principal buckets are evicted. CSP permits framing by huggingface.co while retaining self-hosted scripts and styles. These controls have local automated coverage; proxy behavior on the actual host remains unverified until deployment.

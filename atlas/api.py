@@ -58,6 +58,9 @@ def create_app(service: Service | None = None) -> FastAPI:
     app.state.principals = json.loads(os.environ.get("ATLAS_PRINCIPALS_JSON", "{}"))
     app.state.demo = os.environ.get("ATLAS_DEMO", "0") == "1"
     app.state.requests = defaultdict(deque)
+    app.state.hosted_demo = (
+        app.state.demo and os.environ.get("ATLAS_HOSTED_DEMO", "0") == "1"
+    )
 
     def principal(credentials: HTTPAuthorizationCredentials | None = Depends(auth)):
         if app.state.demo and not credentials:
@@ -131,7 +134,8 @@ def create_app(service: Service | None = None) -> FastAPI:
         response.headers["X-Request-ID"] = trace_id
         response.headers["X-Content-Type-Options"] = "nosniff"
         response.headers["Content-Security-Policy"] = (
-            "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'"
+            "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors "
+            + ("'self' https://huggingface.co" if app.state.hosted_demo else "'none'")
         )
         log.info(
             json.dumps(
@@ -152,17 +156,24 @@ def create_app(service: Service | None = None) -> FastAPI:
         return {
             "status": "ready" if app.state.service else "starting",
             "demo": app.state.demo,
+            "hosted_demo": app.state.hosted_demo,
         }
 
     @app.post("/api/query")
     def query(
         body: QueryRequest, user: dict[str, Any] = Depends(principal)
     ) -> dict[str, Any]:
+        if app.state.hosted_demo and body.generation != "evidence":
+            raise HTTPException(422, "Hosted demo supports evidence mode only")
         with app.state.service.lock:
             now = time.monotonic()
+            for principal_id in list(app.state.requests):
+                old_bucket = app.state.requests[principal_id]
+                while old_bucket and now - old_bucket[0] > 60:
+                    old_bucket.popleft()
+                if not old_bucket:
+                    del app.state.requests[principal_id]
             bucket = app.state.requests[user["id"]]
-            while bucket and now - bucket[0] > 60:
-                bucket.popleft()
             if len(bucket) >= 30:
                 raise HTTPException(
                     429,

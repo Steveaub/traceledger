@@ -163,3 +163,15 @@ loadFeeds();
 
 window.addEventListener('DOMContentLoaded',()=>{if(location.hash==='#evaluation')switchView('evaluation');});
 window.addEventListener('hashchange',()=>switchView(location.hash==='#evaluation'?'evaluation':'workspace'));
+
+async function initializeHostedDemo() {
+  try {
+    const health = await window.atlasFetch('/health');
+    if (!health.hosted_demo || requestSequence || $('question').value.trim() || location.hash === '#evaluation') return;
+    $('generation').replaceChildren(new Option('Verified source excerpts', 'evidence'));
+    $('question').value = 'Investigate Project Alpha: why was commissioning delayed, who approved the change, and was the schedule updated?';
+    setExperience(true);
+    $('ask').requestSubmit();
+  } catch (_) { /* Existing connection feedback handles an unavailable server. */ }
+}
+initializeHostedDemo();

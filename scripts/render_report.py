@@ -199,7 +199,7 @@ Independent human annotations; a larger disjoint real-document benchmark; the fu
 
 Code and original synthetic records are MIT licensed. Third-party models and datasets retain their own licenses and attribution; see [dataset notes](docs/datasets.md). Built with AI assistance; review and reproduce the system before presenting it as your own engineering work.
 """
-(ROOT / "README.md").write_text(readme, encoding="utf-8")
+(ROOT / "reports/generated-readme-summary.md").write_text(readme, encoding="utf-8")
 fail = """# Failure analysis from the measured held-out run\n\nThis file is generated from reports; examples are actual outputs. Empty relevance sets are excluded from retrieval metrics.\n\n| Category | Recall@5 | MRR | nDCG@5 |\n|---|---:|---:|---:|\n"""
 for category, summary in held["selected"]["slices"].items():
     if summary["recall"] is not None:
@@ -214,5 +214,5 @@ fail += "\n## Missing-answer errors\n"
 for r in held["selected"]["rows"]:
     if not r["relevant"] and not r["answer"]["abstained"]:
         fail += f"\n- {r['query']} → returned evidence instead of abstaining.\n"
-(ROOT / "docs/failure-analysis.md").write_text(fail, encoding="utf-8")
-print("Rendered README and failure analysis from saved measurements")
+(ROOT / "reports/generated-failure-summary.md").write_text(fail, encoding="utf-8")
+print("Rendered report summaries; curated README and failure analysis preserved")

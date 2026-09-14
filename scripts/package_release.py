@@ -4,13 +4,25 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-skip = {".venv", ".git", ".cache", "__pycache__", ".pytest_cache", "models"}
+skip = {
+    ".venv",
+    ".git",
+    ".cache",
+    "__pycache__",
+    ".pytest_cache",
+    ".ruff_cache",
+    "dist",
+    "models",
+}
 paths = []
 for p in ROOT.rglob("*"):
     if not p.is_file():
         continue
     rel = p.relative_to(ROOT)
-    if any(x in skip or x.endswith(".egg-info") for x in rel.parts):
+    if any(
+        x in skip or x.startswith(".test-tmp") or x.endswith(".egg-info")
+        for x in rel.parts
+    ):
         continue
     if rel.parts[:2] in [
         ("data", "raw"),
@@ -19,7 +31,12 @@ for p in ROOT.rglob("*"):
         ("data", "ingested"),
     ]:
         continue
-    if p.name in (".env", "release-manifest.json") or p.suffix == ".log":
+    if (
+        p.name in (".env", "release-manifest.json", "CODEX-BRIEF.md")
+        or (p.name.startswith(".env.") and p.name != ".env.example")
+        or p.suffix.lower() in {".log", ".pem", ".key", ".token"}
+        or p.name.lower().startswith(("credentials", "secrets"))
+    ):
         continue
     if rel.parts[:2] == ("reports", "runs"):
         if (

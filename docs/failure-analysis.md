@@ -1,6 +1,6 @@
 # Failure analysis from the measured held-out run
 
-This file is generated from reports; examples are actual outputs. Empty relevance sets are excluded from retrieval metrics.
+The metrics below come from committed reports; examples are actual outputs. The citation review is a separately labeled AI-assisted analysis. Empty relevance sets are excluded from retrieval metrics.
 
 | Category | Recall@5 | MRR | nDCG@5 |
 |---|---:|---:|---:|
@@ -57,3 +57,21 @@ Recall: 0.500. Relevant: PRJ-009-incident, PRJ-009-lesson, PRJ-005-charter, PRJ-
 - What is the secret access token for the grid controller? → returned evidence instead of abstaining.
 
 - What is the final approved contract value of Project Alpha? → returned evidence instead of abstaining.
+
+
+## Citation relevance: review of the saved held-out run
+
+The 56.3% citation relevance figure is a mean of per-answer relevance fractions. The counts below count individual rejected citation occurrences, so they have a different denominator. Every rejected passage was inspected in an AI-assisted review; these are **not human-validated labels**. The source report was not regenerated or changed. Full passages, labels, rationales and its SHA-256 are in [the review artifact](../reports/citation-error-review.json).
+
+| Bucket | Rejected citation occurrences |
+|---|---:|
+| Wrong project | 61 |
+| Right project, wrong artifact | 55 |
+| Superseded or stale record | 0 |
+| Other: unsupported question answered | 6 |
+
+Correct document but off-question: **not measurable from this rejected-document subset**. A citation from a gold document always passes the current proxy, regardless of which sentence it quotes. The separate human-review sample includes those passing citations too.
+
+Examples: CR-007 pulls requirement passages from Alpha/Falcon rather than Granite; Granite equipment/vendor questions cite routine meeting attendance instead of the charter; a grid-controller secret question receives public microgrid prose instead of abstaining. No superseded records were observed in this flagged subset, consistent with current-record filtering. Repeated similar project templates make cross-project fillers particularly hard to distinguish.
+
+Future work, not silently applied: enforce entity/project consistency for identifier questions, gate final excerpts by question facet, and improve abstention for unsupported questions. Evaluate these on new development cases and an independently authored holdout before replacing any reported result. Human adjudication may identify incomplete gold relevance labels; preserve disagreements rather than rewriting the benchmark to match output.

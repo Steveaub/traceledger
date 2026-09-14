@@ -1,0 +1,122 @@
+question_id,category,question,answer,answer_relevant,reviewer_id,notes
+PRJ-012-change_impact,change_impact,Trace the requirement and incident linked to CR-012.,"Change CR-012 on Project Laurel revises acceptance requirement REQ-012. [1]
+CR-012 modifies REQ-012. [2]
+Incident INC-012 on Project Laurel: switchgear relay settings conflicted with the utility study. [3]
+The board accepted the schedule change only after reviewing the incident and change CR-012. [4]",,,
+PRJ-007-change_impact,change_impact,Trace the requirement and incident linked to CR-007.,"Change CR-007 on Project Granite revises acceptance requirement REQ-007. [1]
+CR-007 modifies REQ-007. [2]
+Incident INC-007 on Project Granite: cooling pump seals leaked during endurance testing. [3]
+The board accepted the schedule change only after reviewing the incident and change CR-007. [4]",,,
+PRJ-011-change_impact,change_impact,Trace the requirement and incident linked to CR-011.,"Change CR-011 on Project Kestrel revises acceptance requirement REQ-011. [1]
+CR-011 modifies REQ-011. [2]
+Incident INC-011 on Project Kestrel: cooling pump seals leaked during endurance testing. [3]
+The board accepted the schedule change only after reviewing the incident and change CR-011. [4]",,,
+PRJ-012-conflict,conflict,What is the current commissioning delay for Project Laurel?,Current Project Laurel status: commissioning is delayed 4 weeks. [1],,,
+PRJ-009-conflict,conflict,What is the current commissioning delay for Project Iris?,Current Project Iris status: commissioning is delayed 8 weeks. [1],,,
+PRJ-008-conflict,conflict,What is the current commissioning delay for Project Harbor?,Current Project Harbor status: commissioning is delayed 3 weeks. [1],,,
+PRJ-008-decision,decision,Why did DEC-008 move the milestone?,"Decision DEC-008 moved MS-008 by 3 weeks because switchgear relay settings conflicted with the utility study. [1]
+DEC-008 responds to INC-008. [2]
+The commissioning milestone slipped by 3 weeks. [3]
+The commissioning milestone slipped by 4 weeks. [4]
+The commissioning milestone slipped by 5 weeks. [5]",,,
+PRJ-012-decision,decision,Why did DEC-012 move the milestone?,"The commissioning milestone slipped by 3 weeks. [1]
+Decision DEC-012 moved MS-012 by 4 weeks because switchgear relay settings conflicted with the utility study. [2]
+DEC-012 responds to INC-012. [3]
+The commissioning milestone slipped by 5 weeks. [4]
+The commissioning milestone slipped by 4 weeks. [5]",,,
+PRJ-007-decision,decision,Why did DEC-007 move the milestone?,"Decision DEC-007 moved MS-007 by 5 weeks because cooling pump seals leaked during endurance testing. [1]
+DEC-007 responds to INC-007. [2]
+The commissioning milestone slipped by 3 weeks. [3]
+The commissioning milestone slipped by 4 weeks. [4]
+The commissioning milestone slipped by 5 weeks. [5]",,,
+PRJ-012-direct,direct,Which equipment and vendor does Project Laurel use?,"Project Laurel week 3 coordination log: site access, fencing and document control are progressing. [1]
+Vendor Tidal Systems joined the meeting. [2]
+Project Laurel week 1 coordination log: site access, fencing and document control are progressing. [3]
+Vendor Tidal Systems joined the meeting. [4]",,,
+PRJ-011-direct,direct,Which equipment and vendor does Project Kestrel use?,"Project Kestrel week 3 coordination log: site access, fencing and document control are progressing. [1]
+Vendor Summit Electric joined the meeting. [2]
+Project Kestrel week 1 coordination log: site access, fencing and document control are progressing. [3]
+Vendor Summit Electric joined the meeting. [4]",,,
+PRJ-007-direct,direct,Which equipment and vendor does Project Granite use?,"Project Granite week 3 coordination log: site access, fencing and document control are progressing. [1]
+Vendor Summit Electric joined the meeting. [2]
+Project Granite week 1 coordination log: site access, fencing and document control are progressing. [3]
+Vendor Summit Electric joined the meeting. [4]",,,
+PRJ-011-exact,exact,What requirement does CR-011 modify?,"Change CR-011 on Project Kestrel revises acceptance requirement REQ-011. [1]
+CR-011 modifies REQ-011. [2]
+Change CR-001 on Project Alpha revises acceptance requirement REQ-001. [3]
+Change CR-010 on Project Juniper revises acceptance requirement REQ-010. [4]
+Change CR-012 on Project Laurel revises acceptance requirement REQ-012. [5]
+Engineering references change CR-011. [6]",,,
+PRJ-010-exact,exact,What requirement does CR-010 modify?,"Change CR-010 on Project Juniper revises acceptance requirement REQ-010. [1]
+CR-010 modifies REQ-010. [2]
+Change CR-001 on Project Alpha revises acceptance requirement REQ-001. [3]
+Change CR-012 on Project Laurel revises acceptance requirement REQ-012. [4]
+Change CR-002 on Project Beta revises acceptance requirement REQ-002. [5]
+Change CR-004 on Project Delta revises acceptance requirement REQ-004. [6]",,,
+PRJ-007-exact,exact,What requirement does CR-007 modify?,"Change CR-007 on Project Granite revises acceptance requirement REQ-007. [1]
+CR-007 modifies REQ-007. [2]
+Change CR-001 on Project Alpha revises acceptance requirement REQ-001. [3]
+Change CR-006 on Project Falcon revises acceptance requirement REQ-006. [4]
+The board accepted the schedule change only after reviewing the incident and change CR-007. [5]
+Change CR-002 on Project Beta revises acceptance requirement REQ-002. [6]",,,
+PRJ-007-lesson,lesson,What should we learn from Project Granite before releasing a purchase order?,"Lesson LL-007 from Project Granite: inspect replacement seals and repeat the endurance test. [1]
+Reuse this lesson at the procurement gate of future projects before purchase-order release. [2]",,,
+PRJ-012-lesson,lesson,What should we learn from Project Laurel before releasing a purchase order?,"Lesson LL-012 from Project Laurel: complete an independent protection coordination review. [1]
+Reuse this lesson at the procurement gate of future projects before purchase-order release. [2]",,,
+PRJ-008-lesson,lesson,What should we learn from Project Harbor before releasing a purchase order?,"Lesson LL-008 from Project Harbor: complete an independent protection coordination review. [1]
+Reuse this lesson at the procurement gate of future projects before purchase-order release. [2]",,,
+PRJ-008-multi_hop,multi_hop,"Which active projects use the equipment affected by INC-008, and what lesson follows that incident?","Incident INC-008 on Project Harbor: switchgear relay settings conflicted with the utility study. [1]
+INC-008 affected SWG-610. [2]
+LL-008 follows INC-008. [3]
+Reuse this lesson at the procurement gate of future projects before purchase-order release. [4]
+DEC-008 responds to INC-008. [5]
+The board accepted the schedule change only after reviewing the incident and change CR-008. [6]
+CR-008 addresses INC-008. [7]",,,
+PRJ-011-multi_hop,multi_hop,"Which active projects use the equipment affected by INC-011, and what lesson follows that incident?","Incident INC-011 on Project Kestrel: cooling pump seals leaked during endurance testing. [1]
+INC-011 affected PUMP-310. [2]
+LL-011 follows INC-011. [3]
+Reuse this lesson at the procurement gate of future projects before purchase-order release. [4]
+DEC-011 responds to INC-011. [5]
+The board accepted the schedule change only after reviewing the incident and change CR-011. [6]
+CR-011 addresses INC-011. [7]",,,
+PRJ-007-multi_hop,multi_hop,"Which active projects use the equipment affected by INC-007, and what lesson follows that incident?","Incident INC-007 on Project Granite: cooling pump seals leaked during endurance testing. [1]
+INC-007 affected PUMP-310. [2]
+LL-007 follows INC-007. [3]
+Reuse this lesson at the procurement gate of future projects before purchase-order release. [4]
+DEC-007 responds to INC-007. [5]
+The board accepted the schedule change only after reviewing the incident and change CR-007. [6]
+CR-007 addresses INC-007. [7]",,,
+PRJ-011-risk,risk,What triggers RISK-011 and what response is planned?,"Response: require witnessed factory acceptance before shipment. [1]
+Risk RISK-011 for Project Kestrel: repeat PUMP-310 acceptance failure could delay energization. [2]
+RISK-011 threatens MS-011. [3]
+Response: validate firmware interoperability in a hardware-in-the-loop test. [4]
+Response: inspect replacement seals and repeat the endurance test. [5]
+Response: validate firmware interoperability in a hardware-in-the-loop test. [6]",,,
+PRJ-008-risk,risk,What triggers RISK-008 and what response is planned?,"Risk RISK-008 for Project Harbor: repeat SWG-610 acceptance failure could delay energization. [1]
+RISK-008 threatens MS-008. [2]
+Response: require witnessed factory acceptance before shipment. [3]
+Response: require witnessed factory acceptance before shipment. [4]
+Response: inspect replacement seals and repeat the endurance test. [5]
+Response: validate firmware interoperability in a hardware-in-the-loop test. [6]",,,
+PRJ-010-risk,risk,What triggers RISK-010 and what response is planned?,"Risk RISK-010 for Project Juniper: repeat CTRL-420 acceptance failure could delay energization. [1]
+RISK-010 threatens MS-010. [2]
+Response: require witnessed factory acceptance before shipment. [3]
+Response: inspect replacement seals and repeat the endurance test. [4]
+Response: validate firmware interoperability in a hardware-in-the-loop test. [5]
+Response: complete an independent protection coordination review. [6]",,,
+PRJ-008-semantic,semantic,What caused Project Harbor to fall behind its commissioning schedule?,"Current Project Harbor status: commissioning is delayed 3 weeks. [1]
+Incident INC-008 on Project Harbor: switchgear relay settings conflicted with the utility study. [2]
+The commissioning milestone slipped by 3 weeks. [3]",,,
+PRJ-010-semantic,semantic,What caused Project Juniper to fall behind its commissioning schedule?,"Current Project Juniper status: commissioning is delayed 5 weeks. [1]
+Incident INC-010 on Project Juniper: controller firmware dropped synchronization messages. [2]
+The commissioning milestone slipped by 5 weeks. [3]",,,
+PRJ-009-semantic,semantic,What caused Project Iris to fall behind its commissioning schedule?,"Current Project Iris status: commissioning is delayed 8 weeks. [1]
+Incident INC-009 on Project Iris: transformer winding insulation failed factory testing. [2]
+The commissioning milestone slipped by 8 weeks. [3]",,,
+absent-3,unanswerable,What did Project Omega spend on helicopter repairs?,I could not find sufficient evidence in the accessible sources.,,,
+absent-5,unanswerable,What is the final approved contract value of Project Alpha?,"Current Project Alpha status: commissioning is delayed 6 weeks. [1]
+The approved recovery plan tracks CR-001, RISK-001 and MS-001. [2]
+Change CR-001 on Project Alpha revises acceptance requirement REQ-001. [3]
+Approved scope: require witnessed factory acceptance before shipment. [4]",,,
+absent-4,unanswerable,What is the secret access token for the grid controller?,"interacting with the main utility grid (“grid connected”) and operating independently (“islanded”) during power outages or emergencies; (2) they can leverage all localized sources of affordable, reliable and secure energy resources to meet local demand, while also providing grid support; and (3) they can function intelligently, using advanced controllers to orchestrate the balancing of local energy resources and demand, supporting grid interconnection requirements while optimizing power delivery to end-users. [1]
+Microgrids are deployed across key sectors to bolster reliability and resilience during grid outages. [2]",,,
