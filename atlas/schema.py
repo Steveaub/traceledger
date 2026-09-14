@@ -24,11 +24,13 @@ class Document(BaseModel):
     channel: Literal["documents", "email", "slack", "teams"] = "documents"
     thread_id: str | None = Field(default=None, max_length=200)
     author: str | None = Field(default=None, max_length=200)
-    decision_status: Literal["unspecified", "proposed", "approved", "recorded", "disputed"] = "unspecified"
+    decision_status: Literal[
+        "unspecified", "proposed", "approved", "recorded", "disputed"
+    ] = "unspecified"
 
     @field_validator("text")
     @classmethod
-    def nonblank_text(cls,value):
+    def nonblank_text(cls, value):
         if not value.strip():
             raise ValueError("Document text cannot be blank")
         return value
@@ -66,4 +68,6 @@ class QueryRequest(BaseModel):
     mode: Literal["auto", "vector", "hybrid", "graph", "investigate"] = "auto"
     generation: Literal["evidence", "local"] = "evidence"
     project: str | None = None
-    sources: list[Literal["documents", "email", "slack", "teams"]] = Field(default_factory=lambda: ["documents"], min_length=1, max_length=4)
+    sources: list[Literal["documents", "email", "slack", "teams"]] = Field(
+        default_factory=lambda: ["documents"], min_length=1, max_length=4
+    )

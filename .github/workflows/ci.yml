@@ -17,6 +17,8 @@ jobs:
         with:
           node-version: '22'
       - run: node --test tests/voice.test.cjs
+      - run: python -m ruff format --check atlas scripts tests
+      - run: python -m ruff check atlas scripts tests
       - run: python -m pytest -q
       - uses: actions/cache@v4
         with:

@@ -1,23 +1,42 @@
 """Render documentation from saved measurements, never handwritten scores."""
+
 import json
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1]
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
 def read(name):
-    return json.loads((ROOT/f"reports/{name}.json").read_text())
-def row(label,s):
+    return json.loads((ROOT / f"reports/{name}.json").read_text())
+
+
+def row(label, s):
     return f"| {label} | {s['recall']:.3f} | {s['mrr']:.3f} | {s['ndcg']:.3f} | {s['retrieval_p95_ms']:.1f} |"
-dev=read("development")
-held=read("heldout")
-ext=read("external")
-public=read("public")
-gen=read("generation")
-table="| Configuration | Recall@5 | MRR@5 | nDCG@5 | Retrieval p95 ms |\n|---|---:|---:|---:|---:|\n"
-dev_table=table+"\n".join(row(x.get("experiment",x['config']['name']),x['summary']) for x in dev['experiments'])
-final_table=table+"\n".join([row("Synthetic held-out / vector baseline",held['baseline']['summary']),row("Synthetic held-out / selected router",held['selected']['summary']),row("TechQA sample / vector baseline",ext['baseline']['summary']),row("TechQA sample / selected hybrid + reranker",ext['selected']['summary']),row("DOE reference diagnostic / selected",public['summary'])])
-s=held['selected']['summary']
-g=gen['summary']
-accepted=sum(r['answer'].get('draft_accepted',False) for r in gen['rows'])
-readme=f'''# TraceLedger
+
+
+dev = read("development")
+held = read("heldout")
+ext = read("external")
+public = read("public")
+gen = read("generation")
+table = "| Configuration | Recall@5 | MRR@5 | nDCG@5 | Retrieval p95 ms |\n|---|---:|---:|---:|---:|\n"
+dev_table = table + "\n".join(
+    row(x.get("experiment", x["config"]["name"]), x["summary"])
+    for x in dev["experiments"]
+)
+final_table = table + "\n".join(
+    [
+        row("Synthetic held-out / vector baseline", held["baseline"]["summary"]),
+        row("Synthetic held-out / selected router", held["selected"]["summary"]),
+        row("TechQA sample / vector baseline", ext["baseline"]["summary"]),
+        row("TechQA sample / selected hybrid + reranker", ext["selected"]["summary"]),
+        row("DOE reference diagnostic / selected", public["summary"]),
+    ]
+)
+s = held["selected"]["summary"]
+g = gen["summary"]
+accepted = sum(r["answer"].get("draft_accepted", False) for r in gen["rows"])
+readme = f"""# TraceLedger
 ### Grounded project intelligence for complex technical programs
 
 Project teams accumulate decisions, risk registers, incident reports and lessons faster than they can reuse them. **TraceLedger retrieves the evidence, connects documented relationships and shows the source behind an answer.** Microgrid projects provide the first demonstration domain; every operational project record is clearly fictional.
@@ -44,9 +63,9 @@ Executed locally on Windows, Python 3.12, CPU inference with two model threads. 
 
 Synthetic final test: 57 questions, 54 answerable. Development: a separate 57 questions. The TechQA test is only 40 sampled RAGBench rows pooled into 200 context documents, **not an official benchmark score**. DOE diagnostic: six questions, too small for a generalization claim.
 
-Held-out citation span integrity: **{s['citation_integrity']:.1%}**. Citation relevance accuracy: **{s['citation_accuracy']:.1%}**. Gold-term answer coverage: **{s['relevance_gold_term_coverage']:.1%}**. These differ: a verbatim quote can still be irrelevant. Exact-quote faithfulness is a mechanical proxy, not a human or independent LLM judgment.
+Held-out citation span integrity: **{s["citation_integrity"]:.1%}**. Citation relevance accuracy: **{s["citation_accuracy"]:.1%}**. Gold-term answer coverage: **{s["relevance_gold_term_coverage"]:.1%}**. These differ: a verbatim quote can still be irrelevant. Exact-quote faithfulness is a mechanical proxy, not a human or independent LLM judgment.
 
-Local FLAN evaluation: {accepted}/{len(gen['rows'])} queries produced a fully accepted literal draft. Displayed answer coverage was {g['relevance_gold_term_coverage']:.1%}; total p95 was {g['total_p95_ms']:.1f} ms. Rejected drafts fall back to evidence; see [raw generation results](reports/generation.json). Do not claim a zero hallucination rate from this validation rule.
+Local FLAN evaluation: {accepted}/{len(gen["rows"])} queries produced a fully accepted literal draft. Displayed answer coverage was {g["relevance_gold_term_coverage"]:.1%}; total p95 was {g["total_p95_ms"]:.1f} ms. Rejected drafts fall back to evidence; see [raw generation results](reports/generation.json). Do not claim a zero hallucination rate from this validation rule.
 
 ### What earned its place
 
@@ -179,18 +198,21 @@ Independent human annotations; a larger disjoint real-document benchmark; the fu
 [Usage examples](docs/usage-examples.md) · [architecture diagrams](docs/architecture.md) · [failure analysis](docs/failure-analysis.md) · [checkpoint ledger](docs/checkpoints.md).
 
 Code and original synthetic records are MIT licensed. Third-party models and datasets retain their own licenses and attribution; see [dataset notes](docs/datasets.md). Built with AI assistance; review and reproduce the system before presenting it as your own engineering work.
-'''
-(ROOT/"README.md").write_text(readme,encoding="utf-8")
-fail="""# Failure analysis from the measured held-out run\n\nThis file is generated from reports; examples are actual outputs. Empty relevance sets are excluded from retrieval metrics.\n\n| Category | Recall@5 | MRR | nDCG@5 |\n|---|---:|---:|---:|\n"""
-for category,summary in held['selected']['slices'].items():
-    if summary['recall'] is not None:
-        fail+=f"| {category} | {summary['recall']:.3f} | {summary['mrr']:.3f} | {summary['ndcg']:.3f} |\n"
-fail+="\n## Lowest-recall examples\n"
-for r in sorted([r for r in held['selected']['rows'] if r['recall'] is not None],key=lambda r:r['recall'])[:6]:
-    fail+=f"\n### {r['id']}\n\n{r['query']}\n\nRecall: {r['recall']:.3f}. Relevant: {', '.join(r['relevant'])}. Returned: {', '.join(r['ranked'])}.\n"
-fail+="\n## Missing-answer errors\n"
-for r in held['selected']['rows']:
-    if not r['relevant'] and not r['answer']['abstained']:
-        fail+=f"\n- {r['query']} → returned evidence instead of abstaining.\n"
-(ROOT/"docs/failure-analysis.md").write_text(fail,encoding="utf-8")
+"""
+(ROOT / "README.md").write_text(readme, encoding="utf-8")
+fail = """# Failure analysis from the measured held-out run\n\nThis file is generated from reports; examples are actual outputs. Empty relevance sets are excluded from retrieval metrics.\n\n| Category | Recall@5 | MRR | nDCG@5 |\n|---|---:|---:|---:|\n"""
+for category, summary in held["selected"]["slices"].items():
+    if summary["recall"] is not None:
+        fail += f"| {category} | {summary['recall']:.3f} | {summary['mrr']:.3f} | {summary['ndcg']:.3f} |\n"
+fail += "\n## Lowest-recall examples\n"
+for r in sorted(
+    [r for r in held["selected"]["rows"] if r["recall"] is not None],
+    key=lambda r: r["recall"],
+)[:6]:
+    fail += f"\n### {r['id']}\n\n{r['query']}\n\nRecall: {r['recall']:.3f}. Relevant: {', '.join(r['relevant'])}. Returned: {', '.join(r['ranked'])}.\n"
+fail += "\n## Missing-answer errors\n"
+for r in held["selected"]["rows"]:
+    if not r["relevant"] and not r["answer"]["abstained"]:
+        fail += f"\n- {r['query']} → returned evidence instead of abstaining.\n"
+(ROOT / "docs/failure-analysis.md").write_text(fail, encoding="utf-8")
 print("Rendered README and failure analysis from saved measurements")
