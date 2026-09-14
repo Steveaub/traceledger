@@ -10,10 +10,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def report_digest(content: bytes) -> str:
+    """Hash source text consistently across Git checkout line endings."""
+    return hashlib.sha256(content.replace(b"\r\n", b"\n")).hexdigest()
+
+
 def score(folder: Path) -> dict:
     manifest = json.loads((folder / "sample.json").read_text(encoding="utf-8"))
     source = ROOT / "reports/heldout.json"
-    if hashlib.sha256(source.read_bytes()).hexdigest() != manifest["source_sha256"]:
+    if report_digest(source.read_bytes()) != manifest["source_sha256_lf"]:
         raise ValueError("Source report changed; labels cannot be compared")
     rows = {
         r["id"]: r

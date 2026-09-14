@@ -19,11 +19,11 @@ jobs:
       - run: node --test tests/voice.test.cjs
       - run: python -m ruff format --check atlas scripts tests
       - run: python -m ruff check atlas scripts tests
-      - run: python -m pytest -q
       - uses: actions/cache@v4
         with:
           path: models
           key: atlas-models-${{ hashFiles('config/model-manifest.json') }}
       - run: python scripts/bootstrap_models.py --retrieval-only
+      - run: python -m pytest -q
       - run: python scripts/regression.py
       - run: python scripts/evaluate_investigator.py --split test --check

@@ -75,3 +75,10 @@ def test_human_review_refuses_unlabelled_sample():
 
     with pytest.raises(ValueError, match="human yes/no"):
         score(Path(__file__).resolve().parents[1] / "evaluation/human-review")
+
+
+def test_review_digest_ignores_checkout_newlines_but_detects_edits():
+    from scripts.score_human_review import report_digest
+
+    assert report_digest(b"a\r\nb\r\n") == report_digest(b"a\nb\n")
+    assert report_digest(b"a\nb\n") != report_digest(b"a\nc\n")
