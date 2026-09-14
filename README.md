@@ -7,7 +7,38 @@ Project teams accumulate decisions, risk registers, incident reports and lessons
 
 This repository is a working local portfolio system with measured retrieval experiments, a FastAPI service, browser UI, source-grounded graph, local inference, security tests and reproducible benchmark reports. It is not an enterprise deployment or a claim of independently validated answer quality.
 
-## New: investigate the decision trail
+![Investigate view showing cited approval evidence and fictional project source cards](docs/images/alpha-investigation.png)
+
+## Quick start
+
+Run the local evidence-only demo with Python 3.12 and Git. No API key, Torch, or paid service is required. The first setup downloads dependencies and retrieval models; completion time depends on your connection.
+
+**Windows PowerShell**
+
+```powershell
+git clone https://github.com/Steveaub/traceledger.git
+cd traceledger
+python -m venv .venv
+.venv/Scripts/python.exe -m pip install -e .
+.venv/Scripts/python.exe scripts/bootstrap_models.py --retrieval-only
+$env:ATLAS_DEMO="1"
+.venv/Scripts/python.exe -m uvicorn atlas.api:app --host 127.0.0.1 --port 8000
+```
+
+**macOS / Linux**
+
+```bash
+git clone https://github.com/Steveaub/traceledger.git
+cd traceledger
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -e .
+.venv/bin/python scripts/bootstrap_models.py --retrieval-only
+ATLAS_DEMO=1 .venv/bin/python -m uvicorn atlas.api:app --host 127.0.0.1 --port 8000
+```
+
+Open [localhost:8000](http://127.0.0.1:8000), then choose **Investigate a decision**. Alpha is a fictional project in the demo corpus. For tests, benchmarks and optional generation, see [Setup](#setup).
+
+## Investigate the decision trail
 
 Switch between **Quick answer** and **Investigate**, choose Documents / Email / Slack / Teams, and inspect the actual search and thread-reading activity behind cited evidence. The bounded investigator uses an evidence-driven deterministic controller, **not an LLM planner**. Conversation feeds contain 72 fictional messages and support reviewed local exports; live accounts are not connected.
 
@@ -172,9 +203,11 @@ python -m atlas.ingest reviewed-note.md --project PRJ-001 --output data/ingested
 
 Docker evidence-only demo: `docker compose up --build` after downloading retrieval models. The container is non-root and mounts models read-only; its port is loopback-bound. Docker is not installed on the build machine, so container execution remains unverified. To enable local generation inside Docker, add its optional dependencies explicitly.
 
-### Optional hosted demo
+### Local demo and deployment bundle
 
-A CPU-only Hugging Face Spaces deployment bundle is provided under [deploy/huggingface](deploy/huggingface). Prepare its allowlisted files with `python scripts/prepare_space.py dist/huggingface-release`, then upload that directory to a Docker Space. The landing page starts the fictional Project Alpha investigation, and the API enforces evidence-only answers. No public instance has been deployed or verified yet. Hugging Face currently requires a PRO subscription to create this Docker Space on cpu-basic; this deployment is not available on an unsubscribed account. See [hosted security assumptions](docs/security.md#hosted-evidence-only-demo).
+**No public app instance is hosted, by design.** This project is distributed through GitHub for local use, without an ongoing hosting subscription. The local setup above reproduces the evidence-only demo.
+
+The CPU-only deployment bundle remains under [deploy/huggingface](deploy/huggingface). Reproduce its allowlisted files locally with `python scripts/prepare_space.py dist/huggingface-release`. The bundle configures the fictional Project Alpha investigation as the landing state and enforces evidence-only answers. It is retained as deployment code, not a live-demo promise. Container execution remains unverified; see [hosted security assumptions](docs/security.md#hosted-evidence-only-demo).
 
 ## Security and operations
 
