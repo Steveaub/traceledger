@@ -1,0 +1,44 @@
+{
+  "retrieved_at": "2026-09-13T10:14:45.015926+00:00",
+  "sources": [
+    {
+      "id": "doe-microgrid-checklist",
+      "url": "https://www.energy.gov/cmei/femp/articles/microgrid-system-project-development-checklist",
+      "sha256": "60c836dd85b53bd9847129fec9fdd3a17dbf84b2b5aa0d8d390b3849d9f304eb",
+      "bytes": 119790,
+      "license": "US DOE public website; retain attribution; third-party material may have separate rights"
+    },
+    {
+      "id": "doe-project-process",
+      "url": "https://www.energy.gov/cmei/femp/process-planning-and-implementing-federal-distributed-energy-projects",
+      "sha256": "0e2917a1353e94f6563c9c684051ab27e909a01a0fcfbb2c609392d36d793cdc",
+      "bytes": 131640,
+      "license": "US DOE public website; retain attribution; third-party material may have separate rights"
+    },
+    {
+      "id": "doe-microgrid-systems",
+      "url": "https://www.energy.gov/oe/microgrid-systems",
+      "sha256": "d6dc34c826ee3f3f753583ebadc5d741c1f3820a879f8b55f422313734f154a8",
+      "bytes": 159677,
+      "license": "US DOE public website; retain attribution; third-party material may have separate rights"
+    },
+    {
+      "id": "galileo-ai/ragbench",
+      "subset": "techqa",
+      "split": "test",
+      "offset": 0,
+      "count": 40,
+      "license": "CC-BY-4.0 (dataset card); upstream IBM TechQA terms also apply",
+      "url": "https://huggingface.co/datasets/galileo-ai/ragbench",
+      "sha256": "74aaece599b085e99bc61bf250b91384c2de2b2c9b16f0b9173f9337887581df",
+      "method": "pooled context documents, sentence relevance mapped to document IDs; sampled diagnostic, not official retrieval benchmark"
+    },
+    {
+      "id": "SJChen02/EnterpriseRAG-Bench",
+      "license": "MIT (dataset card)",
+      "url": "https://huggingface.co/datasets/SJChen02/EnterpriseRAG-Bench",
+      "status": "selected for full-scale follow-up; 10 question schemas inspected; full 500k-document benchmark not run",
+      "sha256": "59ff364d8a05c1205fdb90e57b9ec515725693884305cf69ace8e7ad6619bc4a"
+    }
+  ]
+}

@@ -1,0 +1,3432 @@
+{
+  "id": "20260913T225126-30d182035f62",
+  "started_at": "2026-09-13T22:51:23.011583+00:00",
+  "finished_at": "2026-09-13T22:51:26.005549+00:00",
+  "protocol": "atlas-investigation-evidence-v1",
+  "cohort_id": "36ecb5375dcfb3697dd6f13f82c59049e470e3dff316ef614303299bac8ec079",
+  "corpus_sha256": "76226b6b650bae985d59cebc056cc1b43573236e6ddca96113ed6d8e934d489c",
+  "questions_sha256": "477754e170c5440eb96b17a67a0c7f863620b19ab51cd24056861330e6d492cc",
+  "code_sha256": "9287cf2a3413a2fbaa60a886b5f8eb39beb65a1d17ba1d59595de9b14679bb13",
+  "models": {
+    "embedding": {
+      "repo": "qdrant/all-MiniLM-L6-v2-onnx",
+      "revision": "5f1b8cd78bc4fb444dd171e59b18f3a3af89a079",
+      "license": "apache-2.0"
+    },
+    "reranker": {
+      "repo": "Xenova/ms-marco-MiniLM-L-6-v2",
+      "revision": "a09144355adeed5f58c8ed011d209bf8ee5a1fec",
+      "license": "apache-2.0"
+    },
+    "generator": {
+      "repo": "google/flan-t5-small",
+      "revision": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab",
+      "license": "apache-2.0"
+    }
+  },
+  "split": "test",
+  "generation": "evidence",
+  "routing": false,
+  "graph_enabled": false,
+  "cache_policy": "warm sessions; answer cache disabled; query embeddings evicted",
+  "visibility": "demo",
+  "config": {
+    "name": "Bounded investigator",
+    "mode": "investigate"
+  },
+  "summary": {
+    "recall": 0.7142857142857143,
+    "mrr": 1.0,
+    "ndcg": 1.0,
+    "citation_integrity": 1.0,
+    "citation_accuracy": 1.0,
+    "faithfulness_exact_quote": 1.0,
+    "relevance_gold_term_coverage": 1.0,
+    "abstention_correct": 1.0,
+    "api_cost_usd": 0.0,
+    "queries": 7,
+    "answerable": 6,
+    "retrieval_p50_ms": 529.0799999999999,
+    "retrieval_p95_ms": 590.461,
+    "total_p95_ms": 591.1566100054188,
+    "compute_cost_usd": null,
+    "recall_bootstrap_95ci": [
+      0.7142857142857143,
+      0.7142857142857143
+    ],
+    "mean_actions": 4.571428571428571,
+    "evidence_recall": 0.9523809523809524
+  },
+  "slices": {
+    "decision_trace": {
+      "recall": 0.7142857142857143,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1.0,
+      "api_cost_usd": 0.0,
+      "queries": 6,
+      "answerable": 6,
+      "retrieval_p50_ms": 542.79,
+      "retrieval_p95_ms": 591.2625,
+      "total_p95_ms": 591.9533250053064,
+      "compute_cost_usd": null,
+      "recall_bootstrap_95ci": [
+        0.7142857142857143,
+        0.7142857142857143
+      ]
+    },
+    "missing": {
+      "recall": null,
+      "mrr": null,
+      "ndcg": null,
+      "citation_integrity": null,
+      "citation_accuracy": null,
+      "faithfulness_exact_quote": null,
+      "relevance_gold_term_coverage": null,
+      "abstention_correct": 1.0,
+      "api_cost_usd": 0.0,
+      "queries": 1,
+      "answerable": 0,
+      "retrieval_p50_ms": 0.0,
+      "retrieval_p95_ms": 0.0,
+      "total_p95_ms": 0.23179998970590532,
+      "compute_cost_usd": null
+    }
+  },
+  "rows": [
+    {
+      "id": "PRJ-007-investigation",
+      "query": "Investigate Project Granite: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-007-email-approval",
+        "PRJ-007-teams-schedule",
+        "PRJ-007-slack-cause",
+        "PRJ-007-incident",
+        "PRJ-007-status",
+        "PRJ-007-change",
+        "PRJ-007-decision"
+      ],
+      "relevant": [
+        "PRJ-007-incident",
+        "PRJ-007-slack-cause",
+        "PRJ-007-email-approval",
+        "PRJ-007-teams-schedule",
+        "PRJ-007-decision",
+        "PRJ-007-status",
+        "PRJ-007-change"
+      ],
+      "path": "investigator",
+      "recall": 0.7142857142857143,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 556.5,
+      "total_ms": 558.9784999901894,
+      "answer": {
+        "answer": "Project Granite: Granite engineering review board approved CR-007 under DEC-007. [1]\nProject Granite: schedule register updated after DEC-007. [2]\nIncident INC-007 on Project Granite: cooling pump seals leaked during endurance testing. [3]\nIncident INC-007 on Project Granite: cooling pump seals leaked during endurance testing. [4]\nCurrent Project Granite status: commissioning is delayed 5 weeks. [5]\nChange CR-007 on Project Granite revises acceptance requirement REQ-007. [6]\nThe board accepted the schedule change only after reviewing the incident and change CR-007. [7]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-007-email-approval",
+            "title": "Granite / email / approval",
+            "quote": "Project Granite: Granite engineering review board approved CR-007 under DEC-007.",
+            "start": 0,
+            "end": 80,
+            "source": "synthetic:PRJ-007-email-approval",
+            "synthetic": true,
+            "channel": "email",
+            "author": "Granite engineering review board",
+            "date": "2026-05-14T14:00:00Z",
+            "thread_id": "PRJ-007-email-recovery",
+            "decision_status": "approved"
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-007-teams-schedule",
+            "title": "Granite / teams / schedule",
+            "quote": "Project Granite: schedule register updated after DEC-007.",
+            "start": 0,
+            "end": 57,
+            "source": "synthetic:PRJ-007-teams-schedule",
+            "synthetic": true,
+            "channel": "teams",
+            "author": "Schedule controller",
+            "date": "2026-05-15T16:00:00Z",
+            "thread_id": "PRJ-007-teams-recovery",
+            "decision_status": "recorded"
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-007-slack-cause",
+            "title": "Granite / slack / cause",
+            "quote": "Incident INC-007 on Project Granite: cooling pump seals leaked during endurance testing.",
+            "start": 0,
+            "end": 88,
+            "source": "synthetic:PRJ-007-slack-cause",
+            "synthetic": true,
+            "channel": "slack",
+            "author": "Site engineer",
+            "date": "2026-05-12T10:00:00Z",
+            "thread_id": "PRJ-007-slack-recovery",
+            "decision_status": "recorded"
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-007-incident",
+            "title": "Granite / incident",
+            "quote": "Incident INC-007 on Project Granite: cooling pump seals leaked during endurance testing.",
+            "start": 0,
+            "end": 88,
+            "source": "synthetic:PRJ-007-incident",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-007-status",
+            "title": "Granite / status",
+            "quote": "Current Project Granite status: commissioning is delayed 5 weeks.",
+            "start": 0,
+            "end": 65,
+            "source": "synthetic:PRJ-007-status",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-007-change",
+            "title": "Granite / change",
+            "quote": "Change CR-007 on Project Granite revises acceptance requirement REQ-007.",
+            "start": 0,
+            "end": 72,
+            "source": "synthetic:PRJ-007-change",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          },
+          {
+            "id": 7,
+            "doc_id": "PRJ-007-decision",
+            "title": "Granite / decision",
+            "quote": " The board accepted the schedule change only after reviewing the incident and change CR-007.",
+            "start": 129,
+            "end": 221,
+            "source": "synthetic:PRJ-007-decision",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "bounded_investigation",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "cached": false,
+        "path": "investigator",
+        "retrieval_ms": 556.5,
+        "total_ms": 558.0508999992162,
+        "graph_paths": [
+          {
+            "source": "RISK-007",
+            "target": "MS-007",
+            "traversed_from": "RISK-007",
+            "traversed_to": "MS-007",
+            "depth": 1,
+            "relation": "threatens",
+            "doc_id": "PRJ-007-risk",
+            "evidence": "RISK-007 threatens MS-007.",
+            "asserted_source": "RISK-007",
+            "asserted_target": "MS-007"
+          },
+          {
+            "source": "RISK-007",
+            "target": "PUMP-310",
+            "traversed_from": "RISK-007",
+            "traversed_to": "PUMP-310",
+            "depth": 1,
+            "relation": "concerns",
+            "doc_id": "PRJ-007-risk",
+            "evidence": "repeat PUMP-310 acceptance failure could delay energization.",
+            "asserted_source": "RISK-007",
+            "asserted_target": "PUMP-310"
+          },
+          {
+            "source": "CR-007",
+            "target": "REQ-007",
+            "traversed_from": "CR-007",
+            "traversed_to": "REQ-007",
+            "depth": 1,
+            "relation": "modifies",
+            "doc_id": "PRJ-007-change",
+            "evidence": "CR-007 modifies REQ-007.",
+            "asserted_source": "CR-007",
+            "asserted_target": "REQ-007"
+          },
+          {
+            "source": "CR-007",
+            "target": "INC-007",
+            "traversed_from": "CR-007",
+            "traversed_to": "INC-007",
+            "depth": 1,
+            "relation": "addresses",
+            "doc_id": "PRJ-007-change",
+            "evidence": "CR-007 addresses INC-007.",
+            "asserted_source": "CR-007",
+            "asserted_target": "INC-007"
+          },
+          {
+            "source": "DEC-007",
+            "target": "INC-007",
+            "traversed_from": "DEC-007",
+            "traversed_to": "INC-007",
+            "depth": 1,
+            "relation": "responds_to",
+            "doc_id": "PRJ-007-decision",
+            "evidence": "DEC-007 responds to INC-007.",
+            "asserted_source": "DEC-007",
+            "asserted_target": "INC-007"
+          },
+          {
+            "source": "DEC-007",
+            "target": "MS-007",
+            "traversed_from": "DEC-007",
+            "traversed_to": "MS-007",
+            "depth": 1,
+            "relation": "moves",
+            "doc_id": "PRJ-007-decision",
+            "evidence": "Decision DEC-007 moved MS-007 by 5 weeks because cooling pump seals leaked during endurance testing.",
+            "asserted_source": "DEC-007",
+            "asserted_target": "MS-007"
+          },
+          {
+            "source": "INC-007",
+            "target": "MS-007",
+            "traversed_from": "MS-007",
+            "traversed_to": "INC-007",
+            "depth": 2,
+            "relation": "delayed",
+            "doc_id": "PRJ-007-incident",
+            "evidence": "The commissioning milestone slipped by 5 weeks.",
+            "asserted_source": "INC-007",
+            "asserted_target": "MS-007"
+          },
+          {
+            "source": "RISK-007",
+            "target": "MS-007",
+            "traversed_from": "MS-007",
+            "traversed_to": "RISK-007",
+            "depth": 2,
+            "relation": "threatens",
+            "doc_id": "PRJ-007-risk",
+            "evidence": "RISK-007 threatens MS-007.",
+            "asserted_source": "RISK-007",
+            "asserted_target": "MS-007"
+          },
+          {
+            "source": "DEC-007",
+            "target": "MS-007",
+            "traversed_from": "MS-007",
+            "traversed_to": "DEC-007",
+            "depth": 2,
+            "relation": "moves",
+            "doc_id": "PRJ-007-decision",
+            "evidence": "Decision DEC-007 moved MS-007 by 5 weeks because cooling pump seals leaked during endurance testing.",
+            "asserted_source": "DEC-007",
+            "asserted_target": "MS-007"
+          },
+          {
+            "source": "Summit Electric",
+            "target": "PUMP-310",
+            "traversed_from": "PUMP-310",
+            "traversed_to": "Summit Electric",
+            "depth": 2,
+            "relation": "supplies",
+            "doc_id": "PRJ-007-charter",
+            "evidence": "Summit Electric supplies PUMP-310.",
+            "asserted_source": "Summit Electric",
+            "asserted_target": "PUMP-310"
+          },
+          {
+            "source": "PRJ-007",
+            "target": "PUMP-310",
+            "traversed_from": "PUMP-310",
+            "traversed_to": "PRJ-007",
+            "depth": 2,
+            "relation": "uses",
+            "doc_id": "PRJ-007-charter",
+            "evidence": "PRJ-007 uses PUMP-310.",
+            "asserted_source": "PRJ-007",
+            "asserted_target": "PUMP-310"
+          },
+          {
+            "source": "INC-007",
+            "target": "PUMP-310",
+            "traversed_from": "PUMP-310",
+            "traversed_to": "INC-007",
+            "depth": 2,
+            "relation": "affected",
+            "doc_id": "PRJ-007-incident",
+            "evidence": "INC-007 affected PUMP-310.",
+            "asserted_source": "INC-007",
+            "asserted_target": "PUMP-310"
+          },
+          {
+            "source": "RISK-007",
+            "target": "PUMP-310",
+            "traversed_from": "PUMP-310",
+            "traversed_to": "RISK-007",
+            "depth": 2,
+            "relation": "concerns",
+            "doc_id": "PRJ-007-risk",
+            "evidence": "repeat PUMP-310 acceptance failure could delay energization.",
+            "asserted_source": "RISK-007",
+            "asserted_target": "PUMP-310"
+          },
+          {
+            "source": "LL-007",
+            "target": "PUMP-310",
+            "traversed_from": "PUMP-310",
+            "traversed_to": "LL-007",
+            "depth": 2,
+            "relation": "applies_to",
+            "doc_id": "PRJ-007-lesson",
+            "evidence": "LL-007 applies to PUMP-310.",
+            "asserted_source": "LL-007",
+            "asserted_target": "PUMP-310"
+          },
+          {
+            "source": "CR-007",
+            "target": "REQ-007",
+            "traversed_from": "REQ-007",
+            "traversed_to": "CR-007",
+            "depth": 2,
+            "relation": "modifies",
+            "doc_id": "PRJ-007-change",
+            "evidence": "CR-007 modifies REQ-007.",
+            "asserted_source": "CR-007",
+            "asserted_target": "REQ-007"
+          },
+          {
+            "source": "INC-007",
+            "target": "PUMP-310",
+            "traversed_from": "INC-007",
+            "traversed_to": "PUMP-310",
+            "depth": 2,
+            "relation": "affected",
+            "doc_id": "PRJ-007-incident",
+            "evidence": "INC-007 affected PUMP-310.",
+            "asserted_source": "INC-007",
+            "asserted_target": "PUMP-310"
+          },
+          {
+            "source": "INC-007",
+            "target": "MS-007",
+            "traversed_from": "INC-007",
+            "traversed_to": "MS-007",
+            "depth": 2,
+            "relation": "delayed",
+            "doc_id": "PRJ-007-incident",
+            "evidence": "The commissioning milestone slipped by 5 weeks.",
+            "asserted_source": "INC-007",
+            "asserted_target": "MS-007"
+          },
+          {
+            "source": "CR-007",
+            "target": "INC-007",
+            "traversed_from": "INC-007",
+            "traversed_to": "CR-007",
+            "depth": 2,
+            "relation": "addresses",
+            "doc_id": "PRJ-007-change",
+            "evidence": "CR-007 addresses INC-007.",
+            "asserted_source": "CR-007",
+            "asserted_target": "INC-007"
+          },
+          {
+            "source": "LL-007",
+            "target": "INC-007",
+            "traversed_from": "INC-007",
+            "traversed_to": "LL-007",
+            "depth": 2,
+            "relation": "follows",
+            "doc_id": "PRJ-007-lesson",
+            "evidence": "LL-007 follows INC-007.",
+            "asserted_source": "LL-007",
+            "asserted_target": "INC-007"
+          },
+          {
+            "source": "DEC-007",
+            "target": "INC-007",
+            "traversed_from": "INC-007",
+            "traversed_to": "DEC-007",
+            "depth": 2,
+            "relation": "responds_to",
+            "doc_id": "PRJ-007-decision",
+            "evidence": "DEC-007 responds to INC-007.",
+            "asserted_source": "DEC-007",
+            "asserted_target": "INC-007"
+          },
+          {
+            "source": "Summit Electric",
+            "target": "PUMP-310",
+            "traversed_from": "Summit Electric",
+            "traversed_to": "PUMP-310",
+            "depth": 3,
+            "relation": "supplies",
+            "doc_id": "PRJ-007-charter",
+            "evidence": "Summit Electric supplies PUMP-310.",
+            "asserted_source": "Summit Electric",
+            "asserted_target": "PUMP-310"
+          },
+          {
+            "source": "PRJ-007",
+            "target": "SITE-007",
+            "traversed_from": "PRJ-007",
+            "traversed_to": "SITE-007",
+            "depth": 3,
+            "relation": "located_at",
+            "doc_id": "PRJ-007-charter",
+            "evidence": "PRJ-007 serves SITE-007.",
+            "asserted_source": "PRJ-007",
+            "asserted_target": "SITE-007"
+          },
+          {
+            "source": "PRJ-007",
+            "target": "PUMP-310",
+            "traversed_from": "PRJ-007",
+            "traversed_to": "PUMP-310",
+            "depth": 3,
+            "relation": "uses",
+            "doc_id": "PRJ-007-charter",
+            "evidence": "PRJ-007 uses PUMP-310.",
+            "asserted_source": "PRJ-007",
+            "asserted_target": "PUMP-310"
+          },
+          {
+            "source": "LL-007",
+            "target": "INC-007",
+            "traversed_from": "LL-007",
+            "traversed_to": "INC-007",
+            "depth": 3,
+            "relation": "follows",
+            "doc_id": "PRJ-007-lesson",
+            "evidence": "LL-007 follows INC-007.",
+            "asserted_source": "LL-007",
+            "asserted_target": "INC-007"
+          },
+          {
+            "source": "LL-007",
+            "target": "PUMP-310",
+            "traversed_from": "LL-007",
+            "traversed_to": "PUMP-310",
+            "depth": 3,
+            "relation": "applies_to",
+            "doc_id": "PRJ-007-lesson",
+            "evidence": "LL-007 applies to PUMP-310.",
+            "asserted_source": "LL-007",
+            "asserted_target": "PUMP-310"
+          }
+        ],
+        "rewritten_query": "Investigate Project Granite: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "corpus_version": "76226b6b650b",
+        "ranked": [
+          "PRJ-007-email-approval",
+          "PRJ-007-teams-schedule",
+          "PRJ-007-slack-cause",
+          "PRJ-007-incident",
+          "PRJ-007-status",
+          "PRJ-007-change",
+          "PRJ-007-decision"
+        ],
+        "limitations": [
+          "Exact excerpts establish provenance, not independent truth.",
+          "A proposal was found in the conversation context. It was not treated as an approval."
+        ],
+        "investigation": {
+          "policy": "Evidence-driven deterministic controller; no LLM planner",
+          "steps": [
+            {
+              "tool": "search_sources",
+              "label": "Find the initial evidence",
+              "query": "Investigate Project Granite: why was commissioning delayed, who approved the change, and was the schedule updated?",
+              "source_ids": [
+                "PRJ-007-teams-schedule",
+                "PRJ-007-email-approval",
+                "PRJ-007-status",
+                "PRJ-007-email-proposal",
+                "PRJ-007-routine_2"
+              ],
+              "duration_ms": 344.88
+            },
+            {
+              "tool": "read_thread",
+              "label": "Read the surrounding email conversation",
+              "source_ids": [
+                "PRJ-007-email-proposal",
+                "PRJ-007-email-approval"
+              ],
+              "duration_ms": 0.03
+            },
+            {
+              "tool": "read_thread",
+              "label": "Read the surrounding teams conversation",
+              "source_ids": [
+                "PRJ-007-teams-schedule",
+                "PRJ-007-teams-open"
+              ],
+              "duration_ms": 0.01
+            },
+            {
+              "tool": "search_sources",
+              "label": "Investigate the cause",
+              "query": "Project Granite incident commissioning cause",
+              "source_ids": [
+                "PRJ-007-status",
+                "PRJ-007-incident",
+                "PRJ-007-slack-cause",
+                "PRJ-007-email-approval",
+                "PRJ-007-charter"
+              ],
+              "duration_ms": 190.01
+            },
+            {
+              "tool": "read_thread",
+              "label": "Read the surrounding slack conversation",
+              "source_ids": [
+                "PRJ-007-slack-cause",
+                "PRJ-007-slack-followup"
+              ],
+              "duration_ms": 0.07
+            },
+            {
+              "tool": "search_relationships",
+              "label": "Follow documented relationships",
+              "query": "DEC-007 CR-007 RISK-007 linked change impact",
+              "source_ids": [
+                "PRJ-007-risk",
+                "PRJ-007-change",
+                "PRJ-007-decision"
+              ],
+              "duration_ms": 21.5
+            }
+          ],
+          "stop_reason": "action_budget",
+          "gaps": [
+            "The investigation reached its budget. Additional evidence may remain."
+          ],
+          "caveats": [
+            "A proposal was found in the conversation context. It was not treated as an approval."
+          ],
+          "max_actions": 6,
+          "max_seconds": 15,
+          "status": "needs_review",
+          "sources": [
+            "documents",
+            "email",
+            "slack",
+            "teams"
+          ]
+        }
+      },
+      "evidence_recall": 1.0,
+      "actions": 6
+    },
+    {
+      "id": "PRJ-008-investigation",
+      "query": "Investigate Project Harbor: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-008-email-approval",
+        "PRJ-008-teams-schedule",
+        "PRJ-008-slack-cause",
+        "PRJ-008-incident",
+        "PRJ-008-status",
+        "PRJ-008-change",
+        "PRJ-008-decision"
+      ],
+      "relevant": [
+        "PRJ-008-incident",
+        "PRJ-008-slack-cause",
+        "PRJ-008-email-approval",
+        "PRJ-008-teams-schedule",
+        "PRJ-008-decision",
+        "PRJ-008-status",
+        "PRJ-008-change"
+      ],
+      "path": "investigator",
+      "recall": 0.7142857142857143,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 595.27,
+      "total_ms": 595.9369000047445,
+      "answer": {
+        "answer": "Project Harbor: Harbor engineering review board approved CR-008 under DEC-008. [1]\nProject Harbor: schedule register updated after DEC-008. [2]\nIncident INC-008 on Project Harbor: switchgear relay settings conflicted with the utility study. [3]\nIncident INC-008 on Project Harbor: switchgear relay settings conflicted with the utility study. [4]\nCurrent Project Harbor status: commissioning is delayed 3 weeks. [5]\nChange CR-008 on Project Harbor revises acceptance requirement REQ-008. [6]\nThe board accepted the schedule change only after reviewing the incident and change CR-008. [7]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-008-email-approval",
+            "title": "Harbor / email / approval",
+            "quote": "Project Harbor: Harbor engineering review board approved CR-008 under DEC-008.",
+            "start": 0,
+            "end": 78,
+            "source": "synthetic:PRJ-008-email-approval",
+            "synthetic": true,
+            "channel": "email",
+            "author": "Harbor engineering review board",
+            "date": "2026-05-14T14:00:00Z",
+            "thread_id": "PRJ-008-email-recovery",
+            "decision_status": "approved"
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-008-teams-schedule",
+            "title": "Harbor / teams / schedule",
+            "quote": "Project Harbor: schedule register updated after DEC-008.",
+            "start": 0,
+            "end": 56,
+            "source": "synthetic:PRJ-008-teams-schedule",
+            "synthetic": true,
+            "channel": "teams",
+            "author": "Schedule controller",
+            "date": "2026-05-15T16:00:00Z",
+            "thread_id": "PRJ-008-teams-recovery",
+            "decision_status": "recorded"
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-008-slack-cause",
+            "title": "Harbor / slack / cause",
+            "quote": "Incident INC-008 on Project Harbor: switchgear relay settings conflicted with the utility study.",
+            "start": 0,
+            "end": 96,
+            "source": "synthetic:PRJ-008-slack-cause",
+            "synthetic": true,
+            "channel": "slack",
+            "author": "Site engineer",
+            "date": "2026-05-12T10:00:00Z",
+            "thread_id": "PRJ-008-slack-recovery",
+            "decision_status": "recorded"
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-008-incident",
+            "title": "Harbor / incident",
+            "quote": "Incident INC-008 on Project Harbor: switchgear relay settings conflicted with the utility study.",
+            "start": 0,
+            "end": 96,
+            "source": "synthetic:PRJ-008-incident",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-008-status",
+            "title": "Harbor / status",
+            "quote": "Current Project Harbor status: commissioning is delayed 3 weeks.",
+            "start": 0,
+            "end": 64,
+            "source": "synthetic:PRJ-008-status",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-008-change",
+            "title": "Harbor / change",
+            "quote": "Change CR-008 on Project Harbor revises acceptance requirement REQ-008.",
+            "start": 0,
+            "end": 71,
+            "source": "synthetic:PRJ-008-change",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          },
+          {
+            "id": 7,
+            "doc_id": "PRJ-008-decision",
+            "title": "Harbor / decision",
+            "quote": " The board accepted the schedule change only after reviewing the incident and change CR-008.",
+            "start": 138,
+            "end": 230,
+            "source": "synthetic:PRJ-008-decision",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "bounded_investigation",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "cached": false,
+        "path": "investigator",
+        "retrieval_ms": 595.27,
+        "total_ms": 595.8228000090457,
+        "graph_paths": [
+          {
+            "source": "RISK-008",
+            "target": "MS-008",
+            "traversed_from": "RISK-008",
+            "traversed_to": "MS-008",
+            "depth": 1,
+            "relation": "threatens",
+            "doc_id": "PRJ-008-risk",
+            "evidence": "RISK-008 threatens MS-008.",
+            "asserted_source": "RISK-008",
+            "asserted_target": "MS-008"
+          },
+          {
+            "source": "RISK-008",
+            "target": "SWG-610",
+            "traversed_from": "RISK-008",
+            "traversed_to": "SWG-610",
+            "depth": 1,
+            "relation": "concerns",
+            "doc_id": "PRJ-008-risk",
+            "evidence": "repeat SWG-610 acceptance failure could delay energization.",
+            "asserted_source": "RISK-008",
+            "asserted_target": "SWG-610"
+          },
+          {
+            "source": "CR-008",
+            "target": "REQ-008",
+            "traversed_from": "CR-008",
+            "traversed_to": "REQ-008",
+            "depth": 1,
+            "relation": "modifies",
+            "doc_id": "PRJ-008-change",
+            "evidence": "CR-008 modifies REQ-008.",
+            "asserted_source": "CR-008",
+            "asserted_target": "REQ-008"
+          },
+          {
+            "source": "CR-008",
+            "target": "INC-008",
+            "traversed_from": "CR-008",
+            "traversed_to": "INC-008",
+            "depth": 1,
+            "relation": "addresses",
+            "doc_id": "PRJ-008-change",
+            "evidence": "CR-008 addresses INC-008.",
+            "asserted_source": "CR-008",
+            "asserted_target": "INC-008"
+          },
+          {
+            "source": "DEC-008",
+            "target": "INC-008",
+            "traversed_from": "DEC-008",
+            "traversed_to": "INC-008",
+            "depth": 1,
+            "relation": "responds_to",
+            "doc_id": "PRJ-008-decision",
+            "evidence": "DEC-008 responds to INC-008.",
+            "asserted_source": "DEC-008",
+            "asserted_target": "INC-008"
+          },
+          {
+            "source": "DEC-008",
+            "target": "MS-008",
+            "traversed_from": "DEC-008",
+            "traversed_to": "MS-008",
+            "depth": 1,
+            "relation": "moves",
+            "doc_id": "PRJ-008-decision",
+            "evidence": "Decision DEC-008 moved MS-008 by 3 weeks because switchgear relay settings conflicted with the utility study.",
+            "asserted_source": "DEC-008",
+            "asserted_target": "MS-008"
+          },
+          {
+            "source": "INC-008",
+            "target": "MS-008",
+            "traversed_from": "MS-008",
+            "traversed_to": "INC-008",
+            "depth": 2,
+            "relation": "delayed",
+            "doc_id": "PRJ-008-incident",
+            "evidence": "The commissioning milestone slipped by 3 weeks.",
+            "asserted_source": "INC-008",
+            "asserted_target": "MS-008"
+          },
+          {
+            "source": "RISK-008",
+            "target": "MS-008",
+            "traversed_from": "MS-008",
+            "traversed_to": "RISK-008",
+            "depth": 2,
+            "relation": "threatens",
+            "doc_id": "PRJ-008-risk",
+            "evidence": "RISK-008 threatens MS-008.",
+            "asserted_source": "RISK-008",
+            "asserted_target": "MS-008"
+          },
+          {
+            "source": "DEC-008",
+            "target": "MS-008",
+            "traversed_from": "MS-008",
+            "traversed_to": "DEC-008",
+            "depth": 2,
+            "relation": "moves",
+            "doc_id": "PRJ-008-decision",
+            "evidence": "Decision DEC-008 moved MS-008 by 3 weeks because switchgear relay settings conflicted with the utility study.",
+            "asserted_source": "DEC-008",
+            "asserted_target": "MS-008"
+          },
+          {
+            "source": "Tidal Systems",
+            "target": "SWG-610",
+            "traversed_from": "SWG-610",
+            "traversed_to": "Tidal Systems",
+            "depth": 2,
+            "relation": "supplies",
+            "doc_id": "PRJ-008-charter",
+            "evidence": "Tidal Systems supplies SWG-610.",
+            "asserted_source": "Tidal Systems",
+            "asserted_target": "SWG-610"
+          },
+          {
+            "source": "PRJ-008",
+            "target": "SWG-610",
+            "traversed_from": "SWG-610",
+            "traversed_to": "PRJ-008",
+            "depth": 2,
+            "relation": "uses",
+            "doc_id": "PRJ-008-charter",
+            "evidence": "PRJ-008 uses SWG-610.",
+            "asserted_source": "PRJ-008",
+            "asserted_target": "SWG-610"
+          },
+          {
+            "source": "INC-008",
+            "target": "SWG-610",
+            "traversed_from": "SWG-610",
+            "traversed_to": "INC-008",
+            "depth": 2,
+            "relation": "affected",
+            "doc_id": "PRJ-008-incident",
+            "evidence": "INC-008 affected SWG-610.",
+            "asserted_source": "INC-008",
+            "asserted_target": "SWG-610"
+          },
+          {
+            "source": "RISK-008",
+            "target": "SWG-610",
+            "traversed_from": "SWG-610",
+            "traversed_to": "RISK-008",
+            "depth": 2,
+            "relation": "concerns",
+            "doc_id": "PRJ-008-risk",
+            "evidence": "repeat SWG-610 acceptance failure could delay energization.",
+            "asserted_source": "RISK-008",
+            "asserted_target": "SWG-610"
+          },
+          {
+            "source": "LL-008",
+            "target": "SWG-610",
+            "traversed_from": "SWG-610",
+            "traversed_to": "LL-008",
+            "depth": 2,
+            "relation": "applies_to",
+            "doc_id": "PRJ-008-lesson",
+            "evidence": "LL-008 applies to SWG-610.",
+            "asserted_source": "LL-008",
+            "asserted_target": "SWG-610"
+          },
+          {
+            "source": "CR-008",
+            "target": "REQ-008",
+            "traversed_from": "REQ-008",
+            "traversed_to": "CR-008",
+            "depth": 2,
+            "relation": "modifies",
+            "doc_id": "PRJ-008-change",
+            "evidence": "CR-008 modifies REQ-008.",
+            "asserted_source": "CR-008",
+            "asserted_target": "REQ-008"
+          },
+          {
+            "source": "INC-008",
+            "target": "SWG-610",
+            "traversed_from": "INC-008",
+            "traversed_to": "SWG-610",
+            "depth": 2,
+            "relation": "affected",
+            "doc_id": "PRJ-008-incident",
+            "evidence": "INC-008 affected SWG-610.",
+            "asserted_source": "INC-008",
+            "asserted_target": "SWG-610"
+          },
+          {
+            "source": "INC-008",
+            "target": "MS-008",
+            "traversed_from": "INC-008",
+            "traversed_to": "MS-008",
+            "depth": 2,
+            "relation": "delayed",
+            "doc_id": "PRJ-008-incident",
+            "evidence": "The commissioning milestone slipped by 3 weeks.",
+            "asserted_source": "INC-008",
+            "asserted_target": "MS-008"
+          },
+          {
+            "source": "CR-008",
+            "target": "INC-008",
+            "traversed_from": "INC-008",
+            "traversed_to": "CR-008",
+            "depth": 2,
+            "relation": "addresses",
+            "doc_id": "PRJ-008-change",
+            "evidence": "CR-008 addresses INC-008.",
+            "asserted_source": "CR-008",
+            "asserted_target": "INC-008"
+          },
+          {
+            "source": "LL-008",
+            "target": "INC-008",
+            "traversed_from": "INC-008",
+            "traversed_to": "LL-008",
+            "depth": 2,
+            "relation": "follows",
+            "doc_id": "PRJ-008-lesson",
+            "evidence": "LL-008 follows INC-008.",
+            "asserted_source": "LL-008",
+            "asserted_target": "INC-008"
+          },
+          {
+            "source": "DEC-008",
+            "target": "INC-008",
+            "traversed_from": "INC-008",
+            "traversed_to": "DEC-008",
+            "depth": 2,
+            "relation": "responds_to",
+            "doc_id": "PRJ-008-decision",
+            "evidence": "DEC-008 responds to INC-008.",
+            "asserted_source": "DEC-008",
+            "asserted_target": "INC-008"
+          },
+          {
+            "source": "Tidal Systems",
+            "target": "SWG-610",
+            "traversed_from": "Tidal Systems",
+            "traversed_to": "SWG-610",
+            "depth": 3,
+            "relation": "supplies",
+            "doc_id": "PRJ-008-charter",
+            "evidence": "Tidal Systems supplies SWG-610.",
+            "asserted_source": "Tidal Systems",
+            "asserted_target": "SWG-610"
+          },
+          {
+            "source": "PRJ-008",
+            "target": "SITE-008",
+            "traversed_from": "PRJ-008",
+            "traversed_to": "SITE-008",
+            "depth": 3,
+            "relation": "located_at",
+            "doc_id": "PRJ-008-charter",
+            "evidence": "PRJ-008 serves SITE-008.",
+            "asserted_source": "PRJ-008",
+            "asserted_target": "SITE-008"
+          },
+          {
+            "source": "PRJ-008",
+            "target": "SWG-610",
+            "traversed_from": "PRJ-008",
+            "traversed_to": "SWG-610",
+            "depth": 3,
+            "relation": "uses",
+            "doc_id": "PRJ-008-charter",
+            "evidence": "PRJ-008 uses SWG-610.",
+            "asserted_source": "PRJ-008",
+            "asserted_target": "SWG-610"
+          },
+          {
+            "source": "LL-008",
+            "target": "INC-008",
+            "traversed_from": "LL-008",
+            "traversed_to": "INC-008",
+            "depth": 3,
+            "relation": "follows",
+            "doc_id": "PRJ-008-lesson",
+            "evidence": "LL-008 follows INC-008.",
+            "asserted_source": "LL-008",
+            "asserted_target": "INC-008"
+          },
+          {
+            "source": "LL-008",
+            "target": "SWG-610",
+            "traversed_from": "LL-008",
+            "traversed_to": "SWG-610",
+            "depth": 3,
+            "relation": "applies_to",
+            "doc_id": "PRJ-008-lesson",
+            "evidence": "LL-008 applies to SWG-610.",
+            "asserted_source": "LL-008",
+            "asserted_target": "SWG-610"
+          }
+        ],
+        "rewritten_query": "Investigate Project Harbor: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "corpus_version": "76226b6b650b",
+        "ranked": [
+          "PRJ-008-email-approval",
+          "PRJ-008-teams-schedule",
+          "PRJ-008-slack-cause",
+          "PRJ-008-incident",
+          "PRJ-008-status",
+          "PRJ-008-change",
+          "PRJ-008-decision"
+        ],
+        "limitations": [
+          "Exact excerpts establish provenance, not independent truth.",
+          "A proposal was found in the conversation context. It was not treated as an approval."
+        ],
+        "investigation": {
+          "policy": "Evidence-driven deterministic controller; no LLM planner",
+          "steps": [
+            {
+              "tool": "search_sources",
+              "label": "Find the initial evidence",
+              "query": "Investigate Project Harbor: why was commissioning delayed, who approved the change, and was the schedule updated?",
+              "source_ids": [
+                "PRJ-008-teams-schedule",
+                "PRJ-008-email-approval",
+                "PRJ-008-status",
+                "PRJ-008-email-proposal",
+                "PRJ-008-routine_2"
+              ],
+              "duration_ms": 361.16
+            },
+            {
+              "tool": "read_thread",
+              "label": "Read the surrounding email conversation",
+              "source_ids": [
+                "PRJ-008-email-proposal",
+                "PRJ-008-email-approval"
+              ],
+              "duration_ms": 0.02
+            },
+            {
+              "tool": "read_thread",
+              "label": "Read the surrounding teams conversation",
+              "source_ids": [
+                "PRJ-008-teams-schedule",
+                "PRJ-008-teams-open"
+              ],
+              "duration_ms": 0.01
+            },
+            {
+              "tool": "search_sources",
+              "label": "Investigate the cause",
+              "query": "Project Harbor incident commissioning cause",
+              "source_ids": [
+                "PRJ-008-status",
+                "PRJ-008-incident",
+                "PRJ-008-slack-cause",
+                "PRJ-008-email-approval",
+                "PRJ-008-teams-schedule"
+              ],
+              "duration_ms": 219.55
+            },
+            {
+              "tool": "read_thread",
+              "label": "Read the surrounding slack conversation",
+              "source_ids": [
+                "PRJ-008-slack-cause",
+                "PRJ-008-slack-followup"
+              ],
+              "duration_ms": 0.02
+            },
+            {
+              "tool": "search_relationships",
+              "label": "Follow documented relationships",
+              "query": "DEC-008 CR-008 RISK-008 linked change impact",
+              "source_ids": [
+                "PRJ-008-risk",
+                "PRJ-008-change",
+                "PRJ-008-decision",
+                "PRJ-008-incident"
+              ],
+              "duration_ms": 14.51
+            }
+          ],
+          "stop_reason": "action_budget",
+          "gaps": [
+            "The investigation reached its budget. Additional evidence may remain."
+          ],
+          "caveats": [
+            "A proposal was found in the conversation context. It was not treated as an approval."
+          ],
+          "max_actions": 6,
+          "max_seconds": 15,
+          "status": "needs_review",
+          "sources": [
+            "documents",
+            "email",
+            "slack",
+            "teams"
+          ]
+        }
+      },
+      "evidence_recall": 1.0,
+      "actions": 6
+    },
+    {
+      "id": "PRJ-009-investigation",
+      "query": "Investigate Project Iris: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-009-email-approval",
+        "PRJ-009-teams-schedule",
+        "PRJ-009-incident",
+        "PRJ-009-status",
+        "PRJ-009-change",
+        "PRJ-009-decision"
+      ],
+      "relevant": [
+        "PRJ-009-incident",
+        "PRJ-009-slack-cause",
+        "PRJ-009-email-approval",
+        "PRJ-009-teams-schedule",
+        "PRJ-009-decision",
+        "PRJ-009-status",
+        "PRJ-009-change"
+      ],
+      "path": "investigator",
+      "recall": 0.7142857142857143,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 349.37,
+      "total_ms": 349.9424000037834,
+      "answer": {
+        "answer": "Project Iris: Iris engineering review board approved CR-009 under DEC-009. [1]\nProject Iris: schedule register updated after DEC-009. [2]\nIncident INC-009 on Project Iris: transformer winding insulation failed factory testing. [3]\nCurrent Project Iris status: commissioning is delayed 8 weeks. [4]\nChange CR-009 on Project Iris revises acceptance requirement REQ-009. [5]\nThe board accepted the schedule change only after reviewing the incident and change CR-009. [6]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-009-email-approval",
+            "title": "Iris / email / approval",
+            "quote": "Project Iris: Iris engineering review board approved CR-009 under DEC-009.",
+            "start": 0,
+            "end": 74,
+            "source": "synthetic:PRJ-009-email-approval",
+            "synthetic": true,
+            "channel": "email",
+            "author": "Iris engineering review board",
+            "date": "2026-05-14T14:00:00Z",
+            "thread_id": "PRJ-009-email-recovery",
+            "decision_status": "approved"
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-009-teams-schedule",
+            "title": "Iris / teams / schedule",
+            "quote": "Project Iris: schedule register updated after DEC-009.",
+            "start": 0,
+            "end": 54,
+            "source": "synthetic:PRJ-009-teams-schedule",
+            "synthetic": true,
+            "channel": "teams",
+            "author": "Schedule controller",
+            "date": "2026-05-15T16:00:00Z",
+            "thread_id": "PRJ-009-teams-recovery",
+            "decision_status": "recorded"
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-009-incident",
+            "title": "Iris / incident",
+            "quote": "Incident INC-009 on Project Iris: transformer winding insulation failed factory testing.",
+            "start": 0,
+            "end": 88,
+            "source": "synthetic:PRJ-009-incident",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-009-status",
+            "title": "Iris / status",
+            "quote": "Current Project Iris status: commissioning is delayed 8 weeks.",
+            "start": 0,
+            "end": 62,
+            "source": "synthetic:PRJ-009-status",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-009-change",
+            "title": "Iris / change",
+            "quote": "Change CR-009 on Project Iris revises acceptance requirement REQ-009.",
+            "start": 0,
+            "end": 69,
+            "source": "synthetic:PRJ-009-change",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-009-decision",
+            "title": "Iris / decision",
+            "quote": " The board accepted the schedule change only after reviewing the incident and change CR-009.",
+            "start": 132,
+            "end": 224,
+            "source": "synthetic:PRJ-009-decision",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "bounded_investigation",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "cached": false,
+        "path": "investigator",
+        "retrieval_ms": 349.37,
+        "total_ms": 349.83060002559796,
+        "graph_paths": [
+          {
+            "source": "RISK-009",
+            "target": "MS-009",
+            "traversed_from": "RISK-009",
+            "traversed_to": "MS-009",
+            "depth": 1,
+            "relation": "threatens",
+            "doc_id": "PRJ-009-risk",
+            "evidence": "RISK-009 threatens MS-009.",
+            "asserted_source": "RISK-009",
+            "asserted_target": "MS-009"
+          },
+          {
+            "source": "RISK-009",
+            "target": "TX-880",
+            "traversed_from": "RISK-009",
+            "traversed_to": "TX-880",
+            "depth": 1,
+            "relation": "concerns",
+            "doc_id": "PRJ-009-risk",
+            "evidence": "repeat TX-880 acceptance failure could delay energization.",
+            "asserted_source": "RISK-009",
+            "asserted_target": "TX-880"
+          },
+          {
+            "source": "CR-009",
+            "target": "REQ-009",
+            "traversed_from": "CR-009",
+            "traversed_to": "REQ-009",
+            "depth": 1,
+            "relation": "modifies",
+            "doc_id": "PRJ-009-change",
+            "evidence": "CR-009 modifies REQ-009.",
+            "asserted_source": "CR-009",
+            "asserted_target": "REQ-009"
+          },
+          {
+            "source": "CR-009",
+            "target": "INC-009",
+            "traversed_from": "CR-009",
+            "traversed_to": "INC-009",
+            "depth": 1,
+            "relation": "addresses",
+            "doc_id": "PRJ-009-change",
+            "evidence": "CR-009 addresses INC-009.",
+            "asserted_source": "CR-009",
+            "asserted_target": "INC-009"
+          },
+          {
+            "source": "DEC-009",
+            "target": "INC-009",
+            "traversed_from": "DEC-009",
+            "traversed_to": "INC-009",
+            "depth": 1,
+            "relation": "responds_to",
+            "doc_id": "PRJ-009-decision",
+            "evidence": "DEC-009 responds to INC-009.",
+            "asserted_source": "DEC-009",
+            "asserted_target": "INC-009"
+          },
+          {
+            "source": "DEC-009",
+            "target": "MS-009",
+            "traversed_from": "DEC-009",
+            "traversed_to": "MS-009",
+            "depth": 1,
+            "relation": "moves",
+            "doc_id": "PRJ-009-decision",
+            "evidence": "Decision DEC-009 moved MS-009 by 8 weeks because transformer winding insulation failed factory testing.",
+            "asserted_source": "DEC-009",
+            "asserted_target": "MS-009"
+          },
+          {
+            "source": "INC-009",
+            "target": "MS-009",
+            "traversed_from": "MS-009",
+            "traversed_to": "INC-009",
+            "depth": 2,
+            "relation": "delayed",
+            "doc_id": "PRJ-009-incident",
+            "evidence": "The commissioning milestone slipped by 8 weeks.",
+            "asserted_source": "INC-009",
+            "asserted_target": "MS-009"
+          },
+          {
+            "source": "RISK-009",
+            "target": "MS-009",
+            "traversed_from": "MS-009",
+            "traversed_to": "RISK-009",
+            "depth": 2,
+            "relation": "threatens",
+            "doc_id": "PRJ-009-risk",
+            "evidence": "RISK-009 threatens MS-009.",
+            "asserted_source": "RISK-009",
+            "asserted_target": "MS-009"
+          },
+          {
+            "source": "DEC-009",
+            "target": "MS-009",
+            "traversed_from": "MS-009",
+            "traversed_to": "DEC-009",
+            "depth": 2,
+            "relation": "moves",
+            "doc_id": "PRJ-009-decision",
+            "evidence": "Decision DEC-009 moved MS-009 by 8 weeks because transformer winding insulation failed factory testing.",
+            "asserted_source": "DEC-009",
+            "asserted_target": "MS-009"
+          },
+          {
+            "source": "Northstar Power",
+            "target": "TX-880",
+            "traversed_from": "TX-880",
+            "traversed_to": "Northstar Power",
+            "depth": 2,
+            "relation": "supplies",
+            "doc_id": "PRJ-009-charter",
+            "evidence": "Northstar Power supplies TX-880.",
+            "asserted_source": "Northstar Power",
+            "asserted_target": "TX-880"
+          },
+          {
+            "source": "PRJ-009",
+            "target": "TX-880",
+            "traversed_from": "TX-880",
+            "traversed_to": "PRJ-009",
+            "depth": 2,
+            "relation": "uses",
+            "doc_id": "PRJ-009-charter",
+            "evidence": "PRJ-009 uses TX-880.",
+            "asserted_source": "PRJ-009",
+            "asserted_target": "TX-880"
+          },
+          {
+            "source": "INC-009",
+            "target": "TX-880",
+            "traversed_from": "TX-880",
+            "traversed_to": "INC-009",
+            "depth": 2,
+            "relation": "affected",
+            "doc_id": "PRJ-009-incident",
+            "evidence": "INC-009 affected TX-880.",
+            "asserted_source": "INC-009",
+            "asserted_target": "TX-880"
+          },
+          {
+            "source": "RISK-009",
+            "target": "TX-880",
+            "traversed_from": "TX-880",
+            "traversed_to": "RISK-009",
+            "depth": 2,
+            "relation": "concerns",
+            "doc_id": "PRJ-009-risk",
+            "evidence": "repeat TX-880 acceptance failure could delay energization.",
+            "asserted_source": "RISK-009",
+            "asserted_target": "TX-880"
+          },
+          {
+            "source": "LL-009",
+            "target": "TX-880",
+            "traversed_from": "TX-880",
+            "traversed_to": "LL-009",
+            "depth": 2,
+            "relation": "applies_to",
+            "doc_id": "PRJ-009-lesson",
+            "evidence": "LL-009 applies to TX-880.",
+            "asserted_source": "LL-009",
+            "asserted_target": "TX-880"
+          },
+          {
+            "source": "CR-009",
+            "target": "REQ-009",
+            "traversed_from": "REQ-009",
+            "traversed_to": "CR-009",
+            "depth": 2,
+            "relation": "modifies",
+            "doc_id": "PRJ-009-change",
+            "evidence": "CR-009 modifies REQ-009.",
+            "asserted_source": "CR-009",
+            "asserted_target": "REQ-009"
+          },
+          {
+            "source": "INC-009",
+            "target": "TX-880",
+            "traversed_from": "INC-009",
+            "traversed_to": "TX-880",
+            "depth": 2,
+            "relation": "affected",
+            "doc_id": "PRJ-009-incident",
+            "evidence": "INC-009 affected TX-880.",
+            "asserted_source": "INC-009",
+            "asserted_target": "TX-880"
+          },
+          {
+            "source": "INC-009",
+            "target": "MS-009",
+            "traversed_from": "INC-009",
+            "traversed_to": "MS-009",
+            "depth": 2,
+            "relation": "delayed",
+            "doc_id": "PRJ-009-incident",
+            "evidence": "The commissioning milestone slipped by 8 weeks.",
+            "asserted_source": "INC-009",
+            "asserted_target": "MS-009"
+          },
+          {
+            "source": "CR-009",
+            "target": "INC-009",
+            "traversed_from": "INC-009",
+            "traversed_to": "CR-009",
+            "depth": 2,
+            "relation": "addresses",
+            "doc_id": "PRJ-009-change",
+            "evidence": "CR-009 addresses INC-009.",
+            "asserted_source": "CR-009",
+            "asserted_target": "INC-009"
+          },
+          {
+            "source": "LL-009",
+            "target": "INC-009",
+            "traversed_from": "INC-009",
+            "traversed_to": "LL-009",
+            "depth": 2,
+            "relation": "follows",
+            "doc_id": "PRJ-009-lesson",
+            "evidence": "LL-009 follows INC-009.",
+            "asserted_source": "LL-009",
+            "asserted_target": "INC-009"
+          },
+          {
+            "source": "DEC-009",
+            "target": "INC-009",
+            "traversed_from": "INC-009",
+            "traversed_to": "DEC-009",
+            "depth": 2,
+            "relation": "responds_to",
+            "doc_id": "PRJ-009-decision",
+            "evidence": "DEC-009 responds to INC-009.",
+            "asserted_source": "DEC-009",
+            "asserted_target": "INC-009"
+          },
+          {
+            "source": "Northstar Power",
+            "target": "TX-880",
+            "traversed_from": "Northstar Power",
+            "traversed_to": "TX-880",
+            "depth": 3,
+            "relation": "supplies",
+            "doc_id": "PRJ-009-charter",
+            "evidence": "Northstar Power supplies TX-880.",
+            "asserted_source": "Northstar Power",
+            "asserted_target": "TX-880"
+          },
+          {
+            "source": "PRJ-009",
+            "target": "SITE-009",
+            "traversed_from": "PRJ-009",
+            "traversed_to": "SITE-009",
+            "depth": 3,
+            "relation": "located_at",
+            "doc_id": "PRJ-009-charter",
+            "evidence": "PRJ-009 serves SITE-009.",
+            "asserted_source": "PRJ-009",
+            "asserted_target": "SITE-009"
+          },
+          {
+            "source": "PRJ-009",
+            "target": "TX-880",
+            "traversed_from": "PRJ-009",
+            "traversed_to": "TX-880",
+            "depth": 3,
+            "relation": "uses",
+            "doc_id": "PRJ-009-charter",
+            "evidence": "PRJ-009 uses TX-880.",
+            "asserted_source": "PRJ-009",
+            "asserted_target": "TX-880"
+          },
+          {
+            "source": "LL-009",
+            "target": "INC-009",
+            "traversed_from": "LL-009",
+            "traversed_to": "INC-009",
+            "depth": 3,
+            "relation": "follows",
+            "doc_id": "PRJ-009-lesson",
+            "evidence": "LL-009 follows INC-009.",
+            "asserted_source": "LL-009",
+            "asserted_target": "INC-009"
+          },
+          {
+            "source": "LL-009",
+            "target": "TX-880",
+            "traversed_from": "LL-009",
+            "traversed_to": "TX-880",
+            "depth": 3,
+            "relation": "applies_to",
+            "doc_id": "PRJ-009-lesson",
+            "evidence": "LL-009 applies to TX-880.",
+            "asserted_source": "LL-009",
+            "asserted_target": "TX-880"
+          }
+        ],
+        "rewritten_query": "Investigate Project Iris: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "corpus_version": "76226b6b650b",
+        "ranked": [
+          "PRJ-009-email-approval",
+          "PRJ-009-teams-schedule",
+          "PRJ-009-incident",
+          "PRJ-009-status",
+          "PRJ-009-change",
+          "PRJ-009-decision"
+        ],
+        "limitations": [
+          "Exact excerpts establish provenance, not independent truth.",
+          "A proposal was found in the conversation context. It was not treated as an approval."
+        ],
+        "investigation": {
+          "policy": "Evidence-driven deterministic controller; no LLM planner",
+          "steps": [
+            {
+              "tool": "search_sources",
+              "label": "Find the initial evidence",
+              "query": "Investigate Project Iris: why was commissioning delayed, who approved the change, and was the schedule updated?",
+              "source_ids": [
+                "PRJ-009-teams-schedule",
+                "PRJ-009-status",
+                "PRJ-009-email-approval",
+                "PRJ-009-email-proposal",
+                "PRJ-009-incident"
+              ],
+              "duration_ms": 334.93
+            },
+            {
+              "tool": "read_thread",
+              "label": "Read the surrounding email conversation",
+              "source_ids": [
+                "PRJ-009-email-proposal",
+                "PRJ-009-email-approval"
+              ],
+              "duration_ms": 0.02
+            },
+            {
+              "tool": "read_thread",
+              "label": "Read the surrounding teams conversation",
+              "source_ids": [
+                "PRJ-009-teams-schedule",
+                "PRJ-009-teams-open"
+              ],
+              "duration_ms": 0.01
+            },
+            {
+              "tool": "search_relationships",
+              "label": "Follow documented relationships",
+              "query": "DEC-009 CR-009 RISK-009 linked change impact",
+              "source_ids": [
+                "PRJ-009-risk",
+                "PRJ-009-change",
+                "PRJ-009-decision",
+                "PRJ-009-incident"
+              ],
+              "duration_ms": 14.41
+            }
+          ],
+          "stop_reason": "evidence_checked",
+          "gaps": [],
+          "caveats": [
+            "A proposal was found in the conversation context. It was not treated as an approval."
+          ],
+          "max_actions": 6,
+          "max_seconds": 15,
+          "status": "evidence_found",
+          "sources": [
+            "documents",
+            "email",
+            "slack",
+            "teams"
+          ]
+        }
+      },
+      "evidence_recall": 0.8571428571428571,
+      "actions": 4
+    },
+    {
+      "id": "PRJ-010-investigation",
+      "query": "Investigate Project Juniper: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-010-email-approval",
+        "PRJ-010-teams-schedule",
+        "PRJ-010-slack-cause",
+        "PRJ-010-incident",
+        "PRJ-010-status",
+        "PRJ-010-change",
+        "PRJ-010-decision"
+      ],
+      "relevant": [
+        "PRJ-010-incident",
+        "PRJ-010-slack-cause",
+        "PRJ-010-email-approval",
+        "PRJ-010-teams-schedule",
+        "PRJ-010-decision",
+        "PRJ-010-status",
+        "PRJ-010-change"
+      ],
+      "path": "investigator",
+      "recall": 0.7142857142857143,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 579.24,
+      "total_ms": 580.002600006992,
+      "answer": {
+        "answer": "Project Juniper: Juniper engineering review board approved CR-010 under DEC-010. [1]\nProject Juniper: schedule register updated after DEC-010. [2]\nIncident INC-010 on Project Juniper: controller firmware dropped synchronization messages. [3]\nIncident INC-010 on Project Juniper: controller firmware dropped synchronization messages. [4]\nCurrent Project Juniper status: commissioning is delayed 5 weeks. [5]\nChange CR-010 on Project Juniper revises acceptance requirement REQ-010. [6]\nThe board accepted the schedule change only after reviewing the incident and change CR-010. [7]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-010-email-approval",
+            "title": "Juniper / email / approval",
+            "quote": "Project Juniper: Juniper engineering review board approved CR-010 under DEC-010.",
+            "start": 0,
+            "end": 80,
+            "source": "synthetic:PRJ-010-email-approval",
+            "synthetic": true,
+            "channel": "email",
+            "author": "Juniper engineering review board",
+            "date": "2026-05-14T14:00:00Z",
+            "thread_id": "PRJ-010-email-recovery",
+            "decision_status": "approved"
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-010-teams-schedule",
+            "title": "Juniper / teams / schedule",
+            "quote": "Project Juniper: schedule register updated after DEC-010.",
+            "start": 0,
+            "end": 57,
+            "source": "synthetic:PRJ-010-teams-schedule",
+            "synthetic": true,
+            "channel": "teams",
+            "author": "Schedule controller",
+            "date": "2026-05-15T16:00:00Z",
+            "thread_id": "PRJ-010-teams-recovery",
+            "decision_status": "recorded"
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-010-slack-cause",
+            "title": "Juniper / slack / cause",
+            "quote": "Incident INC-010 on Project Juniper: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 90,
+            "source": "synthetic:PRJ-010-slack-cause",
+            "synthetic": true,
+            "channel": "slack",
+            "author": "Site engineer",
+            "date": "2026-05-12T10:00:00Z",
+            "thread_id": "PRJ-010-slack-recovery",
+            "decision_status": "recorded"
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-010-incident",
+            "title": "Juniper / incident",
+            "quote": "Incident INC-010 on Project Juniper: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 90,
+            "source": "synthetic:PRJ-010-incident",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-010-status",
+            "title": "Juniper / status",
+            "quote": "Current Project Juniper status: commissioning is delayed 5 weeks.",
+            "start": 0,
+            "end": 65,
+            "source": "synthetic:PRJ-010-status",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-010-change",
+            "title": "Juniper / change",
+            "quote": "Change CR-010 on Project Juniper revises acceptance requirement REQ-010.",
+            "start": 0,
+            "end": 72,
+            "source": "synthetic:PRJ-010-change",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          },
+          {
+            "id": 7,
+            "doc_id": "PRJ-010-decision",
+            "title": "Juniper / decision",
+            "quote": " The board accepted the schedule change only after reviewing the incident and change CR-010.",
+            "start": 131,
+            "end": 223,
+            "source": "synthetic:PRJ-010-decision",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "bounded_investigation",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "cached": false,
+        "path": "investigator",
+        "retrieval_ms": 579.24,
+        "total_ms": 579.8824999947101,
+        "graph_paths": [
+          {
+            "source": "RISK-010",
+            "target": "MS-010",
+            "traversed_from": "RISK-010",
+            "traversed_to": "MS-010",
+            "depth": 1,
+            "relation": "threatens",
+            "doc_id": "PRJ-010-risk",
+            "evidence": "RISK-010 threatens MS-010.",
+            "asserted_source": "RISK-010",
+            "asserted_target": "MS-010"
+          },
+          {
+            "source": "RISK-010",
+            "target": "CTRL-420",
+            "traversed_from": "RISK-010",
+            "traversed_to": "CTRL-420",
+            "depth": 1,
+            "relation": "concerns",
+            "doc_id": "PRJ-010-risk",
+            "evidence": "repeat CTRL-420 acceptance failure could delay energization.",
+            "asserted_source": "RISK-010",
+            "asserted_target": "CTRL-420"
+          },
+          {
+            "source": "CR-010",
+            "target": "REQ-010",
+            "traversed_from": "CR-010",
+            "traversed_to": "REQ-010",
+            "depth": 1,
+            "relation": "modifies",
+            "doc_id": "PRJ-010-change",
+            "evidence": "CR-010 modifies REQ-010.",
+            "asserted_source": "CR-010",
+            "asserted_target": "REQ-010"
+          },
+          {
+            "source": "CR-010",
+            "target": "INC-010",
+            "traversed_from": "CR-010",
+            "traversed_to": "INC-010",
+            "depth": 1,
+            "relation": "addresses",
+            "doc_id": "PRJ-010-change",
+            "evidence": "CR-010 addresses INC-010.",
+            "asserted_source": "CR-010",
+            "asserted_target": "INC-010"
+          },
+          {
+            "source": "DEC-010",
+            "target": "INC-010",
+            "traversed_from": "DEC-010",
+            "traversed_to": "INC-010",
+            "depth": 1,
+            "relation": "responds_to",
+            "doc_id": "PRJ-010-decision",
+            "evidence": "DEC-010 responds to INC-010.",
+            "asserted_source": "DEC-010",
+            "asserted_target": "INC-010"
+          },
+          {
+            "source": "DEC-010",
+            "target": "MS-010",
+            "traversed_from": "DEC-010",
+            "traversed_to": "MS-010",
+            "depth": 1,
+            "relation": "moves",
+            "doc_id": "PRJ-010-decision",
+            "evidence": "Decision DEC-010 moved MS-010 by 5 weeks because controller firmware dropped synchronization messages.",
+            "asserted_source": "DEC-010",
+            "asserted_target": "MS-010"
+          },
+          {
+            "source": "INC-010",
+            "target": "MS-010",
+            "traversed_from": "MS-010",
+            "traversed_to": "INC-010",
+            "depth": 2,
+            "relation": "delayed",
+            "doc_id": "PRJ-010-incident",
+            "evidence": "The commissioning milestone slipped by 5 weeks.",
+            "asserted_source": "INC-010",
+            "asserted_target": "MS-010"
+          },
+          {
+            "source": "RISK-010",
+            "target": "MS-010",
+            "traversed_from": "MS-010",
+            "traversed_to": "RISK-010",
+            "depth": 2,
+            "relation": "threatens",
+            "doc_id": "PRJ-010-risk",
+            "evidence": "RISK-010 threatens MS-010.",
+            "asserted_source": "RISK-010",
+            "asserted_target": "MS-010"
+          },
+          {
+            "source": "DEC-010",
+            "target": "MS-010",
+            "traversed_from": "MS-010",
+            "traversed_to": "DEC-010",
+            "depth": 2,
+            "relation": "moves",
+            "doc_id": "PRJ-010-decision",
+            "evidence": "Decision DEC-010 moved MS-010 by 5 weeks because controller firmware dropped synchronization messages.",
+            "asserted_source": "DEC-010",
+            "asserted_target": "MS-010"
+          },
+          {
+            "source": "Meridian Controls",
+            "target": "CTRL-420",
+            "traversed_from": "CTRL-420",
+            "traversed_to": "Meridian Controls",
+            "depth": 2,
+            "relation": "supplies",
+            "doc_id": "PRJ-010-charter",
+            "evidence": "Meridian Controls supplies CTRL-420.",
+            "asserted_source": "Meridian Controls",
+            "asserted_target": "CTRL-420"
+          },
+          {
+            "source": "PRJ-010",
+            "target": "CTRL-420",
+            "traversed_from": "CTRL-420",
+            "traversed_to": "PRJ-010",
+            "depth": 2,
+            "relation": "uses",
+            "doc_id": "PRJ-010-charter",
+            "evidence": "PRJ-010 uses CTRL-420.",
+            "asserted_source": "PRJ-010",
+            "asserted_target": "CTRL-420"
+          },
+          {
+            "source": "INC-010",
+            "target": "CTRL-420",
+            "traversed_from": "CTRL-420",
+            "traversed_to": "INC-010",
+            "depth": 2,
+            "relation": "affected",
+            "doc_id": "PRJ-010-incident",
+            "evidence": "INC-010 affected CTRL-420.",
+            "asserted_source": "INC-010",
+            "asserted_target": "CTRL-420"
+          },
+          {
+            "source": "RISK-010",
+            "target": "CTRL-420",
+            "traversed_from": "CTRL-420",
+            "traversed_to": "RISK-010",
+            "depth": 2,
+            "relation": "concerns",
+            "doc_id": "PRJ-010-risk",
+            "evidence": "repeat CTRL-420 acceptance failure could delay energization.",
+            "asserted_source": "RISK-010",
+            "asserted_target": "CTRL-420"
+          },
+          {
+            "source": "LL-010",
+            "target": "CTRL-420",
+            "traversed_from": "CTRL-420",
+            "traversed_to": "LL-010",
+            "depth": 2,
+            "relation": "applies_to",
+            "doc_id": "PRJ-010-lesson",
+            "evidence": "LL-010 applies to CTRL-420.",
+            "asserted_source": "LL-010",
+            "asserted_target": "CTRL-420"
+          },
+          {
+            "source": "CR-010",
+            "target": "REQ-010",
+            "traversed_from": "REQ-010",
+            "traversed_to": "CR-010",
+            "depth": 2,
+            "relation": "modifies",
+            "doc_id": "PRJ-010-change",
+            "evidence": "CR-010 modifies REQ-010.",
+            "asserted_source": "CR-010",
+            "asserted_target": "REQ-010"
+          },
+          {
+            "source": "INC-010",
+            "target": "CTRL-420",
+            "traversed_from": "INC-010",
+            "traversed_to": "CTRL-420",
+            "depth": 2,
+            "relation": "affected",
+            "doc_id": "PRJ-010-incident",
+            "evidence": "INC-010 affected CTRL-420.",
+            "asserted_source": "INC-010",
+            "asserted_target": "CTRL-420"
+          },
+          {
+            "source": "INC-010",
+            "target": "MS-010",
+            "traversed_from": "INC-010",
+            "traversed_to": "MS-010",
+            "depth": 2,
+            "relation": "delayed",
+            "doc_id": "PRJ-010-incident",
+            "evidence": "The commissioning milestone slipped by 5 weeks.",
+            "asserted_source": "INC-010",
+            "asserted_target": "MS-010"
+          },
+          {
+            "source": "CR-010",
+            "target": "INC-010",
+            "traversed_from": "INC-010",
+            "traversed_to": "CR-010",
+            "depth": 2,
+            "relation": "addresses",
+            "doc_id": "PRJ-010-change",
+            "evidence": "CR-010 addresses INC-010.",
+            "asserted_source": "CR-010",
+            "asserted_target": "INC-010"
+          },
+          {
+            "source": "LL-010",
+            "target": "INC-010",
+            "traversed_from": "INC-010",
+            "traversed_to": "LL-010",
+            "depth": 2,
+            "relation": "follows",
+            "doc_id": "PRJ-010-lesson",
+            "evidence": "LL-010 follows INC-010.",
+            "asserted_source": "LL-010",
+            "asserted_target": "INC-010"
+          },
+          {
+            "source": "DEC-010",
+            "target": "INC-010",
+            "traversed_from": "INC-010",
+            "traversed_to": "DEC-010",
+            "depth": 2,
+            "relation": "responds_to",
+            "doc_id": "PRJ-010-decision",
+            "evidence": "DEC-010 responds to INC-010.",
+            "asserted_source": "DEC-010",
+            "asserted_target": "INC-010"
+          },
+          {
+            "source": "Meridian Controls",
+            "target": "CTRL-420",
+            "traversed_from": "Meridian Controls",
+            "traversed_to": "CTRL-420",
+            "depth": 3,
+            "relation": "supplies",
+            "doc_id": "PRJ-010-charter",
+            "evidence": "Meridian Controls supplies CTRL-420.",
+            "asserted_source": "Meridian Controls",
+            "asserted_target": "CTRL-420"
+          },
+          {
+            "source": "PRJ-010",
+            "target": "SITE-010",
+            "traversed_from": "PRJ-010",
+            "traversed_to": "SITE-010",
+            "depth": 3,
+            "relation": "located_at",
+            "doc_id": "PRJ-010-charter",
+            "evidence": "PRJ-010 serves SITE-010.",
+            "asserted_source": "PRJ-010",
+            "asserted_target": "SITE-010"
+          },
+          {
+            "source": "PRJ-010",
+            "target": "CTRL-420",
+            "traversed_from": "PRJ-010",
+            "traversed_to": "CTRL-420",
+            "depth": 3,
+            "relation": "uses",
+            "doc_id": "PRJ-010-charter",
+            "evidence": "PRJ-010 uses CTRL-420.",
+            "asserted_source": "PRJ-010",
+            "asserted_target": "CTRL-420"
+          },
+          {
+            "source": "LL-010",
+            "target": "INC-010",
+            "traversed_from": "LL-010",
+            "traversed_to": "INC-010",
+            "depth": 3,
+            "relation": "follows",
+            "doc_id": "PRJ-010-lesson",
+            "evidence": "LL-010 follows INC-010.",
+            "asserted_source": "LL-010",
+            "asserted_target": "INC-010"
+          },
+          {
+            "source": "LL-010",
+            "target": "CTRL-420",
+            "traversed_from": "LL-010",
+            "traversed_to": "CTRL-420",
+            "depth": 3,
+            "relation": "applies_to",
+            "doc_id": "PRJ-010-lesson",
+            "evidence": "LL-010 applies to CTRL-420.",
+            "asserted_source": "LL-010",
+            "asserted_target": "CTRL-420"
+          }
+        ],
+        "rewritten_query": "Investigate Project Juniper: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "corpus_version": "76226b6b650b",
+        "ranked": [
+          "PRJ-010-email-approval",
+          "PRJ-010-teams-schedule",
+          "PRJ-010-slack-cause",
+          "PRJ-010-incident",
+          "PRJ-010-status",
+          "PRJ-010-change",
+          "PRJ-010-decision"
+        ],
+        "limitations": [
+          "Exact excerpts establish provenance, not independent truth.",
+          "A proposal was found in the conversation context. It was not treated as an approval."
+        ],
+        "investigation": {
+          "policy": "Evidence-driven deterministic controller; no LLM planner",
+          "steps": [
+            {
+              "tool": "search_sources",
+              "label": "Find the initial evidence",
+              "query": "Investigate Project Juniper: why was commissioning delayed, who approved the change, and was the schedule updated?",
+              "source_ids": [
+                "PRJ-010-teams-schedule",
+                "PRJ-010-email-approval",
+                "PRJ-010-status",
+                "PRJ-010-email-proposal",
+                "PRJ-010-routine_2"
+              ],
+              "duration_ms": 337.29
+            },
+            {
+              "tool": "read_thread",
+              "label": "Read the surrounding email conversation",
+              "source_ids": [
+                "PRJ-010-email-proposal",
+                "PRJ-010-email-approval"
+              ],
+              "duration_ms": 0.02
+            },
+            {
+              "tool": "read_thread",
+              "label": "Read the surrounding teams conversation",
+              "source_ids": [
+                "PRJ-010-teams-schedule",
+                "PRJ-010-teams-open"
+              ],
+              "duration_ms": 0.01
+            },
+            {
+              "tool": "search_sources",
+              "label": "Investigate the cause",
+              "query": "Project Juniper incident commissioning cause",
+              "source_ids": [
+                "PRJ-010-status",
+                "PRJ-010-incident",
+                "PRJ-010-slack-cause",
+                "PRJ-010-email-approval",
+                "PRJ-010-teams-schedule"
+              ],
+              "duration_ms": 225.49
+            },
+            {
+              "tool": "read_thread",
+              "label": "Read the surrounding slack conversation",
+              "source_ids": [
+                "PRJ-010-slack-cause",
+                "PRJ-010-slack-followup"
+              ],
+              "duration_ms": 0.02
+            },
+            {
+              "tool": "search_relationships",
+              "label": "Follow documented relationships",
+              "query": "DEC-010 CR-010 RISK-010 linked change impact",
+              "source_ids": [
+                "PRJ-010-risk",
+                "PRJ-010-change",
+                "PRJ-010-decision",
+                "PRJ-010-incident"
+              ],
+              "duration_ms": 16.41
+            }
+          ],
+          "stop_reason": "action_budget",
+          "gaps": [
+            "The investigation reached its budget. Additional evidence may remain."
+          ],
+          "caveats": [
+            "A proposal was found in the conversation context. It was not treated as an approval."
+          ],
+          "max_actions": 6,
+          "max_seconds": 15,
+          "status": "needs_review",
+          "sources": [
+            "documents",
+            "email",
+            "slack",
+            "teams"
+          ]
+        }
+      },
+      "evidence_recall": 1.0,
+      "actions": 6
+    },
+    {
+      "id": "PRJ-011-investigation",
+      "query": "Investigate Project Kestrel: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-011-email-approval",
+        "PRJ-011-teams-schedule",
+        "PRJ-011-slack-cause",
+        "PRJ-011-incident",
+        "PRJ-011-status",
+        "PRJ-011-change",
+        "PRJ-011-decision"
+      ],
+      "relevant": [
+        "PRJ-011-incident",
+        "PRJ-011-slack-cause",
+        "PRJ-011-email-approval",
+        "PRJ-011-teams-schedule",
+        "PRJ-011-decision",
+        "PRJ-011-status",
+        "PRJ-011-change"
+      ],
+      "path": "investigator",
+      "recall": 0.7142857142857143,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 529.0799999999999,
+      "total_ms": 529.8462000209838,
+      "answer": {
+        "answer": "Project Kestrel: Kestrel engineering review board approved CR-011 under DEC-011. [1]\nProject Kestrel: schedule register updated after DEC-011. [2]\nIncident INC-011 on Project Kestrel: cooling pump seals leaked during endurance testing. [3]\nIncident INC-011 on Project Kestrel: cooling pump seals leaked during endurance testing. [4]\nCurrent Project Kestrel status: commissioning is delayed 6 weeks. [5]\nChange CR-011 on Project Kestrel revises acceptance requirement REQ-011. [6]\nThe board accepted the schedule change only after reviewing the incident and change CR-011. [7]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-011-email-approval",
+            "title": "Kestrel / email / approval",
+            "quote": "Project Kestrel: Kestrel engineering review board approved CR-011 under DEC-011.",
+            "start": 0,
+            "end": 80,
+            "source": "synthetic:PRJ-011-email-approval",
+            "synthetic": true,
+            "channel": "email",
+            "author": "Kestrel engineering review board",
+            "date": "2026-05-14T14:00:00Z",
+            "thread_id": "PRJ-011-email-recovery",
+            "decision_status": "approved"
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-011-teams-schedule",
+            "title": "Kestrel / teams / schedule",
+            "quote": "Project Kestrel: schedule register updated after DEC-011.",
+            "start": 0,
+            "end": 57,
+            "source": "synthetic:PRJ-011-teams-schedule",
+            "synthetic": true,
+            "channel": "teams",
+            "author": "Schedule controller",
+            "date": "2026-05-15T16:00:00Z",
+            "thread_id": "PRJ-011-teams-recovery",
+            "decision_status": "recorded"
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-011-slack-cause",
+            "title": "Kestrel / slack / cause",
+            "quote": "Incident INC-011 on Project Kestrel: cooling pump seals leaked during endurance testing.",
+            "start": 0,
+            "end": 88,
+            "source": "synthetic:PRJ-011-slack-cause",
+            "synthetic": true,
+            "channel": "slack",
+            "author": "Site engineer",
+            "date": "2026-05-12T10:00:00Z",
+            "thread_id": "PRJ-011-slack-recovery",
+            "decision_status": "recorded"
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-011-incident",
+            "title": "Kestrel / incident",
+            "quote": "Incident INC-011 on Project Kestrel: cooling pump seals leaked during endurance testing.",
+            "start": 0,
+            "end": 88,
+            "source": "synthetic:PRJ-011-incident",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-011-status",
+            "title": "Kestrel / status",
+            "quote": "Current Project Kestrel status: commissioning is delayed 6 weeks.",
+            "start": 0,
+            "end": 65,
+            "source": "synthetic:PRJ-011-status",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-011-change",
+            "title": "Kestrel / change",
+            "quote": "Change CR-011 on Project Kestrel revises acceptance requirement REQ-011.",
+            "start": 0,
+            "end": 72,
+            "source": "synthetic:PRJ-011-change",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          },
+          {
+            "id": 7,
+            "doc_id": "PRJ-011-decision",
+            "title": "Kestrel / decision",
+            "quote": " The board accepted the schedule change only after reviewing the incident and change CR-011.",
+            "start": 129,
+            "end": 221,
+            "source": "synthetic:PRJ-011-decision",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "bounded_investigation",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "cached": false,
+        "path": "investigator",
+        "retrieval_ms": 529.0799999999999,
+        "total_ms": 529.7200999921188,
+        "graph_paths": [
+          {
+            "source": "RISK-011",
+            "target": "MS-011",
+            "traversed_from": "RISK-011",
+            "traversed_to": "MS-011",
+            "depth": 1,
+            "relation": "threatens",
+            "doc_id": "PRJ-011-risk",
+            "evidence": "RISK-011 threatens MS-011.",
+            "asserted_source": "RISK-011",
+            "asserted_target": "MS-011"
+          },
+          {
+            "source": "RISK-011",
+            "target": "PUMP-310",
+            "traversed_from": "RISK-011",
+            "traversed_to": "PUMP-310",
+            "depth": 1,
+            "relation": "concerns",
+            "doc_id": "PRJ-011-risk",
+            "evidence": "repeat PUMP-310 acceptance failure could delay energization.",
+            "asserted_source": "RISK-011",
+            "asserted_target": "PUMP-310"
+          },
+          {
+            "source": "CR-011",
+            "target": "REQ-011",
+            "traversed_from": "CR-011",
+            "traversed_to": "REQ-011",
+            "depth": 1,
+            "relation": "modifies",
+            "doc_id": "PRJ-011-change",
+            "evidence": "CR-011 modifies REQ-011.",
+            "asserted_source": "CR-011",
+            "asserted_target": "REQ-011"
+          },
+          {
+            "source": "CR-011",
+            "target": "INC-011",
+            "traversed_from": "CR-011",
+            "traversed_to": "INC-011",
+            "depth": 1,
+            "relation": "addresses",
+            "doc_id": "PRJ-011-change",
+            "evidence": "CR-011 addresses INC-011.",
+            "asserted_source": "CR-011",
+            "asserted_target": "INC-011"
+          },
+          {
+            "source": "DEC-011",
+            "target": "INC-011",
+            "traversed_from": "DEC-011",
+            "traversed_to": "INC-011",
+            "depth": 1,
+            "relation": "responds_to",
+            "doc_id": "PRJ-011-decision",
+            "evidence": "DEC-011 responds to INC-011.",
+            "asserted_source": "DEC-011",
+            "asserted_target": "INC-011"
+          },
+          {
+            "source": "DEC-011",
+            "target": "MS-011",
+            "traversed_from": "DEC-011",
+            "traversed_to": "MS-011",
+            "depth": 1,
+            "relation": "moves",
+            "doc_id": "PRJ-011-decision",
+            "evidence": "Decision DEC-011 moved MS-011 by 6 weeks because cooling pump seals leaked during endurance testing.",
+            "asserted_source": "DEC-011",
+            "asserted_target": "MS-011"
+          },
+          {
+            "source": "INC-011",
+            "target": "MS-011",
+            "traversed_from": "MS-011",
+            "traversed_to": "INC-011",
+            "depth": 2,
+            "relation": "delayed",
+            "doc_id": "PRJ-011-incident",
+            "evidence": "The commissioning milestone slipped by 6 weeks.",
+            "asserted_source": "INC-011",
+            "asserted_target": "MS-011"
+          },
+          {
+            "source": "RISK-011",
+            "target": "MS-011",
+            "traversed_from": "MS-011",
+            "traversed_to": "RISK-011",
+            "depth": 2,
+            "relation": "threatens",
+            "doc_id": "PRJ-011-risk",
+            "evidence": "RISK-011 threatens MS-011.",
+            "asserted_source": "RISK-011",
+            "asserted_target": "MS-011"
+          },
+          {
+            "source": "DEC-011",
+            "target": "MS-011",
+            "traversed_from": "MS-011",
+            "traversed_to": "DEC-011",
+            "depth": 2,
+            "relation": "moves",
+            "doc_id": "PRJ-011-decision",
+            "evidence": "Decision DEC-011 moved MS-011 by 6 weeks because cooling pump seals leaked during endurance testing.",
+            "asserted_source": "DEC-011",
+            "asserted_target": "MS-011"
+          },
+          {
+            "source": "Summit Electric",
+            "target": "PUMP-310",
+            "traversed_from": "PUMP-310",
+            "traversed_to": "Summit Electric",
+            "depth": 2,
+            "relation": "supplies",
+            "doc_id": "PRJ-011-charter",
+            "evidence": "Summit Electric supplies PUMP-310.",
+            "asserted_source": "Summit Electric",
+            "asserted_target": "PUMP-310"
+          },
+          {
+            "source": "PRJ-011",
+            "target": "PUMP-310",
+            "traversed_from": "PUMP-310",
+            "traversed_to": "PRJ-011",
+            "depth": 2,
+            "relation": "uses",
+            "doc_id": "PRJ-011-charter",
+            "evidence": "PRJ-011 uses PUMP-310.",
+            "asserted_source": "PRJ-011",
+            "asserted_target": "PUMP-310"
+          },
+          {
+            "source": "INC-011",
+            "target": "PUMP-310",
+            "traversed_from": "PUMP-310",
+            "traversed_to": "INC-011",
+            "depth": 2,
+            "relation": "affected",
+            "doc_id": "PRJ-011-incident",
+            "evidence": "INC-011 affected PUMP-310.",
+            "asserted_source": "INC-011",
+            "asserted_target": "PUMP-310"
+          },
+          {
+            "source": "RISK-011",
+            "target": "PUMP-310",
+            "traversed_from": "PUMP-310",
+            "traversed_to": "RISK-011",
+            "depth": 2,
+            "relation": "concerns",
+            "doc_id": "PRJ-011-risk",
+            "evidence": "repeat PUMP-310 acceptance failure could delay energization.",
+            "asserted_source": "RISK-011",
+            "asserted_target": "PUMP-310"
+          },
+          {
+            "source": "LL-011",
+            "target": "PUMP-310",
+            "traversed_from": "PUMP-310",
+            "traversed_to": "LL-011",
+            "depth": 2,
+            "relation": "applies_to",
+            "doc_id": "PRJ-011-lesson",
+            "evidence": "LL-011 applies to PUMP-310.",
+            "asserted_source": "LL-011",
+            "asserted_target": "PUMP-310"
+          },
+          {
+            "source": "CR-011",
+            "target": "REQ-011",
+            "traversed_from": "REQ-011",
+            "traversed_to": "CR-011",
+            "depth": 2,
+            "relation": "modifies",
+            "doc_id": "PRJ-011-change",
+            "evidence": "CR-011 modifies REQ-011.",
+            "asserted_source": "CR-011",
+            "asserted_target": "REQ-011"
+          },
+          {
+            "source": "INC-011",
+            "target": "PUMP-310",
+            "traversed_from": "INC-011",
+            "traversed_to": "PUMP-310",
+            "depth": 2,
+            "relation": "affected",
+            "doc_id": "PRJ-011-incident",
+            "evidence": "INC-011 affected PUMP-310.",
+            "asserted_source": "INC-011",
+            "asserted_target": "PUMP-310"
+          },
+          {
+            "source": "INC-011",
+            "target": "MS-011",
+            "traversed_from": "INC-011",
+            "traversed_to": "MS-011",
+            "depth": 2,
+            "relation": "delayed",
+            "doc_id": "PRJ-011-incident",
+            "evidence": "The commissioning milestone slipped by 6 weeks.",
+            "asserted_source": "INC-011",
+            "asserted_target": "MS-011"
+          },
+          {
+            "source": "CR-011",
+            "target": "INC-011",
+            "traversed_from": "INC-011",
+            "traversed_to": "CR-011",
+            "depth": 2,
+            "relation": "addresses",
+            "doc_id": "PRJ-011-change",
+            "evidence": "CR-011 addresses INC-011.",
+            "asserted_source": "CR-011",
+            "asserted_target": "INC-011"
+          },
+          {
+            "source": "LL-011",
+            "target": "INC-011",
+            "traversed_from": "INC-011",
+            "traversed_to": "LL-011",
+            "depth": 2,
+            "relation": "follows",
+            "doc_id": "PRJ-011-lesson",
+            "evidence": "LL-011 follows INC-011.",
+            "asserted_source": "LL-011",
+            "asserted_target": "INC-011"
+          },
+          {
+            "source": "DEC-011",
+            "target": "INC-011",
+            "traversed_from": "INC-011",
+            "traversed_to": "DEC-011",
+            "depth": 2,
+            "relation": "responds_to",
+            "doc_id": "PRJ-011-decision",
+            "evidence": "DEC-011 responds to INC-011.",
+            "asserted_source": "DEC-011",
+            "asserted_target": "INC-011"
+          },
+          {
+            "source": "Summit Electric",
+            "target": "PUMP-310",
+            "traversed_from": "Summit Electric",
+            "traversed_to": "PUMP-310",
+            "depth": 3,
+            "relation": "supplies",
+            "doc_id": "PRJ-011-charter",
+            "evidence": "Summit Electric supplies PUMP-310.",
+            "asserted_source": "Summit Electric",
+            "asserted_target": "PUMP-310"
+          },
+          {
+            "source": "PRJ-011",
+            "target": "SITE-011",
+            "traversed_from": "PRJ-011",
+            "traversed_to": "SITE-011",
+            "depth": 3,
+            "relation": "located_at",
+            "doc_id": "PRJ-011-charter",
+            "evidence": "PRJ-011 serves SITE-011.",
+            "asserted_source": "PRJ-011",
+            "asserted_target": "SITE-011"
+          },
+          {
+            "source": "PRJ-011",
+            "target": "PUMP-310",
+            "traversed_from": "PRJ-011",
+            "traversed_to": "PUMP-310",
+            "depth": 3,
+            "relation": "uses",
+            "doc_id": "PRJ-011-charter",
+            "evidence": "PRJ-011 uses PUMP-310.",
+            "asserted_source": "PRJ-011",
+            "asserted_target": "PUMP-310"
+          },
+          {
+            "source": "LL-011",
+            "target": "INC-011",
+            "traversed_from": "LL-011",
+            "traversed_to": "INC-011",
+            "depth": 3,
+            "relation": "follows",
+            "doc_id": "PRJ-011-lesson",
+            "evidence": "LL-011 follows INC-011.",
+            "asserted_source": "LL-011",
+            "asserted_target": "INC-011"
+          },
+          {
+            "source": "LL-011",
+            "target": "PUMP-310",
+            "traversed_from": "LL-011",
+            "traversed_to": "PUMP-310",
+            "depth": 3,
+            "relation": "applies_to",
+            "doc_id": "PRJ-011-lesson",
+            "evidence": "LL-011 applies to PUMP-310.",
+            "asserted_source": "LL-011",
+            "asserted_target": "PUMP-310"
+          }
+        ],
+        "rewritten_query": "Investigate Project Kestrel: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "corpus_version": "76226b6b650b",
+        "ranked": [
+          "PRJ-011-email-approval",
+          "PRJ-011-teams-schedule",
+          "PRJ-011-slack-cause",
+          "PRJ-011-incident",
+          "PRJ-011-status",
+          "PRJ-011-change",
+          "PRJ-011-decision"
+        ],
+        "limitations": [
+          "Exact excerpts establish provenance, not independent truth.",
+          "A proposal was found in the conversation context. It was not treated as an approval."
+        ],
+        "investigation": {
+          "policy": "Evidence-driven deterministic controller; no LLM planner",
+          "steps": [
+            {
+              "tool": "search_sources",
+              "label": "Find the initial evidence",
+              "query": "Investigate Project Kestrel: why was commissioning delayed, who approved the change, and was the schedule updated?",
+              "source_ids": [
+                "PRJ-011-teams-schedule",
+                "PRJ-011-email-approval",
+                "PRJ-011-status",
+                "PRJ-011-email-proposal",
+                "PRJ-011-routine_2"
+              ],
+              "duration_ms": 304.4
+            },
+            {
+              "tool": "read_thread",
+              "label": "Read the surrounding email conversation",
+              "source_ids": [
+                "PRJ-011-email-proposal",
+                "PRJ-011-email-approval"
+              ],
+              "duration_ms": 0.02
+            },
+            {
+              "tool": "read_thread",
+              "label": "Read the surrounding teams conversation",
+              "source_ids": [
+                "PRJ-011-teams-schedule",
+                "PRJ-011-teams-open"
+              ],
+              "duration_ms": 0.01
+            },
+            {
+              "tool": "search_sources",
+              "label": "Investigate the cause",
+              "query": "Project Kestrel incident commissioning cause",
+              "source_ids": [
+                "PRJ-011-status",
+                "PRJ-011-incident",
+                "PRJ-011-slack-cause",
+                "PRJ-011-email-approval",
+                "PRJ-011-teams-schedule"
+              ],
+              "duration_ms": 201.79
+            },
+            {
+              "tool": "read_thread",
+              "label": "Read the surrounding slack conversation",
+              "source_ids": [
+                "PRJ-011-slack-cause",
+                "PRJ-011-slack-followup"
+              ],
+              "duration_ms": 0.03
+            },
+            {
+              "tool": "search_relationships",
+              "label": "Follow documented relationships",
+              "query": "DEC-011 CR-011 RISK-011 linked change impact",
+              "source_ids": [
+                "PRJ-011-risk",
+                "PRJ-011-change",
+                "PRJ-011-decision",
+                "PRJ-011-incident"
+              ],
+              "duration_ms": 22.83
+            }
+          ],
+          "stop_reason": "action_budget",
+          "gaps": [
+            "The investigation reached its budget. Additional evidence may remain."
+          ],
+          "caveats": [
+            "A proposal was found in the conversation context. It was not treated as an approval."
+          ],
+          "max_actions": 6,
+          "max_seconds": 15,
+          "status": "needs_review",
+          "sources": [
+            "documents",
+            "email",
+            "slack",
+            "teams"
+          ]
+        }
+      },
+      "evidence_recall": 1.0,
+      "actions": 6
+    },
+    {
+      "id": "PRJ-012-investigation",
+      "query": "Investigate Project Laurel: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-012-email-approval",
+        "PRJ-012-teams-schedule",
+        "PRJ-012-incident",
+        "PRJ-012-status",
+        "PRJ-012-change",
+        "PRJ-012-decision"
+      ],
+      "relevant": [
+        "PRJ-012-incident",
+        "PRJ-012-slack-cause",
+        "PRJ-012-email-approval",
+        "PRJ-012-teams-schedule",
+        "PRJ-012-decision",
+        "PRJ-012-status",
+        "PRJ-012-change"
+      ],
+      "path": "investigator",
+      "recall": 0.7142857142857143,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 377.96999999999997,
+      "total_ms": 378.5550000029616,
+      "answer": {
+        "answer": "Project Laurel: Laurel engineering review board approved CR-012 under DEC-012. [1]\nProject Laurel: schedule register updated after DEC-012. [2]\nIncident INC-012 on Project Laurel: switchgear relay settings conflicted with the utility study. [3]\nCurrent Project Laurel status: commissioning is delayed 4 weeks. [4]\nChange CR-012 on Project Laurel revises acceptance requirement REQ-012. [5]\nThe board accepted the schedule change only after reviewing the incident and change CR-012. [6]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-012-email-approval",
+            "title": "Laurel / email / approval",
+            "quote": "Project Laurel: Laurel engineering review board approved CR-012 under DEC-012.",
+            "start": 0,
+            "end": 78,
+            "source": "synthetic:PRJ-012-email-approval",
+            "synthetic": true,
+            "channel": "email",
+            "author": "Laurel engineering review board",
+            "date": "2026-05-14T14:00:00Z",
+            "thread_id": "PRJ-012-email-recovery",
+            "decision_status": "approved"
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-012-teams-schedule",
+            "title": "Laurel / teams / schedule",
+            "quote": "Project Laurel: schedule register updated after DEC-012.",
+            "start": 0,
+            "end": 56,
+            "source": "synthetic:PRJ-012-teams-schedule",
+            "synthetic": true,
+            "channel": "teams",
+            "author": "Schedule controller",
+            "date": "2026-05-15T16:00:00Z",
+            "thread_id": "PRJ-012-teams-recovery",
+            "decision_status": "recorded"
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-012-incident",
+            "title": "Laurel / incident",
+            "quote": "Incident INC-012 on Project Laurel: switchgear relay settings conflicted with the utility study.",
+            "start": 0,
+            "end": 96,
+            "source": "synthetic:PRJ-012-incident",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-012-status",
+            "title": "Laurel / status",
+            "quote": "Current Project Laurel status: commissioning is delayed 4 weeks.",
+            "start": 0,
+            "end": 64,
+            "source": "synthetic:PRJ-012-status",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-012-change",
+            "title": "Laurel / change",
+            "quote": "Change CR-012 on Project Laurel revises acceptance requirement REQ-012.",
+            "start": 0,
+            "end": 71,
+            "source": "synthetic:PRJ-012-change",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-012-decision",
+            "title": "Laurel / decision",
+            "quote": " The board accepted the schedule change only after reviewing the incident and change CR-012.",
+            "start": 138,
+            "end": 230,
+            "source": "synthetic:PRJ-012-decision",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "bounded_investigation",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "cached": false,
+        "path": "investigator",
+        "retrieval_ms": 377.96999999999997,
+        "total_ms": 378.4464000200387,
+        "graph_paths": [
+          {
+            "source": "RISK-012",
+            "target": "MS-012",
+            "traversed_from": "RISK-012",
+            "traversed_to": "MS-012",
+            "depth": 1,
+            "relation": "threatens",
+            "doc_id": "PRJ-012-risk",
+            "evidence": "RISK-012 threatens MS-012.",
+            "asserted_source": "RISK-012",
+            "asserted_target": "MS-012"
+          },
+          {
+            "source": "RISK-012",
+            "target": "SWG-610",
+            "traversed_from": "RISK-012",
+            "traversed_to": "SWG-610",
+            "depth": 1,
+            "relation": "concerns",
+            "doc_id": "PRJ-012-risk",
+            "evidence": "repeat SWG-610 acceptance failure could delay energization.",
+            "asserted_source": "RISK-012",
+            "asserted_target": "SWG-610"
+          },
+          {
+            "source": "CR-012",
+            "target": "REQ-012",
+            "traversed_from": "CR-012",
+            "traversed_to": "REQ-012",
+            "depth": 1,
+            "relation": "modifies",
+            "doc_id": "PRJ-012-change",
+            "evidence": "CR-012 modifies REQ-012.",
+            "asserted_source": "CR-012",
+            "asserted_target": "REQ-012"
+          },
+          {
+            "source": "CR-012",
+            "target": "INC-012",
+            "traversed_from": "CR-012",
+            "traversed_to": "INC-012",
+            "depth": 1,
+            "relation": "addresses",
+            "doc_id": "PRJ-012-change",
+            "evidence": "CR-012 addresses INC-012.",
+            "asserted_source": "CR-012",
+            "asserted_target": "INC-012"
+          },
+          {
+            "source": "DEC-012",
+            "target": "INC-012",
+            "traversed_from": "DEC-012",
+            "traversed_to": "INC-012",
+            "depth": 1,
+            "relation": "responds_to",
+            "doc_id": "PRJ-012-decision",
+            "evidence": "DEC-012 responds to INC-012.",
+            "asserted_source": "DEC-012",
+            "asserted_target": "INC-012"
+          },
+          {
+            "source": "DEC-012",
+            "target": "MS-012",
+            "traversed_from": "DEC-012",
+            "traversed_to": "MS-012",
+            "depth": 1,
+            "relation": "moves",
+            "doc_id": "PRJ-012-decision",
+            "evidence": "Decision DEC-012 moved MS-012 by 4 weeks because switchgear relay settings conflicted with the utility study.",
+            "asserted_source": "DEC-012",
+            "asserted_target": "MS-012"
+          },
+          {
+            "source": "INC-012",
+            "target": "MS-012",
+            "traversed_from": "MS-012",
+            "traversed_to": "INC-012",
+            "depth": 2,
+            "relation": "delayed",
+            "doc_id": "PRJ-012-incident",
+            "evidence": "The commissioning milestone slipped by 4 weeks.",
+            "asserted_source": "INC-012",
+            "asserted_target": "MS-012"
+          },
+          {
+            "source": "RISK-012",
+            "target": "MS-012",
+            "traversed_from": "MS-012",
+            "traversed_to": "RISK-012",
+            "depth": 2,
+            "relation": "threatens",
+            "doc_id": "PRJ-012-risk",
+            "evidence": "RISK-012 threatens MS-012.",
+            "asserted_source": "RISK-012",
+            "asserted_target": "MS-012"
+          },
+          {
+            "source": "DEC-012",
+            "target": "MS-012",
+            "traversed_from": "MS-012",
+            "traversed_to": "DEC-012",
+            "depth": 2,
+            "relation": "moves",
+            "doc_id": "PRJ-012-decision",
+            "evidence": "Decision DEC-012 moved MS-012 by 4 weeks because switchgear relay settings conflicted with the utility study.",
+            "asserted_source": "DEC-012",
+            "asserted_target": "MS-012"
+          },
+          {
+            "source": "Tidal Systems",
+            "target": "SWG-610",
+            "traversed_from": "SWG-610",
+            "traversed_to": "Tidal Systems",
+            "depth": 2,
+            "relation": "supplies",
+            "doc_id": "PRJ-012-charter",
+            "evidence": "Tidal Systems supplies SWG-610.",
+            "asserted_source": "Tidal Systems",
+            "asserted_target": "SWG-610"
+          },
+          {
+            "source": "PRJ-012",
+            "target": "SWG-610",
+            "traversed_from": "SWG-610",
+            "traversed_to": "PRJ-012",
+            "depth": 2,
+            "relation": "uses",
+            "doc_id": "PRJ-012-charter",
+            "evidence": "PRJ-012 uses SWG-610.",
+            "asserted_source": "PRJ-012",
+            "asserted_target": "SWG-610"
+          },
+          {
+            "source": "INC-012",
+            "target": "SWG-610",
+            "traversed_from": "SWG-610",
+            "traversed_to": "INC-012",
+            "depth": 2,
+            "relation": "affected",
+            "doc_id": "PRJ-012-incident",
+            "evidence": "INC-012 affected SWG-610.",
+            "asserted_source": "INC-012",
+            "asserted_target": "SWG-610"
+          },
+          {
+            "source": "RISK-012",
+            "target": "SWG-610",
+            "traversed_from": "SWG-610",
+            "traversed_to": "RISK-012",
+            "depth": 2,
+            "relation": "concerns",
+            "doc_id": "PRJ-012-risk",
+            "evidence": "repeat SWG-610 acceptance failure could delay energization.",
+            "asserted_source": "RISK-012",
+            "asserted_target": "SWG-610"
+          },
+          {
+            "source": "LL-012",
+            "target": "SWG-610",
+            "traversed_from": "SWG-610",
+            "traversed_to": "LL-012",
+            "depth": 2,
+            "relation": "applies_to",
+            "doc_id": "PRJ-012-lesson",
+            "evidence": "LL-012 applies to SWG-610.",
+            "asserted_source": "LL-012",
+            "asserted_target": "SWG-610"
+          },
+          {
+            "source": "CR-012",
+            "target": "REQ-012",
+            "traversed_from": "REQ-012",
+            "traversed_to": "CR-012",
+            "depth": 2,
+            "relation": "modifies",
+            "doc_id": "PRJ-012-change",
+            "evidence": "CR-012 modifies REQ-012.",
+            "asserted_source": "CR-012",
+            "asserted_target": "REQ-012"
+          },
+          {
+            "source": "INC-012",
+            "target": "SWG-610",
+            "traversed_from": "INC-012",
+            "traversed_to": "SWG-610",
+            "depth": 2,
+            "relation": "affected",
+            "doc_id": "PRJ-012-incident",
+            "evidence": "INC-012 affected SWG-610.",
+            "asserted_source": "INC-012",
+            "asserted_target": "SWG-610"
+          },
+          {
+            "source": "INC-012",
+            "target": "MS-012",
+            "traversed_from": "INC-012",
+            "traversed_to": "MS-012",
+            "depth": 2,
+            "relation": "delayed",
+            "doc_id": "PRJ-012-incident",
+            "evidence": "The commissioning milestone slipped by 4 weeks.",
+            "asserted_source": "INC-012",
+            "asserted_target": "MS-012"
+          },
+          {
+            "source": "CR-012",
+            "target": "INC-012",
+            "traversed_from": "INC-012",
+            "traversed_to": "CR-012",
+            "depth": 2,
+            "relation": "addresses",
+            "doc_id": "PRJ-012-change",
+            "evidence": "CR-012 addresses INC-012.",
+            "asserted_source": "CR-012",
+            "asserted_target": "INC-012"
+          },
+          {
+            "source": "LL-012",
+            "target": "INC-012",
+            "traversed_from": "INC-012",
+            "traversed_to": "LL-012",
+            "depth": 2,
+            "relation": "follows",
+            "doc_id": "PRJ-012-lesson",
+            "evidence": "LL-012 follows INC-012.",
+            "asserted_source": "LL-012",
+            "asserted_target": "INC-012"
+          },
+          {
+            "source": "DEC-012",
+            "target": "INC-012",
+            "traversed_from": "INC-012",
+            "traversed_to": "DEC-012",
+            "depth": 2,
+            "relation": "responds_to",
+            "doc_id": "PRJ-012-decision",
+            "evidence": "DEC-012 responds to INC-012.",
+            "asserted_source": "DEC-012",
+            "asserted_target": "INC-012"
+          },
+          {
+            "source": "Tidal Systems",
+            "target": "SWG-610",
+            "traversed_from": "Tidal Systems",
+            "traversed_to": "SWG-610",
+            "depth": 3,
+            "relation": "supplies",
+            "doc_id": "PRJ-012-charter",
+            "evidence": "Tidal Systems supplies SWG-610.",
+            "asserted_source": "Tidal Systems",
+            "asserted_target": "SWG-610"
+          },
+          {
+            "source": "PRJ-012",
+            "target": "SITE-012",
+            "traversed_from": "PRJ-012",
+            "traversed_to": "SITE-012",
+            "depth": 3,
+            "relation": "located_at",
+            "doc_id": "PRJ-012-charter",
+            "evidence": "PRJ-012 serves SITE-012.",
+            "asserted_source": "PRJ-012",
+            "asserted_target": "SITE-012"
+          },
+          {
+            "source": "PRJ-012",
+            "target": "SWG-610",
+            "traversed_from": "PRJ-012",
+            "traversed_to": "SWG-610",
+            "depth": 3,
+            "relation": "uses",
+            "doc_id": "PRJ-012-charter",
+            "evidence": "PRJ-012 uses SWG-610.",
+            "asserted_source": "PRJ-012",
+            "asserted_target": "SWG-610"
+          },
+          {
+            "source": "LL-012",
+            "target": "INC-012",
+            "traversed_from": "LL-012",
+            "traversed_to": "INC-012",
+            "depth": 3,
+            "relation": "follows",
+            "doc_id": "PRJ-012-lesson",
+            "evidence": "LL-012 follows INC-012.",
+            "asserted_source": "LL-012",
+            "asserted_target": "INC-012"
+          },
+          {
+            "source": "LL-012",
+            "target": "SWG-610",
+            "traversed_from": "LL-012",
+            "traversed_to": "SWG-610",
+            "depth": 3,
+            "relation": "applies_to",
+            "doc_id": "PRJ-012-lesson",
+            "evidence": "LL-012 applies to SWG-610.",
+            "asserted_source": "LL-012",
+            "asserted_target": "SWG-610"
+          }
+        ],
+        "rewritten_query": "Investigate Project Laurel: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "corpus_version": "76226b6b650b",
+        "ranked": [
+          "PRJ-012-email-approval",
+          "PRJ-012-teams-schedule",
+          "PRJ-012-incident",
+          "PRJ-012-status",
+          "PRJ-012-change",
+          "PRJ-012-decision"
+        ],
+        "limitations": [
+          "Exact excerpts establish provenance, not independent truth.",
+          "A proposal was found in the conversation context. It was not treated as an approval."
+        ],
+        "investigation": {
+          "policy": "Evidence-driven deterministic controller; no LLM planner",
+          "steps": [
+            {
+              "tool": "search_sources",
+              "label": "Find the initial evidence",
+              "query": "Investigate Project Laurel: why was commissioning delayed, who approved the change, and was the schedule updated?",
+              "source_ids": [
+                "PRJ-012-teams-schedule",
+                "PRJ-012-email-approval",
+                "PRJ-012-status",
+                "PRJ-012-email-proposal",
+                "PRJ-012-incident"
+              ],
+              "duration_ms": 360.28
+            },
+            {
+              "tool": "read_thread",
+              "label": "Read the surrounding email conversation",
+              "source_ids": [
+                "PRJ-012-email-proposal",
+                "PRJ-012-email-approval"
+              ],
+              "duration_ms": 0.02
+            },
+            {
+              "tool": "read_thread",
+              "label": "Read the surrounding teams conversation",
+              "source_ids": [
+                "PRJ-012-teams-schedule",
+                "PRJ-012-teams-open"
+              ],
+              "duration_ms": 0.01
+            },
+            {
+              "tool": "search_relationships",
+              "label": "Follow documented relationships",
+              "query": "DEC-012 CR-012 RISK-012 linked change impact",
+              "source_ids": [
+                "PRJ-012-risk",
+                "PRJ-012-change",
+                "PRJ-012-decision",
+                "PRJ-012-incident"
+              ],
+              "duration_ms": 17.66
+            }
+          ],
+          "stop_reason": "evidence_checked",
+          "gaps": [],
+          "caveats": [
+            "A proposal was found in the conversation context. It was not treated as an approval."
+          ],
+          "max_actions": 6,
+          "max_seconds": 15,
+          "status": "evidence_found",
+          "sources": [
+            "documents",
+            "email",
+            "slack",
+            "teams"
+          ]
+        }
+      },
+      "evidence_recall": 0.8571428571428571,
+      "actions": 4
+    },
+    {
+      "id": "missing-incident",
+      "query": "Investigate INC-999 and who approved its change.",
+      "category": "missing",
+      "ranked": [],
+      "relevant": [],
+      "path": "investigator",
+      "recall": null,
+      "mrr": null,
+      "ndcg": null,
+      "citation_integrity": null,
+      "citation_accuracy": null,
+      "faithfulness_exact_quote": null,
+      "relevance_gold_term_coverage": null,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 0,
+      "total_ms": 0.23179998970590532,
+      "answer": {
+        "answer": "I could not find sufficient evidence in the selected, accessible sources.",
+        "citations": [],
+        "abstained": true,
+        "generation_mode": "bounded_investigation",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "cached": false,
+        "path": "investigator",
+        "retrieval_ms": 0,
+        "total_ms": 0.146100006531924,
+        "graph_paths": [],
+        "rewritten_query": "Investigate INC-999 and who approved its change.",
+        "corpus_version": "76226b6b650b",
+        "ranked": [],
+        "limitations": [
+          "Exact excerpts establish provenance, not independent truth."
+        ],
+        "investigation": {
+          "policy": "Evidence-driven deterministic controller; no LLM planner",
+          "steps": [],
+          "stop_reason": "missing_evidence",
+          "gaps": [
+            "The requested identifier was not found in the selected, accessible sources."
+          ],
+          "caveats": [],
+          "max_actions": 6,
+          "max_seconds": 15,
+          "status": "needs_review",
+          "sources": [
+            "documents",
+            "email",
+            "slack",
+            "teams"
+          ]
+        }
+      },
+      "evidence_recall": null,
+      "actions": 0
+    }
+  ]
+}

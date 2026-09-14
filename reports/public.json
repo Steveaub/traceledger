@@ -1,0 +1,607 @@
+{
+  "scope": "Six manually authored source-grounded diagnostic questions; written after config freeze; not used for tuning",
+  "config": {
+    "name": "reranker",
+    "chunking": "fixed",
+    "hybrid": true,
+    "expansion": false,
+    "rerank": true,
+    "graph": false
+  },
+  "summary": {
+    "recall": 1.0,
+    "mrr": 1.0,
+    "ndcg": 1.0,
+    "citation_integrity": 1.0,
+    "citation_accuracy": 0.4146825396825396,
+    "faithfulness_exact_quote": 1.0,
+    "relevance_gold_term_coverage": 0.8333333333333334,
+    "abstention_correct": 1.0,
+    "api_cost_usd": 0.0,
+    "queries": 6,
+    "answerable": 6,
+    "retrieval_p50_ms": 394.44185001048027,
+    "retrieval_p95_ms": 425.3009750027559,
+    "total_p95_ms": 426.12007500065374,
+    "compute_cost_usd": null,
+    "recall_bootstrap_95ci": [
+      1.0,
+      1.0
+    ]
+  },
+  "slices": {
+    "public_reference": {
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.4146825396825396,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.8333333333333334,
+      "abstention_correct": 1.0,
+      "api_cost_usd": 0.0,
+      "queries": 6,
+      "answerable": 6,
+      "retrieval_p50_ms": 394.44185001048027,
+      "retrieval_p95_ms": 425.3009750027559,
+      "total_p95_ms": 426.12007500065374,
+      "compute_cost_usd": null,
+      "recall_bootstrap_95ci": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "rows": [
+    {
+      "id": "public-0",
+      "query": "What phases does the FEMP microgrid development checklist cover?",
+      "category": "public_reference",
+      "ranked": [
+        "doe-microgrid-checklist",
+        "doe-project-process",
+        "doe-microgrid-systems",
+        "PRJ-002-charter",
+        "PRJ-011-charter"
+      ],
+      "relevant": [
+        "doe-microgrid-checklist"
+      ],
+      "path": "hybrid",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.25,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 428.29700000584126,
+      "total_ms": 429.2709000001196,
+      "answer": {
+        "answer": "Agencies are encouraged to utilize Federal Energy Management Program (FEMP) technical specification resources and relevant checklists in developing their microgrid project. [1]\nbe taken during the project planning, design, procurement, and implementation phases. [2]\nFEMP's process for successfully implementing distributed energy projects is comprised of six phases, each consisting of a series of steps. [3]\n(FEMP) helps federal agencies plan and implement federal distributed energy projects including on-site electric and thermal renewable energy and energy storage technologies. [4]\nThis area focuses on developing next-generation software and hardware platforms for advanced feasibility, technical, and techno-economic analyses, validating prototypes, and supporting high-fidelity planning and design studies for advanced microgrid system development or deployment. [5]\nThis area involves creating advanced algorithms and protocols, responsibly leveraging AI/ML, to significantly improve real-time microgrid operation, protection, monitoring, automation, and control, enhancing grid reliability, resilience, security, and affordability. [6]\nScope: deliver a resilient microgrid for municipal facilities. [7]\nScope: deliver a resilient microgrid for municipal facilities. [8]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "doe-microgrid-checklist",
+            "title": "Microgrid System Project Development Checklist | Department of Energy",
+            "quote": "Agencies are encouraged to utilize Federal Energy Management Program (FEMP) technical specification resources and relevant checklists in developing their microgrid project.",
+            "start": 692,
+            "end": 864,
+            "source": "https://www.energy.gov/cmei/femp/articles/microgrid-system-project-development-checklist",
+            "synthetic": false
+          },
+          {
+            "id": 2,
+            "doc_id": "doe-microgrid-checklist",
+            "title": "Microgrid System Project Development Checklist | Department of Energy",
+            "quote": "be taken during the project planning, design, procurement, and implementation phases.",
+            "start": 549,
+            "end": 634,
+            "source": "https://www.energy.gov/cmei/femp/articles/microgrid-system-project-development-checklist",
+            "synthetic": false
+          },
+          {
+            "id": 3,
+            "doc_id": "doe-project-process",
+            "title": "Process for Planning and Implementing Federal Distributed Energy Projects | Department of Energy",
+            "quote": "FEMP's process for successfully implementing distributed energy projects is comprised of six phases, each consisting of a series of steps.",
+            "start": 394,
+            "end": 532,
+            "source": "https://www.energy.gov/cmei/femp/process-planning-and-implementing-federal-distributed-energy-projects",
+            "synthetic": false
+          },
+          {
+            "id": 4,
+            "doc_id": "doe-project-process",
+            "title": "Process for Planning and Implementing Federal Distributed Energy Projects | Department of Energy",
+            "quote": "(FEMP) helps federal agencies plan and implement federal distributed energy projects including on-site electric and thermal renewable energy and energy storage technologies.",
+            "start": 220,
+            "end": 393,
+            "source": "https://www.energy.gov/cmei/femp/process-planning-and-implementing-federal-distributed-energy-projects",
+            "synthetic": false
+          },
+          {
+            "id": 5,
+            "doc_id": "doe-microgrid-systems",
+            "title": "Microgrid Systems | Department of Energy",
+            "quote": "This area focuses on developing next-generation software and hardware platforms for advanced feasibility, technical, and techno-economic analyses, validating prototypes, and supporting high-fidelity planning and design studies for advanced microgrid system development or deployment.",
+            "start": 4259,
+            "end": 4542,
+            "source": "https://www.energy.gov/oe/microgrid-systems",
+            "synthetic": false
+          },
+          {
+            "id": 6,
+            "doc_id": "doe-microgrid-systems",
+            "title": "Microgrid Systems | Department of Energy",
+            "quote": "This area involves creating advanced algorithms and protocols, responsibly leveraging AI/ML, to significantly improve real-time microgrid operation, protection, monitoring, automation, and control, enhancing grid reliability, resilience, security, and affordability.",
+            "start": 4571,
+            "end": 4837,
+            "source": "https://www.energy.gov/oe/microgrid-systems",
+            "synthetic": false
+          },
+          {
+            "id": 7,
+            "doc_id": "PRJ-002-charter",
+            "title": "Beta / charter",
+            "quote": "Scope: deliver a resilient microgrid for municipal facilities.",
+            "start": 120,
+            "end": 182,
+            "source": "synthetic:PRJ-002-charter",
+            "synthetic": true
+          },
+          {
+            "id": 8,
+            "doc_id": "PRJ-011-charter",
+            "title": "Kestrel / charter",
+            "quote": "Scope: deliver a resilient microgrid for municipal facilities.",
+            "start": 121,
+            "end": 183,
+            "source": "synthetic:PRJ-011-charter",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "public-1",
+      "query": "Who is the microgrid project development checklist intended to assist?",
+      "category": "public_reference",
+      "ranked": [
+        "doe-microgrid-checklist",
+        "doe-microgrid-systems",
+        "PRJ-002-charter",
+        "PRJ-011-charter",
+        "PRJ-009-charter"
+      ],
+      "relevant": [
+        "doe-microgrid-checklist"
+      ],
+      "path": "hybrid",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.6666666666666666,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 402.01790000719484,
+      "total_ms": 402.2668999969028,
+      "answer": {
+        "answer": "Checklist provides federal agencies with a standard set of tasks, questions, and reference points to assist in microgrid project development. [1]\nThis checklist provides federal agencies with a standard set of tasks, questions, and reference points to assist in microgrid project development. [2]\nOver the years, the Microgrid program has supported major projects and initiatives, involving inter-office and/or cross agency collaboration, with reported outcomes aligning with top Administration priorities, where being responsive to current and evolving industry stakeholder needs. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "doe-microgrid-checklist",
+            "title": "Microgrid System Project Development Checklist | Department of Energy",
+            "quote": "Checklist provides federal agencies with a standard set of tasks, questions, and reference points to assist in microgrid project development.",
+            "start": 47,
+            "end": 188,
+            "source": "https://www.energy.gov/cmei/femp/articles/microgrid-system-project-development-checklist",
+            "synthetic": false
+          },
+          {
+            "id": 2,
+            "doc_id": "doe-microgrid-checklist",
+            "title": "Microgrid System Project Development Checklist | Department of Energy",
+            "quote": "This checklist provides federal agencies with a standard set of tasks, questions, and reference points to assist in microgrid project development.",
+            "start": 261,
+            "end": 407,
+            "source": "https://www.energy.gov/cmei/femp/articles/microgrid-system-project-development-checklist",
+            "synthetic": false
+          },
+          {
+            "id": 3,
+            "doc_id": "doe-microgrid-systems",
+            "title": "Microgrid Systems | Department of Energy",
+            "quote": "Over the years, the Microgrid program has supported major projects and initiatives, involving inter-office and/or cross agency collaboration, with reported outcomes aligning with top Administration priorities, where being responsive to current and evolving industry stakeholder needs.",
+            "start": 5510,
+            "end": 5794,
+            "source": "https://www.energy.gov/oe/microgrid-systems",
+            "synthetic": false
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "public-2",
+      "query": "How many phases are in FEMP's distributed energy project process?",
+      "category": "public_reference",
+      "ranked": [
+        "doe-project-process",
+        "doe-microgrid-checklist",
+        "doe-microgrid-systems",
+        "PRJ-001-routine_2",
+        "PRJ-001-routine_1"
+      ],
+      "relevant": [
+        "doe-project-process"
+      ],
+      "path": "hybrid",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.5,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 416.31289999349974,
+      "total_ms": 416.6676000022562,
+      "answer": {
+        "answer": "FEMP's process for successfully implementing distributed energy projects is comprised of six phases, each consisting of a series of steps. [1]\nBy following FEMP's distributed energy project process, agencies can efficiently implement projects that are technically sound, reduce energy costs for the federal government, and support agency needs and missions. [2]\nAgencies are encouraged to utilize Federal Energy Management Program (FEMP) technical specification resources and relevant checklists in developing their microgrid project. [3]\nbe taken during the project planning, design, procurement, and implementation phases. [4]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "doe-project-process",
+            "title": "Process for Planning and Implementing Federal Distributed Energy Projects | Department of Energy",
+            "quote": "FEMP's process for successfully implementing distributed energy projects is comprised of six phases, each consisting of a series of steps.",
+            "start": 394,
+            "end": 532,
+            "source": "https://www.energy.gov/cmei/femp/process-planning-and-implementing-federal-distributed-energy-projects",
+            "synthetic": false
+          },
+          {
+            "id": 2,
+            "doc_id": "doe-project-process",
+            "title": "Process for Planning and Implementing Federal Distributed Energy Projects | Department of Energy",
+            "quote": " By following FEMP's distributed energy project process, agencies can efficiently implement projects that are technically sound, reduce energy costs for the federal government, and support agency needs and missions.",
+            "start": 532,
+            "end": 747,
+            "source": "https://www.energy.gov/cmei/femp/process-planning-and-implementing-federal-distributed-energy-projects",
+            "synthetic": false
+          },
+          {
+            "id": 3,
+            "doc_id": "doe-microgrid-checklist",
+            "title": "Microgrid System Project Development Checklist | Department of Energy",
+            "quote": "Agencies are encouraged to utilize Federal Energy Management Program (FEMP) technical specification resources and relevant checklists in developing their microgrid project.",
+            "start": 692,
+            "end": 864,
+            "source": "https://www.energy.gov/cmei/femp/articles/microgrid-system-project-development-checklist",
+            "synthetic": false
+          },
+          {
+            "id": 4,
+            "doc_id": "doe-microgrid-checklist",
+            "title": "Microgrid System Project Development Checklist | Department of Energy",
+            "quote": "be taken during the project planning, design, procurement, and implementation phases.",
+            "start": 549,
+            "end": 634,
+            "source": "https://www.energy.gov/cmei/femp/articles/microgrid-system-project-development-checklist",
+            "synthetic": false
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "public-3",
+      "query": "What is Phase 4 of the federal distributed energy project process?",
+      "category": "public_reference",
+      "ranked": [
+        "doe-project-process",
+        "doe-microgrid-checklist",
+        "doe-microgrid-systems",
+        "PRJ-012-status",
+        "PRJ-004-status"
+      ],
+      "relevant": [
+        "doe-project-process"
+      ],
+      "path": "hybrid",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.5,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 364.979999998468,
+      "total_ms": 365.37759999919217,
+      "answer": {
+        "answer": "efficiently implement projects that are technically sound, reduce energy costs for the federal government, and support agency needs and missions. [1]\nAgencies are encouraged to utilize Federal Energy Management Program (FEMP) technical specification resources and relevant checklists in developing their microgrid project. [2]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "doe-project-process",
+            "title": "Process for Planning and Implementing Federal Distributed Energy Projects | Department of Energy",
+            "quote": "efficiently implement projects that are technically sound, reduce energy costs for the federal government, and support agency needs and missions.",
+            "start": 602,
+            "end": 747,
+            "source": "https://www.energy.gov/cmei/femp/process-planning-and-implementing-federal-distributed-energy-projects",
+            "synthetic": false
+          },
+          {
+            "id": 2,
+            "doc_id": "doe-microgrid-checklist",
+            "title": "Microgrid System Project Development Checklist | Department of Energy",
+            "quote": "Agencies are encouraged to utilize Federal Energy Management Program (FEMP) technical specification resources and relevant checklists in developing their microgrid project.",
+            "start": 692,
+            "end": 864,
+            "source": "https://www.energy.gov/cmei/femp/articles/microgrid-system-project-development-checklist",
+            "synthetic": false
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "public-4",
+      "query": "What modes can a microgrid operate in?",
+      "category": "public_reference",
+      "ranked": [
+        "doe-microgrid-systems",
+        "doe-microgrid-checklist",
+        "PRJ-006-charter",
+        "PRJ-002-charter",
+        "PRJ-008-charter"
+      ],
+      "relevant": [
+        "doe-microgrid-systems"
+      ],
+      "path": "hybrid",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.2857142857142857,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 378.15190000401344,
+      "total_ms": 378.4756999957608,
+      "answer": {
+        "answer": "systems that can operate in grid-connected modes, providing reliability services during normal and abnormal grid conditions, or in islanded modes, powering remote communities or commercial/industrial operations. [1]\nAn illustration of a sample microgrid showing diverse energy generation and battery energy storage. [2]\nChecklist provides federal agencies with a standard set of tasks, questions, and reference points to assist in microgrid project development. [3]\nThis checklist provides federal agencies with a standard set of tasks, questions, and reference points to assist in microgrid project development. [4]\nScope: deliver a resilient microgrid for municipal facilities. [5]\nScope: deliver a resilient microgrid for municipal facilities. [6]\nScope: deliver a resilient microgrid for municipal facilities. [7]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "doe-microgrid-systems",
+            "title": "Microgrid Systems | Department of Energy",
+            "quote": "systems that can operate in grid-connected modes, providing reliability services during normal and abnormal grid conditions, or in islanded modes, powering remote communities or commercial/industrial operations.",
+            "start": 1135,
+            "end": 1346,
+            "source": "https://www.energy.gov/oe/microgrid-systems",
+            "synthetic": false
+          },
+          {
+            "id": 2,
+            "doc_id": "doe-microgrid-systems",
+            "title": "Microgrid Systems | Department of Energy",
+            "quote": "An illustration of a sample microgrid showing diverse energy generation and battery energy storage.",
+            "start": 1347,
+            "end": 1446,
+            "source": "https://www.energy.gov/oe/microgrid-systems",
+            "synthetic": false
+          },
+          {
+            "id": 3,
+            "doc_id": "doe-microgrid-checklist",
+            "title": "Microgrid System Project Development Checklist | Department of Energy",
+            "quote": "Checklist provides federal agencies with a standard set of tasks, questions, and reference points to assist in microgrid project development.",
+            "start": 47,
+            "end": 188,
+            "source": "https://www.energy.gov/cmei/femp/articles/microgrid-system-project-development-checklist",
+            "synthetic": false
+          },
+          {
+            "id": 4,
+            "doc_id": "doe-microgrid-checklist",
+            "title": "Microgrid System Project Development Checklist | Department of Energy",
+            "quote": "This checklist provides federal agencies with a standard set of tasks, questions, and reference points to assist in microgrid project development.",
+            "start": 261,
+            "end": 407,
+            "source": "https://www.energy.gov/cmei/femp/articles/microgrid-system-project-development-checklist",
+            "synthetic": false
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-006-charter",
+            "title": "Falcon / charter",
+            "quote": "Scope: deliver a resilient microgrid for municipal facilities.",
+            "start": 122,
+            "end": 184,
+            "source": "synthetic:PRJ-006-charter",
+            "synthetic": true
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-002-charter",
+            "title": "Beta / charter",
+            "quote": "Scope: deliver a resilient microgrid for municipal facilities.",
+            "start": 120,
+            "end": 182,
+            "source": "synthetic:PRJ-002-charter",
+            "synthetic": true
+          },
+          {
+            "id": 7,
+            "doc_id": "PRJ-008-charter",
+            "title": "Harbor / charter",
+            "quote": "Scope: deliver a resilient microgrid for municipal facilities.",
+            "start": 116,
+            "end": 178,
+            "source": "synthetic:PRJ-008-charter",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "public-5",
+      "query": "How does DOE define a microgrid system?",
+      "category": "public_reference",
+      "ranked": [
+        "doe-microgrid-systems",
+        "doe-microgrid-checklist",
+        "PRJ-012-charter",
+        "PRJ-008-charter",
+        "PRJ-004-charter"
+      ],
+      "relevant": [
+        "doe-microgrid-systems"
+      ],
+      "path": "hybrid",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.2857142857142857,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 386.8658000137657,
+      "total_ms": 387.17390000238083,
+      "answer": {
+        "answer": "A microgrid system represents a group of interconnected loads and local energy resources within clearly defined electrical boundaries that acts as a single controllable entity with respect to the grid. [1]\nto accelerate beneficial microgrid innovations that improve the reliability, resilience, security, and affordability of the U. [2]\nChecklist provides federal agencies with a standard set of tasks, questions, and reference points to assist in microgrid project development. [3]\nThis checklist provides federal agencies with a standard set of tasks, questions, and reference points to assist in microgrid project development. [4]\nScope: deliver a resilient microgrid for municipal facilities. [5]\nScope: deliver a resilient microgrid for municipal facilities. [6]\nScope: deliver a resilient microgrid for municipal facilities. [7]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "doe-microgrid-systems",
+            "title": "Microgrid Systems | Department of Energy",
+            "quote": "A microgrid system represents a group of interconnected loads and local energy resources within clearly defined electrical boundaries that acts as a single controllable entity with respect to the grid.",
+            "start": 1931,
+            "end": 2132,
+            "source": "https://www.energy.gov/oe/microgrid-systems",
+            "synthetic": false
+          },
+          {
+            "id": 2,
+            "doc_id": "doe-microgrid-systems",
+            "title": "Microgrid Systems | Department of Energy",
+            "quote": "to accelerate beneficial microgrid innovations that improve the reliability, resilience, security, and affordability of the U.",
+            "start": 1722,
+            "end": 1848,
+            "source": "https://www.energy.gov/oe/microgrid-systems",
+            "synthetic": false
+          },
+          {
+            "id": 3,
+            "doc_id": "doe-microgrid-checklist",
+            "title": "Microgrid System Project Development Checklist | Department of Energy",
+            "quote": "Checklist provides federal agencies with a standard set of tasks, questions, and reference points to assist in microgrid project development.",
+            "start": 47,
+            "end": 188,
+            "source": "https://www.energy.gov/cmei/femp/articles/microgrid-system-project-development-checklist",
+            "synthetic": false
+          },
+          {
+            "id": 4,
+            "doc_id": "doe-microgrid-checklist",
+            "title": "Microgrid System Project Development Checklist | Department of Energy",
+            "quote": "This checklist provides federal agencies with a standard set of tasks, questions, and reference points to assist in microgrid project development.",
+            "start": 261,
+            "end": 407,
+            "source": "https://www.energy.gov/cmei/femp/articles/microgrid-system-project-development-checklist",
+            "synthetic": false
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-012-charter",
+            "title": "Laurel / charter",
+            "quote": "Scope: deliver a resilient microgrid for municipal facilities.",
+            "start": 116,
+            "end": 178,
+            "source": "synthetic:PRJ-012-charter",
+            "synthetic": true
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-008-charter",
+            "title": "Harbor / charter",
+            "quote": "Scope: deliver a resilient microgrid for municipal facilities.",
+            "start": 116,
+            "end": 178,
+            "source": "synthetic:PRJ-008-charter",
+            "synthetic": true
+          },
+          {
+            "id": 7,
+            "doc_id": "PRJ-004-charter",
+            "title": "Delta / charter",
+            "quote": "Scope: deliver a resilient microgrid for municipal facilities.",
+            "start": 115,
+            "end": 177,
+            "source": "synthetic:PRJ-004-charter",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    }
+  ]
+}

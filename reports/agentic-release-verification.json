@@ -1,0 +1,21 @@
+{
+  "verified_at": "2026-09-13T23:03:41.216985+00:00",
+  "python_tests_passed": 41,
+  "voice_tests_passed": 5,
+  "original_document_regression": "passed; recall 0.8611111111 and MRR 0.8858024691 unchanged",
+  "investigation_regression": "passed against matched-selector protocol v2",
+  "browser_checks": [
+    "decision investigation completed with approval, schedule and incident citations",
+    "Email deselection produced missing-approval gap",
+    "Read full record displayed original message",
+    "desktop and mobile layouts inspected; no horizontal page overflow observed"
+  ],
+  "limitations": [
+    "live accounts not connected; reviewed exports only",
+    "deterministic controller, no LLM planner",
+    "soft time budget cannot interrupt an in-flight inference",
+    "microphone hardware and audible output not verified in this release",
+    "Docker and hosted CI not executed"
+  ],
+  "benchmarks": "reports/investigation-test.json; separate cohort from original retrieval"
+}

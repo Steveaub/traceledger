@@ -1,0 +1,687 @@
+{
+  "id": "20260913T225122-4b90729bea4d",
+  "started_at": "2026-09-13T22:51:21.738768+00:00",
+  "finished_at": "2026-09-13T22:51:22.818782+00:00",
+  "protocol": "atlas-investigation-evidence-v1",
+  "cohort_id": "36ecb5375dcfb3697dd6f13f82c59049e470e3dff316ef614303299bac8ec079",
+  "corpus_sha256": "76226b6b650bae985d59cebc056cc1b43573236e6ddca96113ed6d8e934d489c",
+  "questions_sha256": "477754e170c5440eb96b17a67a0c7f863620b19ab51cd24056861330e6d492cc",
+  "code_sha256": "9287cf2a3413a2fbaa60a886b5f8eb39beb65a1d17ba1d59595de9b14679bb13",
+  "models": {
+    "embedding": {
+      "repo": "qdrant/all-MiniLM-L6-v2-onnx",
+      "revision": "5f1b8cd78bc4fb444dd171e59b18f3a3af89a079",
+      "license": "apache-2.0"
+    },
+    "reranker": {
+      "repo": "Xenova/ms-marco-MiniLM-L-6-v2",
+      "revision": "a09144355adeed5f58c8ed011d209bf8ee5a1fec",
+      "license": "apache-2.0"
+    },
+    "generator": {
+      "repo": "google/flan-t5-small",
+      "revision": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab",
+      "license": "apache-2.0"
+    }
+  },
+  "split": "test",
+  "generation": "evidence",
+  "routing": false,
+  "graph_enabled": false,
+  "cache_policy": "warm sessions; answer cache disabled; query embeddings evicted",
+  "visibility": "demo",
+  "config": {
+    "name": "Single-pass evidence",
+    "mode": "auto"
+  },
+  "summary": {
+    "recall": 0.28571428571428564,
+    "mrr": 1.0,
+    "ndcg": 0.5531464700081435,
+    "citation_integrity": 1.0,
+    "citation_accuracy": 1.0,
+    "faithfulness_exact_quote": 1.0,
+    "relevance_gold_term_coverage": 0.9444444444444443,
+    "abstention_correct": 1.0,
+    "api_cost_usd": 0.0,
+    "queries": 7,
+    "answerable": 6,
+    "retrieval_p50_ms": 172.3072000022512,
+    "retrieval_p95_ms": 185.94155999016948,
+    "total_p95_ms": 186.26241000019945,
+    "compute_cost_usd": null,
+    "recall_bootstrap_95ci": [
+      0.28571428571428564,
+      0.28571428571428564
+    ],
+    "mean_actions": 0.0,
+    "evidence_recall": 0.2857142857142857
+  },
+  "slices": {
+    "decision_trace": {
+      "recall": 0.28571428571428564,
+      "mrr": 1.0,
+      "ndcg": 0.5531464700081435,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.9444444444444443,
+      "abstention_correct": 1.0,
+      "api_cost_usd": 0.0,
+      "queries": 6,
+      "answerable": 6,
+      "retrieval_p50_ms": 173.00754999450874,
+      "retrieval_p95_ms": 186.3537499884842,
+      "total_p95_ms": 186.67242499941494,
+      "compute_cost_usd": null,
+      "recall_bootstrap_95ci": [
+        0.28571428571428564,
+        0.28571428571428564
+      ]
+    },
+    "missing": {
+      "recall": null,
+      "mrr": null,
+      "ndcg": null,
+      "citation_integrity": null,
+      "citation_accuracy": null,
+      "faithfulness_exact_quote": null,
+      "relevance_gold_term_coverage": null,
+      "abstention_correct": 1.0,
+      "api_cost_usd": 0.0,
+      "queries": 1,
+      "answerable": 0,
+      "retrieval_p50_ms": 14.070200006244704,
+      "retrieval_p95_ms": 14.070200006244704,
+      "total_p95_ms": 14.341200003400445,
+      "compute_cost_usd": null
+    }
+  },
+  "rows": [
+    {
+      "id": "PRJ-007-investigation",
+      "query": "Investigate Project Granite: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-007-teams-schedule",
+        "PRJ-007-email-approval"
+      ],
+      "relevant": [
+        "PRJ-007-incident",
+        "PRJ-007-slack-cause",
+        "PRJ-007-email-approval",
+        "PRJ-007-teams-schedule",
+        "PRJ-007-decision",
+        "PRJ-007-status",
+        "PRJ-007-change"
+      ],
+      "path": "hybrid",
+      "recall": 0.2857142857142857,
+      "mrr": 1.0,
+      "ndcg": 0.5531464700081437,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 173.70789998676628,
+      "total_ms": 174.07929999171756,
+      "answer": {
+        "answer": "Project Granite: schedule register updated after DEC-007. [1]\nThe commissioning baseline now records the approved 5-week delay for CR-007. [2]\nProject Granite: Granite engineering review board approved CR-007 under DEC-007. [3]\nThe approved commissioning delay remains 5 weeks. [4]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-007-teams-schedule",
+            "title": "Granite / teams / schedule",
+            "quote": "Project Granite: schedule register updated after DEC-007.",
+            "start": 0,
+            "end": 57,
+            "source": "synthetic:PRJ-007-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-007-teams-schedule",
+            "title": "Granite / teams / schedule",
+            "quote": " The commissioning baseline now records the approved 5-week delay for CR-007.",
+            "start": 57,
+            "end": 134,
+            "source": "synthetic:PRJ-007-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-007-email-approval",
+            "title": "Granite / email / approval",
+            "quote": "Project Granite: Granite engineering review board approved CR-007 under DEC-007.",
+            "start": 0,
+            "end": 80,
+            "source": "synthetic:PRJ-007-email-approval",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-007-email-approval",
+            "title": "Granite / email / approval",
+            "quote": " The approved commissioning delay remains 5 weeks.",
+            "start": 80,
+            "end": 130,
+            "source": "synthetic:PRJ-007-email-approval",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ],
+        "path": "hybrid",
+        "retrieval_ms": 173.70789998676628,
+        "graph_paths": [],
+        "rewritten_query": "Investigate Project Granite: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "cached": false,
+        "corpus_version": "76226b6b650b"
+      },
+      "evidence_recall": 0.2857142857142857,
+      "actions": 0
+    },
+    {
+      "id": "PRJ-008-investigation",
+      "query": "Investigate Project Harbor: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-008-teams-schedule",
+        "PRJ-008-email-approval"
+      ],
+      "relevant": [
+        "PRJ-008-incident",
+        "PRJ-008-slack-cause",
+        "PRJ-008-email-approval",
+        "PRJ-008-teams-schedule",
+        "PRJ-008-decision",
+        "PRJ-008-status",
+        "PRJ-008-change"
+      ],
+      "path": "hybrid",
+      "recall": 0.2857142857142857,
+      "mrr": 1.0,
+      "ndcg": 0.5531464700081437,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 164.82259999611415,
+      "total_ms": 165.07909999927506,
+      "answer": {
+        "answer": "Project Harbor: schedule register updated after DEC-008. [1]\nThe commissioning baseline now records the approved 3-week delay for CR-008. [2]\nProject Harbor: Harbor engineering review board approved CR-008 under DEC-008. [3]\nThe approved commissioning delay remains 3 weeks. [4]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-008-teams-schedule",
+            "title": "Harbor / teams / schedule",
+            "quote": "Project Harbor: schedule register updated after DEC-008.",
+            "start": 0,
+            "end": 56,
+            "source": "synthetic:PRJ-008-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-008-teams-schedule",
+            "title": "Harbor / teams / schedule",
+            "quote": " The commissioning baseline now records the approved 3-week delay for CR-008.",
+            "start": 56,
+            "end": 133,
+            "source": "synthetic:PRJ-008-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-008-email-approval",
+            "title": "Harbor / email / approval",
+            "quote": "Project Harbor: Harbor engineering review board approved CR-008 under DEC-008.",
+            "start": 0,
+            "end": 78,
+            "source": "synthetic:PRJ-008-email-approval",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-008-email-approval",
+            "title": "Harbor / email / approval",
+            "quote": " The approved commissioning delay remains 3 weeks.",
+            "start": 78,
+            "end": 128,
+            "source": "synthetic:PRJ-008-email-approval",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ],
+        "path": "hybrid",
+        "retrieval_ms": 164.82259999611415,
+        "graph_paths": [],
+        "rewritten_query": "Investigate Project Harbor: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "cached": false,
+        "corpus_version": "76226b6b650b"
+      },
+      "evidence_recall": 0.2857142857142857,
+      "actions": 0
+    },
+    {
+      "id": "PRJ-009-investigation",
+      "query": "Investigate Project Iris: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-009-teams-schedule",
+        "PRJ-009-status"
+      ],
+      "relevant": [
+        "PRJ-009-incident",
+        "PRJ-009-slack-cause",
+        "PRJ-009-email-approval",
+        "PRJ-009-teams-schedule",
+        "PRJ-009-decision",
+        "PRJ-009-status",
+        "PRJ-009-change"
+      ],
+      "path": "hybrid",
+      "recall": 0.2857142857142857,
+      "mrr": 1.0,
+      "ndcg": 0.5531464700081437,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.6666666666666666,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 171.02759997942485,
+      "total_ms": 171.29830000340007,
+      "answer": {
+        "answer": "Project Iris: schedule register updated after DEC-009. [1]\nThe commissioning baseline now records the approved 8-week delay for CR-009. [2]\nCurrent Project Iris status: commissioning is delayed 8 weeks. [3]\nThe approved recovery plan tracks CR-009, RISK-009 and MS-009. [4]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-009-teams-schedule",
+            "title": "Iris / teams / schedule",
+            "quote": "Project Iris: schedule register updated after DEC-009.",
+            "start": 0,
+            "end": 54,
+            "source": "synthetic:PRJ-009-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-009-teams-schedule",
+            "title": "Iris / teams / schedule",
+            "quote": " The commissioning baseline now records the approved 8-week delay for CR-009.",
+            "start": 54,
+            "end": 131,
+            "source": "synthetic:PRJ-009-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-009-status",
+            "title": "Iris / status",
+            "quote": "Current Project Iris status: commissioning is delayed 8 weeks.",
+            "start": 0,
+            "end": 62,
+            "source": "synthetic:PRJ-009-status",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-009-status",
+            "title": "Iris / status",
+            "quote": " The approved recovery plan tracks CR-009, RISK-009 and MS-009.",
+            "start": 62,
+            "end": 125,
+            "source": "synthetic:PRJ-009-status",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ],
+        "path": "hybrid",
+        "retrieval_ms": 171.02759997942485,
+        "graph_paths": [],
+        "rewritten_query": "Investigate Project Iris: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "cached": false,
+        "corpus_version": "76226b6b650b"
+      },
+      "evidence_recall": 0.2857142857142857,
+      "actions": 0
+    },
+    {
+      "id": "PRJ-010-investigation",
+      "query": "Investigate Project Juniper: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-010-teams-schedule",
+        "PRJ-010-email-approval"
+      ],
+      "relevant": [
+        "PRJ-010-incident",
+        "PRJ-010-slack-cause",
+        "PRJ-010-email-approval",
+        "PRJ-010-teams-schedule",
+        "PRJ-010-decision",
+        "PRJ-010-status",
+        "PRJ-010-change"
+      ],
+      "path": "hybrid",
+      "recall": 0.2857142857142857,
+      "mrr": 1.0,
+      "ndcg": 0.5531464700081437,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 188.41469998005778,
+      "total_ms": 188.7224999954924,
+      "answer": {
+        "answer": "Project Juniper: schedule register updated after DEC-010. [1]\nThe commissioning baseline now records the approved 5-week delay for CR-010. [2]\nProject Juniper: Juniper engineering review board approved CR-010 under DEC-010. [3]\nThe approved commissioning delay remains 5 weeks. [4]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-010-teams-schedule",
+            "title": "Juniper / teams / schedule",
+            "quote": "Project Juniper: schedule register updated after DEC-010.",
+            "start": 0,
+            "end": 57,
+            "source": "synthetic:PRJ-010-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-010-teams-schedule",
+            "title": "Juniper / teams / schedule",
+            "quote": " The commissioning baseline now records the approved 5-week delay for CR-010.",
+            "start": 57,
+            "end": 134,
+            "source": "synthetic:PRJ-010-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-010-email-approval",
+            "title": "Juniper / email / approval",
+            "quote": "Project Juniper: Juniper engineering review board approved CR-010 under DEC-010.",
+            "start": 0,
+            "end": 80,
+            "source": "synthetic:PRJ-010-email-approval",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-010-email-approval",
+            "title": "Juniper / email / approval",
+            "quote": " The approved commissioning delay remains 5 weeks.",
+            "start": 80,
+            "end": 130,
+            "source": "synthetic:PRJ-010-email-approval",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ],
+        "path": "hybrid",
+        "retrieval_ms": 188.41469998005778,
+        "graph_paths": [],
+        "rewritten_query": "Investigate Project Juniper: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "cached": false,
+        "corpus_version": "76226b6b650b"
+      },
+      "evidence_recall": 0.2857142857142857,
+      "actions": 0
+    },
+    {
+      "id": "PRJ-011-investigation",
+      "query": "Investigate Project Kestrel: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-011-teams-schedule",
+        "PRJ-011-email-approval"
+      ],
+      "relevant": [
+        "PRJ-011-incident",
+        "PRJ-011-slack-cause",
+        "PRJ-011-email-approval",
+        "PRJ-011-teams-schedule",
+        "PRJ-011-decision",
+        "PRJ-011-status",
+        "PRJ-011-change"
+      ],
+      "path": "hybrid",
+      "recall": 0.2857142857142857,
+      "mrr": 1.0,
+      "ndcg": 0.5531464700081437,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 180.17090001376346,
+      "total_ms": 180.52220001118258,
+      "answer": {
+        "answer": "Project Kestrel: schedule register updated after DEC-011. [1]\nThe commissioning baseline now records the approved 6-week delay for CR-011. [2]\nProject Kestrel: Kestrel engineering review board approved CR-011 under DEC-011. [3]\nThe approved commissioning delay remains 6 weeks. [4]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-011-teams-schedule",
+            "title": "Kestrel / teams / schedule",
+            "quote": "Project Kestrel: schedule register updated after DEC-011.",
+            "start": 0,
+            "end": 57,
+            "source": "synthetic:PRJ-011-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-011-teams-schedule",
+            "title": "Kestrel / teams / schedule",
+            "quote": " The commissioning baseline now records the approved 6-week delay for CR-011.",
+            "start": 57,
+            "end": 134,
+            "source": "synthetic:PRJ-011-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-011-email-approval",
+            "title": "Kestrel / email / approval",
+            "quote": "Project Kestrel: Kestrel engineering review board approved CR-011 under DEC-011.",
+            "start": 0,
+            "end": 80,
+            "source": "synthetic:PRJ-011-email-approval",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-011-email-approval",
+            "title": "Kestrel / email / approval",
+            "quote": " The approved commissioning delay remains 6 weeks.",
+            "start": 80,
+            "end": 130,
+            "source": "synthetic:PRJ-011-email-approval",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ],
+        "path": "hybrid",
+        "retrieval_ms": 180.17090001376346,
+        "graph_paths": [],
+        "rewritten_query": "Investigate Project Kestrel: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "cached": false,
+        "corpus_version": "76226b6b650b"
+      },
+      "evidence_recall": 0.2857142857142857,
+      "actions": 0
+    },
+    {
+      "id": "PRJ-012-investigation",
+      "query": "Investigate Project Laurel: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-012-teams-schedule",
+        "PRJ-012-email-approval"
+      ],
+      "relevant": [
+        "PRJ-012-incident",
+        "PRJ-012-slack-cause",
+        "PRJ-012-email-approval",
+        "PRJ-012-teams-schedule",
+        "PRJ-012-decision",
+        "PRJ-012-status",
+        "PRJ-012-change"
+      ],
+      "path": "hybrid",
+      "recall": 0.2857142857142857,
+      "mrr": 1.0,
+      "ndcg": 0.5531464700081437,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 172.3072000022512,
+      "total_ms": 172.64810000779107,
+      "answer": {
+        "answer": "Project Laurel: schedule register updated after DEC-012. [1]\nThe commissioning baseline now records the approved 4-week delay for CR-012. [2]\nProject Laurel: Laurel engineering review board approved CR-012 under DEC-012. [3]\nThe approved commissioning delay remains 4 weeks. [4]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-012-teams-schedule",
+            "title": "Laurel / teams / schedule",
+            "quote": "Project Laurel: schedule register updated after DEC-012.",
+            "start": 0,
+            "end": 56,
+            "source": "synthetic:PRJ-012-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-012-teams-schedule",
+            "title": "Laurel / teams / schedule",
+            "quote": " The commissioning baseline now records the approved 4-week delay for CR-012.",
+            "start": 56,
+            "end": 133,
+            "source": "synthetic:PRJ-012-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-012-email-approval",
+            "title": "Laurel / email / approval",
+            "quote": "Project Laurel: Laurel engineering review board approved CR-012 under DEC-012.",
+            "start": 0,
+            "end": 78,
+            "source": "synthetic:PRJ-012-email-approval",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-012-email-approval",
+            "title": "Laurel / email / approval",
+            "quote": " The approved commissioning delay remains 4 weeks.",
+            "start": 78,
+            "end": 128,
+            "source": "synthetic:PRJ-012-email-approval",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ],
+        "path": "hybrid",
+        "retrieval_ms": 172.3072000022512,
+        "graph_paths": [],
+        "rewritten_query": "Investigate Project Laurel: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "cached": false,
+        "corpus_version": "76226b6b650b"
+      },
+      "evidence_recall": 0.2857142857142857,
+      "actions": 0
+    },
+    {
+      "id": "missing-incident",
+      "query": "Investigate INC-999 and who approved its change.",
+      "category": "missing",
+      "ranked": [],
+      "relevant": [],
+      "path": "hybrid",
+      "recall": null,
+      "mrr": null,
+      "ndcg": null,
+      "citation_integrity": null,
+      "citation_accuracy": null,
+      "faithfulness_exact_quote": null,
+      "relevance_gold_term_coverage": null,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 14.070200006244704,
+      "total_ms": 14.341200003400445,
+      "answer": {
+        "answer": "I could not find sufficient evidence in the accessible sources.",
+        "citations": [],
+        "abstained": true,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ],
+        "path": "hybrid",
+        "retrieval_ms": 14.070200006244704,
+        "graph_paths": [],
+        "rewritten_query": "Investigate INC-999 and who approved its change.",
+        "cached": false,
+        "corpus_version": "76226b6b650b"
+      },
+      "evidence_recall": null,
+      "actions": 0
+    }
+  ]
+}

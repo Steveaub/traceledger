@@ -1,0 +1,687 @@
+{
+  "id": "20260913T225043-7a313bcf8928",
+  "started_at": "2026-09-13T22:50:41.754686+00:00",
+  "finished_at": "2026-09-13T22:50:43.329084+00:00",
+  "protocol": "atlas-investigation-evidence-v1",
+  "cohort_id": "8b39d10f226e5ab00270d7a0b3ae5c1a7f1b8d2191391df718998511b1ab9447",
+  "corpus_sha256": "76226b6b650bae985d59cebc056cc1b43573236e6ddca96113ed6d8e934d489c",
+  "questions_sha256": "95fe1a7d732dd0f0e2951b820ee5a3504fdfdc2f5281f969b5bb4a24ef1ae063",
+  "code_sha256": "9287cf2a3413a2fbaa60a886b5f8eb39beb65a1d17ba1d59595de9b14679bb13",
+  "models": {
+    "embedding": {
+      "repo": "qdrant/all-MiniLM-L6-v2-onnx",
+      "revision": "5f1b8cd78bc4fb444dd171e59b18f3a3af89a079",
+      "license": "apache-2.0"
+    },
+    "reranker": {
+      "repo": "Xenova/ms-marco-MiniLM-L-6-v2",
+      "revision": "a09144355adeed5f58c8ed011d209bf8ee5a1fec",
+      "license": "apache-2.0"
+    },
+    "generator": {
+      "repo": "google/flan-t5-small",
+      "revision": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab",
+      "license": "apache-2.0"
+    }
+  },
+  "split": "dev",
+  "generation": "evidence",
+  "routing": false,
+  "graph_enabled": false,
+  "cache_policy": "warm sessions; answer cache disabled; query embeddings evicted",
+  "visibility": "demo",
+  "config": {
+    "name": "Single-pass evidence",
+    "mode": "auto"
+  },
+  "summary": {
+    "recall": 0.28571428571428564,
+    "mrr": 1.0,
+    "ndcg": 0.5531464700081435,
+    "citation_integrity": 1.0,
+    "citation_accuracy": 1.0,
+    "faithfulness_exact_quote": 1.0,
+    "relevance_gold_term_coverage": 0.8888888888888888,
+    "abstention_correct": 1.0,
+    "api_cost_usd": 0.0,
+    "queries": 7,
+    "answerable": 6,
+    "retrieval_p50_ms": 187.34289999702014,
+    "retrieval_p95_ms": 333.2128199894213,
+    "total_p95_ms": 333.418750000419,
+    "compute_cost_usd": null,
+    "recall_bootstrap_95ci": [
+      0.28571428571428564,
+      0.28571428571428564
+    ],
+    "mean_actions": 0.0,
+    "evidence_recall": 0.2857142857142857
+  },
+  "slices": {
+    "decision_trace": {
+      "recall": 0.28571428571428564,
+      "mrr": 1.0,
+      "ndcg": 0.5531464700081435,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.8888888888888888,
+      "abstention_correct": 1.0,
+      "api_cost_usd": 0.0,
+      "queries": 6,
+      "answerable": 6,
+      "retrieval_p50_ms": 186.30569998640567,
+      "retrieval_p95_ms": 234.58779999782564,
+      "total_p95_ms": 234.88070000894368,
+      "compute_cost_usd": null,
+      "recall_bootstrap_95ci": [
+        0.28571428571428564,
+        0.28571428571428564
+      ]
+    },
+    "missing": {
+      "recall": null,
+      "mrr": null,
+      "ndcg": null,
+      "citation_integrity": null,
+      "citation_accuracy": null,
+      "faithfulness_exact_quote": null,
+      "relevance_gold_term_coverage": null,
+      "abstention_correct": 1.0,
+      "api_cost_usd": 0.0,
+      "queries": 1,
+      "answerable": 0,
+      "retrieval_p50_ms": 374.0273999865167,
+      "retrieval_p95_ms": 374.0273999865167,
+      "total_p95_ms": 374.1927999944892,
+      "compute_cost_usd": null
+    }
+  },
+  "rows": [
+    {
+      "id": "PRJ-001-investigation",
+      "query": "Investigate Project Alpha: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-001-teams-schedule",
+        "PRJ-001-status"
+      ],
+      "relevant": [
+        "PRJ-001-incident",
+        "PRJ-001-slack-cause",
+        "PRJ-001-email-approval",
+        "PRJ-001-teams-schedule",
+        "PRJ-001-decision",
+        "PRJ-001-status",
+        "PRJ-001-change"
+      ],
+      "path": "hybrid",
+      "recall": 0.2857142857142857,
+      "mrr": 1.0,
+      "ndcg": 0.5531464700081437,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.6666666666666666,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 174.4180000096094,
+      "total_ms": 174.80339997564442,
+      "answer": {
+        "answer": "Project Alpha: schedule register updated after DEC-001. [1]\nThe commissioning baseline now records the approved 6-week delay for CR-001. [2]\nCurrent Project Alpha status: commissioning is delayed 6 weeks. [3]\nThe approved recovery plan tracks CR-001, RISK-001 and MS-001. [4]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-001-teams-schedule",
+            "title": "Alpha / teams / schedule",
+            "quote": "Project Alpha: schedule register updated after DEC-001.",
+            "start": 0,
+            "end": 55,
+            "source": "synthetic:PRJ-001-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-001-teams-schedule",
+            "title": "Alpha / teams / schedule",
+            "quote": " The commissioning baseline now records the approved 6-week delay for CR-001.",
+            "start": 55,
+            "end": 132,
+            "source": "synthetic:PRJ-001-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-001-status",
+            "title": "Alpha / status",
+            "quote": "Current Project Alpha status: commissioning is delayed 6 weeks.",
+            "start": 0,
+            "end": 63,
+            "source": "synthetic:PRJ-001-status",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-001-status",
+            "title": "Alpha / status",
+            "quote": " The approved recovery plan tracks CR-001, RISK-001 and MS-001.",
+            "start": 63,
+            "end": 126,
+            "source": "synthetic:PRJ-001-status",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ],
+        "path": "hybrid",
+        "retrieval_ms": 174.4180000096094,
+        "graph_paths": [],
+        "rewritten_query": "Investigate Project Alpha: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "cached": false,
+        "corpus_version": "76226b6b650b"
+      },
+      "evidence_recall": 0.2857142857142857,
+      "actions": 0
+    },
+    {
+      "id": "PRJ-002-investigation",
+      "query": "Investigate Project Beta: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-002-teams-schedule",
+        "PRJ-002-email-approval"
+      ],
+      "relevant": [
+        "PRJ-002-incident",
+        "PRJ-002-slack-cause",
+        "PRJ-002-email-approval",
+        "PRJ-002-teams-schedule",
+        "PRJ-002-decision",
+        "PRJ-002-status",
+        "PRJ-002-change"
+      ],
+      "path": "hybrid",
+      "recall": 0.2857142857142857,
+      "mrr": 1.0,
+      "ndcg": 0.5531464700081437,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 237.9787999961991,
+      "total_ms": 238.27930001425557,
+      "answer": {
+        "answer": "Project Beta: schedule register updated after DEC-002. [1]\nThe commissioning baseline now records the approved 3-week delay for CR-002. [2]\nProject Beta: Beta engineering review board approved CR-002 under DEC-002. [3]\nThe approved commissioning delay remains 3 weeks. [4]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-002-teams-schedule",
+            "title": "Beta / teams / schedule",
+            "quote": "Project Beta: schedule register updated after DEC-002.",
+            "start": 0,
+            "end": 54,
+            "source": "synthetic:PRJ-002-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-002-teams-schedule",
+            "title": "Beta / teams / schedule",
+            "quote": " The commissioning baseline now records the approved 3-week delay for CR-002.",
+            "start": 54,
+            "end": 131,
+            "source": "synthetic:PRJ-002-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-002-email-approval",
+            "title": "Beta / email / approval",
+            "quote": "Project Beta: Beta engineering review board approved CR-002 under DEC-002.",
+            "start": 0,
+            "end": 74,
+            "source": "synthetic:PRJ-002-email-approval",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-002-email-approval",
+            "title": "Beta / email / approval",
+            "quote": " The approved commissioning delay remains 3 weeks.",
+            "start": 74,
+            "end": 124,
+            "source": "synthetic:PRJ-002-email-approval",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ],
+        "path": "hybrid",
+        "retrieval_ms": 237.9787999961991,
+        "graph_paths": [],
+        "rewritten_query": "Investigate Project Beta: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "cached": false,
+        "corpus_version": "76226b6b650b"
+      },
+      "evidence_recall": 0.2857142857142857,
+      "actions": 0
+    },
+    {
+      "id": "PRJ-003-investigation",
+      "query": "Investigate Project Cedar: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-003-teams-schedule",
+        "PRJ-003-email-approval"
+      ],
+      "relevant": [
+        "PRJ-003-incident",
+        "PRJ-003-slack-cause",
+        "PRJ-003-email-approval",
+        "PRJ-003-teams-schedule",
+        "PRJ-003-decision",
+        "PRJ-003-status",
+        "PRJ-003-change"
+      ],
+      "path": "hybrid",
+      "recall": 0.2857142857142857,
+      "mrr": 1.0,
+      "ndcg": 0.5531464700081437,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 175.18190000555478,
+      "total_ms": 175.4607000038959,
+      "answer": {
+        "answer": "Project Cedar: schedule register updated after DEC-003. [1]\nThe commissioning baseline now records the approved 4-week delay for CR-003. [2]\nProject Cedar: Cedar engineering review board approved CR-003 under DEC-003. [3]\nThe approved commissioning delay remains 4 weeks. [4]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-003-teams-schedule",
+            "title": "Cedar / teams / schedule",
+            "quote": "Project Cedar: schedule register updated after DEC-003.",
+            "start": 0,
+            "end": 55,
+            "source": "synthetic:PRJ-003-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-003-teams-schedule",
+            "title": "Cedar / teams / schedule",
+            "quote": " The commissioning baseline now records the approved 4-week delay for CR-003.",
+            "start": 55,
+            "end": 132,
+            "source": "synthetic:PRJ-003-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-003-email-approval",
+            "title": "Cedar / email / approval",
+            "quote": "Project Cedar: Cedar engineering review board approved CR-003 under DEC-003.",
+            "start": 0,
+            "end": 76,
+            "source": "synthetic:PRJ-003-email-approval",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-003-email-approval",
+            "title": "Cedar / email / approval",
+            "quote": " The approved commissioning delay remains 4 weeks.",
+            "start": 76,
+            "end": 126,
+            "source": "synthetic:PRJ-003-email-approval",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ],
+        "path": "hybrid",
+        "retrieval_ms": 175.18190000555478,
+        "graph_paths": [],
+        "rewritten_query": "Investigate Project Cedar: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "cached": false,
+        "corpus_version": "76226b6b650b"
+      },
+      "evidence_recall": 0.2857142857142857,
+      "actions": 0
+    },
+    {
+      "id": "PRJ-004-investigation",
+      "query": "Investigate Project Delta: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-004-teams-schedule",
+        "PRJ-004-email-approval"
+      ],
+      "relevant": [
+        "PRJ-004-incident",
+        "PRJ-004-slack-cause",
+        "PRJ-004-email-approval",
+        "PRJ-004-teams-schedule",
+        "PRJ-004-decision",
+        "PRJ-004-status",
+        "PRJ-004-change"
+      ],
+      "path": "hybrid",
+      "recall": 0.2857142857142857,
+      "mrr": 1.0,
+      "ndcg": 0.5531464700081437,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 185.2684999757912,
+      "total_ms": 185.5068000149913,
+      "answer": {
+        "answer": "Project Delta: schedule register updated after DEC-004. [1]\nThe commissioning baseline now records the approved 2-week delay for CR-004. [2]\nProject Delta: Delta engineering review board approved CR-004 under DEC-004. [3]\nThe approved commissioning delay remains 2 weeks. [4]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-004-teams-schedule",
+            "title": "Delta / teams / schedule",
+            "quote": "Project Delta: schedule register updated after DEC-004.",
+            "start": 0,
+            "end": 55,
+            "source": "synthetic:PRJ-004-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-004-teams-schedule",
+            "title": "Delta / teams / schedule",
+            "quote": " The commissioning baseline now records the approved 2-week delay for CR-004.",
+            "start": 55,
+            "end": 132,
+            "source": "synthetic:PRJ-004-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-004-email-approval",
+            "title": "Delta / email / approval",
+            "quote": "Project Delta: Delta engineering review board approved CR-004 under DEC-004.",
+            "start": 0,
+            "end": 76,
+            "source": "synthetic:PRJ-004-email-approval",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-004-email-approval",
+            "title": "Delta / email / approval",
+            "quote": " The approved commissioning delay remains 2 weeks.",
+            "start": 76,
+            "end": 126,
+            "source": "synthetic:PRJ-004-email-approval",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ],
+        "path": "hybrid",
+        "retrieval_ms": 185.2684999757912,
+        "graph_paths": [],
+        "rewritten_query": "Investigate Project Delta: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "cached": false,
+        "corpus_version": "76226b6b650b"
+      },
+      "evidence_recall": 0.2857142857142857,
+      "actions": 0
+    },
+    {
+      "id": "PRJ-005-investigation",
+      "query": "Investigate Project Elm: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-005-teams-schedule",
+        "PRJ-005-status"
+      ],
+      "relevant": [
+        "PRJ-005-incident",
+        "PRJ-005-slack-cause",
+        "PRJ-005-email-approval",
+        "PRJ-005-teams-schedule",
+        "PRJ-005-decision",
+        "PRJ-005-status",
+        "PRJ-005-change"
+      ],
+      "path": "hybrid",
+      "recall": 0.2857142857142857,
+      "mrr": 1.0,
+      "ndcg": 0.5531464700081437,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.6666666666666666,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 187.34289999702014,
+      "total_ms": 187.62920002336614,
+      "answer": {
+        "answer": "Project Elm: schedule register updated after DEC-005. [1]\nThe commissioning baseline now records the approved 7-week delay for CR-005. [2]\nCurrent Project Elm status: commissioning is delayed 7 weeks. [3]\nThe approved recovery plan tracks CR-005, RISK-005 and MS-005. [4]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-005-teams-schedule",
+            "title": "Elm / teams / schedule",
+            "quote": "Project Elm: schedule register updated after DEC-005.",
+            "start": 0,
+            "end": 53,
+            "source": "synthetic:PRJ-005-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-005-teams-schedule",
+            "title": "Elm / teams / schedule",
+            "quote": " The commissioning baseline now records the approved 7-week delay for CR-005.",
+            "start": 53,
+            "end": 130,
+            "source": "synthetic:PRJ-005-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-005-status",
+            "title": "Elm / status",
+            "quote": "Current Project Elm status: commissioning is delayed 7 weeks.",
+            "start": 0,
+            "end": 61,
+            "source": "synthetic:PRJ-005-status",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-005-status",
+            "title": "Elm / status",
+            "quote": " The approved recovery plan tracks CR-005, RISK-005 and MS-005.",
+            "start": 61,
+            "end": 124,
+            "source": "synthetic:PRJ-005-status",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ],
+        "path": "hybrid",
+        "retrieval_ms": 187.34289999702014,
+        "graph_paths": [],
+        "rewritten_query": "Investigate Project Elm: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "cached": false,
+        "corpus_version": "76226b6b650b"
+      },
+      "evidence_recall": 0.2857142857142857,
+      "actions": 0
+    },
+    {
+      "id": "PRJ-006-investigation",
+      "query": "Investigate Project Falcon: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-006-teams-schedule",
+        "PRJ-006-email-approval"
+      ],
+      "relevant": [
+        "PRJ-006-incident",
+        "PRJ-006-slack-cause",
+        "PRJ-006-email-approval",
+        "PRJ-006-teams-schedule",
+        "PRJ-006-decision",
+        "PRJ-006-status",
+        "PRJ-006-change"
+      ],
+      "path": "hybrid",
+      "recall": 0.2857142857142857,
+      "mrr": 1.0,
+      "ndcg": 0.5531464700081437,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 224.4148000027053,
+      "total_ms": 224.684899993008,
+      "answer": {
+        "answer": "Project Falcon: schedule register updated after DEC-006. [1]\nThe commissioning baseline now records the approved 4-week delay for CR-006. [2]\nProject Falcon: Falcon engineering review board approved CR-006 under DEC-006. [3]\nThe approved commissioning delay remains 4 weeks. [4]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-006-teams-schedule",
+            "title": "Falcon / teams / schedule",
+            "quote": "Project Falcon: schedule register updated after DEC-006.",
+            "start": 0,
+            "end": 56,
+            "source": "synthetic:PRJ-006-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-006-teams-schedule",
+            "title": "Falcon / teams / schedule",
+            "quote": " The commissioning baseline now records the approved 4-week delay for CR-006.",
+            "start": 56,
+            "end": 133,
+            "source": "synthetic:PRJ-006-teams-schedule",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-006-email-approval",
+            "title": "Falcon / email / approval",
+            "quote": "Project Falcon: Falcon engineering review board approved CR-006 under DEC-006.",
+            "start": 0,
+            "end": 78,
+            "source": "synthetic:PRJ-006-email-approval",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-006-email-approval",
+            "title": "Falcon / email / approval",
+            "quote": " The approved commissioning delay remains 4 weeks.",
+            "start": 78,
+            "end": 128,
+            "source": "synthetic:PRJ-006-email-approval",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ],
+        "path": "hybrid",
+        "retrieval_ms": 224.4148000027053,
+        "graph_paths": [],
+        "rewritten_query": "Investigate Project Falcon: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "cached": false,
+        "corpus_version": "76226b6b650b"
+      },
+      "evidence_recall": 0.2857142857142857,
+      "actions": 0
+    },
+    {
+      "id": "missing-project",
+      "query": "Investigate Project Omega and its approval.",
+      "category": "missing",
+      "ranked": [],
+      "relevant": [],
+      "path": "hybrid",
+      "recall": null,
+      "mrr": null,
+      "ndcg": null,
+      "citation_integrity": null,
+      "citation_accuracy": null,
+      "faithfulness_exact_quote": null,
+      "relevance_gold_term_coverage": null,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 374.0273999865167,
+      "total_ms": 374.1927999944892,
+      "answer": {
+        "answer": "I could not find sufficient evidence in the accessible sources.",
+        "citations": [],
+        "abstained": true,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ],
+        "path": "hybrid",
+        "retrieval_ms": 374.0273999865167,
+        "graph_paths": [],
+        "rewritten_query": "Investigate Project Omega and its approval.",
+        "cached": false,
+        "corpus_version": "76226b6b650b"
+      },
+      "evidence_recall": null,
+      "actions": 0
+    }
+  ]
+}

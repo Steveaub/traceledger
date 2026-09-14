@@ -1,0 +1,110 @@
+[
+  {
+    "id": "PRJ-001",
+    "name": "Alpha",
+    "site": "SITE-001",
+    "equipment": "TX-880",
+    "vendor": "Northstar Power",
+    "status": "closed",
+    "delay_weeks": 6
+  },
+  {
+    "id": "PRJ-002",
+    "name": "Beta",
+    "site": "SITE-002",
+    "equipment": "CTRL-420",
+    "vendor": "Meridian Controls",
+    "status": "closed",
+    "delay_weeks": 3
+  },
+  {
+    "id": "PRJ-003",
+    "name": "Cedar",
+    "site": "SITE-003",
+    "equipment": "PUMP-310",
+    "vendor": "Summit Electric",
+    "status": "closed",
+    "delay_weeks": 4
+  },
+  {
+    "id": "PRJ-004",
+    "name": "Delta",
+    "site": "SITE-004",
+    "equipment": "SWG-610",
+    "vendor": "Tidal Systems",
+    "status": "closed",
+    "delay_weeks": 2
+  },
+  {
+    "id": "PRJ-005",
+    "name": "Elm",
+    "site": "SITE-005",
+    "equipment": "TX-880",
+    "vendor": "Northstar Power",
+    "status": "active",
+    "delay_weeks": 7
+  },
+  {
+    "id": "PRJ-006",
+    "name": "Falcon",
+    "site": "SITE-006",
+    "equipment": "CTRL-420",
+    "vendor": "Meridian Controls",
+    "status": "active",
+    "delay_weeks": 4
+  },
+  {
+    "id": "PRJ-007",
+    "name": "Granite",
+    "site": "SITE-007",
+    "equipment": "PUMP-310",
+    "vendor": "Summit Electric",
+    "status": "active",
+    "delay_weeks": 5
+  },
+  {
+    "id": "PRJ-008",
+    "name": "Harbor",
+    "site": "SITE-008",
+    "equipment": "SWG-610",
+    "vendor": "Tidal Systems",
+    "status": "active",
+    "delay_weeks": 3
+  },
+  {
+    "id": "PRJ-009",
+    "name": "Iris",
+    "site": "SITE-009",
+    "equipment": "TX-880",
+    "vendor": "Northstar Power",
+    "status": "active",
+    "delay_weeks": 8
+  },
+  {
+    "id": "PRJ-010",
+    "name": "Juniper",
+    "site": "SITE-010",
+    "equipment": "CTRL-420",
+    "vendor": "Meridian Controls",
+    "status": "active",
+    "delay_weeks": 5
+  },
+  {
+    "id": "PRJ-011",
+    "name": "Kestrel",
+    "site": "SITE-011",
+    "equipment": "PUMP-310",
+    "vendor": "Summit Electric",
+    "status": "active",
+    "delay_weeks": 6
+  },
+  {
+    "id": "PRJ-012",
+    "name": "Laurel",
+    "site": "SITE-012",
+    "equipment": "SWG-610",
+    "vendor": "Tidal Systems",
+    "status": "active",
+    "delay_weeks": 4
+  }
+]

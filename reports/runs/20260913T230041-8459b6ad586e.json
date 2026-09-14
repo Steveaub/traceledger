@@ -1,0 +1,1023 @@
+{
+  "id": "20260913T230041-8459b6ad586e",
+  "started_at": "2026-09-13T23:00:38.738733+00:00",
+  "finished_at": "2026-09-13T23:00:41.048664+00:00",
+  "protocol": "atlas-investigation-evidence-v2",
+  "cohort_id": "217b4b10636302634f3e44b9ad2cbd577893b95075995462d940204b63f073f0",
+  "corpus_sha256": "76226b6b650bae985d59cebc056cc1b43573236e6ddca96113ed6d8e934d489c",
+  "questions_sha256": "95fe1a7d732dd0f0e2951b820ee5a3504fdfdc2f5281f969b5bb4a24ef1ae063",
+  "code_sha256": "a2a826d2a3e3325f06a470c5cb1b4b702b4b5c9635b3a2dbcf053f7184651f88",
+  "models": {
+    "embedding": {
+      "repo": "qdrant/all-MiniLM-L6-v2-onnx",
+      "revision": "5f1b8cd78bc4fb444dd171e59b18f3a3af89a079",
+      "license": "apache-2.0"
+    },
+    "reranker": {
+      "repo": "Xenova/ms-marco-MiniLM-L-6-v2",
+      "revision": "a09144355adeed5f58c8ed011d209bf8ee5a1fec",
+      "license": "apache-2.0"
+    },
+    "generator": {
+      "repo": "google/flan-t5-small",
+      "revision": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab",
+      "license": "apache-2.0"
+    }
+  },
+  "split": "dev",
+  "generation": "evidence",
+  "routing": false,
+  "graph_enabled": false,
+  "cache_policy": "warm sessions; answer cache disabled; query embeddings evicted",
+  "visibility": "demo",
+  "config": {
+    "name": "Single-pass matched selector",
+    "mode": "auto"
+  },
+  "summary": {
+    "recall": 0.4761904761904762,
+    "mrr": 1.0,
+    "ndcg": 0.7714160225925206,
+    "citation_integrity": 1.0,
+    "citation_accuracy": 1.0,
+    "faithfulness_exact_quote": 1.0,
+    "relevance_gold_term_coverage": 1.0,
+    "abstention_correct": 1.0,
+    "api_cost_usd": 0.0,
+    "queries": 7,
+    "answerable": 6,
+    "retrieval_p50_ms": 378.54,
+    "retrieval_p95_ms": 402.103,
+    "total_p95_ms": 402.6544800057309,
+    "compute_cost_usd": null,
+    "recall_bootstrap_95ci": [
+      0.42857142857142855,
+      0.5238095238095238
+    ],
+    "mean_actions": 0.8571428571428571,
+    "evidence_recall": 0.4761904761904761
+  },
+  "slices": {
+    "decision_trace": {
+      "recall": 0.4761904761904762,
+      "mrr": 1.0,
+      "ndcg": 0.7714160225925206,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1.0,
+      "api_cost_usd": 0.0,
+      "queries": 6,
+      "answerable": 6,
+      "retrieval_p50_ms": 381.46000000000004,
+      "retrieval_p95_ms": 402.7775,
+      "total_p95_ms": 403.3067000054871,
+      "compute_cost_usd": null,
+      "recall_bootstrap_95ci": [
+        0.42857142857142855,
+        0.5238095238095238
+      ]
+    },
+    "missing": {
+      "recall": null,
+      "mrr": null,
+      "ndcg": null,
+      "citation_integrity": null,
+      "citation_accuracy": null,
+      "faithfulness_exact_quote": null,
+      "relevance_gold_term_coverage": null,
+      "abstention_correct": 1.0,
+      "api_cost_usd": 0.0,
+      "queries": 1,
+      "answerable": 0,
+      "retrieval_p50_ms": 0.0,
+      "retrieval_p95_ms": 0.0,
+      "total_p95_ms": 0.18130001262761652,
+      "compute_cost_usd": null
+    }
+  },
+  "rows": [
+    {
+      "id": "PRJ-001-investigation",
+      "query": "Investigate Project Alpha: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-001-email-approval",
+        "PRJ-001-teams-schedule",
+        "PRJ-001-incident",
+        "PRJ-001-status"
+      ],
+      "relevant": [
+        "PRJ-001-incident",
+        "PRJ-001-slack-cause",
+        "PRJ-001-email-approval",
+        "PRJ-001-teams-schedule",
+        "PRJ-001-decision",
+        "PRJ-001-status",
+        "PRJ-001-change"
+      ],
+      "path": "investigator",
+      "recall": 0.5714285714285714,
+      "mrr": 1.0,
+      "ndcg": 0.8687949224876582,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 392.66,
+      "total_ms": 393.5234000091441,
+      "answer": {
+        "answer": "Project Alpha: Alpha engineering review board approved CR-001 under DEC-001. [1]\nProject Alpha: schedule register updated after DEC-001. [2]\nIncident INC-001 on Project Alpha: transformer winding insulation failed factory testing. [3]\nCurrent Project Alpha status: commissioning is delayed 6 weeks. [4]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-001-email-approval",
+            "title": "Alpha / email / approval",
+            "quote": "Project Alpha: Alpha engineering review board approved CR-001 under DEC-001.",
+            "start": 0,
+            "end": 76,
+            "source": "synthetic:PRJ-001-email-approval",
+            "synthetic": true,
+            "channel": "email",
+            "author": "Alpha engineering review board",
+            "date": "2026-05-14T14:00:00Z",
+            "thread_id": "PRJ-001-email-recovery",
+            "decision_status": "approved"
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-001-teams-schedule",
+            "title": "Alpha / teams / schedule",
+            "quote": "Project Alpha: schedule register updated after DEC-001.",
+            "start": 0,
+            "end": 55,
+            "source": "synthetic:PRJ-001-teams-schedule",
+            "synthetic": true,
+            "channel": "teams",
+            "author": "Schedule controller",
+            "date": "2026-05-15T16:00:00Z",
+            "thread_id": "PRJ-001-teams-recovery",
+            "decision_status": "recorded"
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-001-incident",
+            "title": "Alpha / incident",
+            "quote": "Incident INC-001 on Project Alpha: transformer winding insulation failed factory testing.",
+            "start": 0,
+            "end": 89,
+            "source": "synthetic:PRJ-001-incident",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-001-status",
+            "title": "Alpha / status",
+            "quote": "Current Project Alpha status: commissioning is delayed 6 weeks.",
+            "start": 0,
+            "end": 63,
+            "source": "synthetic:PRJ-001-status",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "bounded_investigation",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "cached": false,
+        "path": "investigator",
+        "retrieval_ms": 392.66,
+        "total_ms": 393.46330001717433,
+        "graph_paths": [],
+        "rewritten_query": "Investigate Project Alpha: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "corpus_version": "76226b6b650b",
+        "ranked": [
+          "PRJ-001-email-approval",
+          "PRJ-001-teams-schedule",
+          "PRJ-001-incident",
+          "PRJ-001-status"
+        ],
+        "limitations": [
+          "Exact excerpts establish provenance, not independent truth.",
+          "A proposal was found in the conversation context. It was not treated as an approval."
+        ],
+        "investigation": {
+          "policy": "Evidence-driven deterministic controller; no LLM planner",
+          "steps": [
+            {
+              "tool": "search_sources",
+              "label": "Find the initial evidence",
+              "query": "Investigate Project Alpha: why was commissioning delayed, who approved the change, and was the schedule updated?",
+              "source_ids": [
+                "PRJ-001-teams-schedule",
+                "PRJ-001-status",
+                "PRJ-001-email-approval",
+                "PRJ-001-email-proposal",
+                "PRJ-001-incident"
+              ],
+              "duration_ms": 392.66
+            }
+          ],
+          "stop_reason": "action_budget",
+          "gaps": [
+            "The investigation reached its budget. Additional evidence may remain."
+          ],
+          "caveats": [
+            "A proposal was found in the conversation context. It was not treated as an approval."
+          ],
+          "max_actions": 1,
+          "max_seconds": 15,
+          "status": "needs_review",
+          "sources": [
+            "documents",
+            "email",
+            "slack",
+            "teams"
+          ]
+        }
+      },
+      "evidence_recall": 0.5714285714285714,
+      "actions": 1
+    },
+    {
+      "id": "PRJ-002-investigation",
+      "query": "Investigate Project Beta: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-002-email-approval",
+        "PRJ-002-teams-schedule",
+        "PRJ-002-status"
+      ],
+      "relevant": [
+        "PRJ-002-incident",
+        "PRJ-002-slack-cause",
+        "PRJ-002-email-approval",
+        "PRJ-002-teams-schedule",
+        "PRJ-002-decision",
+        "PRJ-002-status",
+        "PRJ-002-change"
+      ],
+      "path": "investigator",
+      "recall": 0.42857142857142855,
+      "mrr": 1.0,
+      "ndcg": 0.7227265726449519,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 375.82,
+      "total_ms": 376.1946000158787,
+      "answer": {
+        "answer": "Project Beta: Beta engineering review board approved CR-002 under DEC-002. [1]\nProject Beta: schedule register updated after DEC-002. [2]\nCurrent Project Beta status: commissioning is delayed 3 weeks. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-002-email-approval",
+            "title": "Beta / email / approval",
+            "quote": "Project Beta: Beta engineering review board approved CR-002 under DEC-002.",
+            "start": 0,
+            "end": 74,
+            "source": "synthetic:PRJ-002-email-approval",
+            "synthetic": true,
+            "channel": "email",
+            "author": "Beta engineering review board",
+            "date": "2026-05-14T14:00:00Z",
+            "thread_id": "PRJ-002-email-recovery",
+            "decision_status": "approved"
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-002-teams-schedule",
+            "title": "Beta / teams / schedule",
+            "quote": "Project Beta: schedule register updated after DEC-002.",
+            "start": 0,
+            "end": 54,
+            "source": "synthetic:PRJ-002-teams-schedule",
+            "synthetic": true,
+            "channel": "teams",
+            "author": "Schedule controller",
+            "date": "2026-05-15T16:00:00Z",
+            "thread_id": "PRJ-002-teams-recovery",
+            "decision_status": "recorded"
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-002-status",
+            "title": "Beta / status",
+            "quote": "Current Project Beta status: commissioning is delayed 3 weeks.",
+            "start": 0,
+            "end": 62,
+            "source": "synthetic:PRJ-002-status",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "bounded_investigation",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "cached": false,
+        "path": "investigator",
+        "retrieval_ms": 375.82,
+        "total_ms": 376.12490000901744,
+        "graph_paths": [],
+        "rewritten_query": "Investigate Project Beta: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "corpus_version": "76226b6b650b",
+        "ranked": [
+          "PRJ-002-email-approval",
+          "PRJ-002-teams-schedule",
+          "PRJ-002-status"
+        ],
+        "limitations": [
+          "Exact excerpts establish provenance, not independent truth.",
+          "A proposal was found in the conversation context. It was not treated as an approval."
+        ],
+        "investigation": {
+          "policy": "Evidence-driven deterministic controller; no LLM planner",
+          "steps": [
+            {
+              "tool": "search_sources",
+              "label": "Find the initial evidence",
+              "query": "Investigate Project Beta: why was commissioning delayed, who approved the change, and was the schedule updated?",
+              "source_ids": [
+                "PRJ-002-teams-schedule",
+                "PRJ-002-email-approval",
+                "PRJ-002-status",
+                "PRJ-002-email-proposal",
+                "PRJ-002-routine_2"
+              ],
+              "duration_ms": 375.82
+            }
+          ],
+          "stop_reason": "action_budget",
+          "gaps": [
+            "The investigation reached its budget. Additional evidence may remain."
+          ],
+          "caveats": [
+            "A proposal was found in the conversation context. It was not treated as an approval."
+          ],
+          "max_actions": 1,
+          "max_seconds": 15,
+          "status": "needs_review",
+          "sources": [
+            "documents",
+            "email",
+            "slack",
+            "teams"
+          ]
+        }
+      },
+      "evidence_recall": 0.42857142857142855,
+      "actions": 1
+    },
+    {
+      "id": "PRJ-003-investigation",
+      "query": "Investigate Project Cedar: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-003-email-approval",
+        "PRJ-003-teams-schedule",
+        "PRJ-003-status"
+      ],
+      "relevant": [
+        "PRJ-003-incident",
+        "PRJ-003-slack-cause",
+        "PRJ-003-email-approval",
+        "PRJ-003-teams-schedule",
+        "PRJ-003-decision",
+        "PRJ-003-status",
+        "PRJ-003-change"
+      ],
+      "path": "investigator",
+      "recall": 0.42857142857142855,
+      "mrr": 1.0,
+      "ndcg": 0.7227265726449519,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 355.77,
+      "total_ms": 356.21569998329505,
+      "answer": {
+        "answer": "Project Cedar: Cedar engineering review board approved CR-003 under DEC-003. [1]\nProject Cedar: schedule register updated after DEC-003. [2]\nCurrent Project Cedar status: commissioning is delayed 4 weeks. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-003-email-approval",
+            "title": "Cedar / email / approval",
+            "quote": "Project Cedar: Cedar engineering review board approved CR-003 under DEC-003.",
+            "start": 0,
+            "end": 76,
+            "source": "synthetic:PRJ-003-email-approval",
+            "synthetic": true,
+            "channel": "email",
+            "author": "Cedar engineering review board",
+            "date": "2026-05-14T14:00:00Z",
+            "thread_id": "PRJ-003-email-recovery",
+            "decision_status": "approved"
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-003-teams-schedule",
+            "title": "Cedar / teams / schedule",
+            "quote": "Project Cedar: schedule register updated after DEC-003.",
+            "start": 0,
+            "end": 55,
+            "source": "synthetic:PRJ-003-teams-schedule",
+            "synthetic": true,
+            "channel": "teams",
+            "author": "Schedule controller",
+            "date": "2026-05-15T16:00:00Z",
+            "thread_id": "PRJ-003-teams-recovery",
+            "decision_status": "recorded"
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-003-status",
+            "title": "Cedar / status",
+            "quote": "Current Project Cedar status: commissioning is delayed 4 weeks.",
+            "start": 0,
+            "end": 63,
+            "source": "synthetic:PRJ-003-status",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "bounded_investigation",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "cached": false,
+        "path": "investigator",
+        "retrieval_ms": 355.77,
+        "total_ms": 356.1407999950461,
+        "graph_paths": [],
+        "rewritten_query": "Investigate Project Cedar: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "corpus_version": "76226b6b650b",
+        "ranked": [
+          "PRJ-003-email-approval",
+          "PRJ-003-teams-schedule",
+          "PRJ-003-status"
+        ],
+        "limitations": [
+          "Exact excerpts establish provenance, not independent truth.",
+          "A proposal was found in the conversation context. It was not treated as an approval."
+        ],
+        "investigation": {
+          "policy": "Evidence-driven deterministic controller; no LLM planner",
+          "steps": [
+            {
+              "tool": "search_sources",
+              "label": "Find the initial evidence",
+              "query": "Investigate Project Cedar: why was commissioning delayed, who approved the change, and was the schedule updated?",
+              "source_ids": [
+                "PRJ-003-teams-schedule",
+                "PRJ-003-email-approval",
+                "PRJ-003-status",
+                "PRJ-003-email-proposal",
+                "PRJ-003-routine_2"
+              ],
+              "duration_ms": 355.77
+            }
+          ],
+          "stop_reason": "action_budget",
+          "gaps": [
+            "The investigation reached its budget. Additional evidence may remain."
+          ],
+          "caveats": [
+            "A proposal was found in the conversation context. It was not treated as an approval."
+          ],
+          "max_actions": 1,
+          "max_seconds": 15,
+          "status": "needs_review",
+          "sources": [
+            "documents",
+            "email",
+            "slack",
+            "teams"
+          ]
+        }
+      },
+      "evidence_recall": 0.42857142857142855,
+      "actions": 1
+    },
+    {
+      "id": "PRJ-004-investigation",
+      "query": "Investigate Project Delta: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-004-email-approval",
+        "PRJ-004-teams-schedule",
+        "PRJ-004-status"
+      ],
+      "relevant": [
+        "PRJ-004-incident",
+        "PRJ-004-slack-cause",
+        "PRJ-004-email-approval",
+        "PRJ-004-teams-schedule",
+        "PRJ-004-decision",
+        "PRJ-004-status",
+        "PRJ-004-change"
+      ],
+      "path": "investigator",
+      "recall": 0.42857142857142855,
+      "mrr": 1.0,
+      "ndcg": 0.7227265726449519,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 406.15,
+      "total_ms": 406.56780000426807,
+      "answer": {
+        "answer": "Project Delta: Delta engineering review board approved CR-004 under DEC-004. [1]\nProject Delta: schedule register updated after DEC-004. [2]\nCurrent Project Delta status: commissioning is delayed 2 weeks. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-004-email-approval",
+            "title": "Delta / email / approval",
+            "quote": "Project Delta: Delta engineering review board approved CR-004 under DEC-004.",
+            "start": 0,
+            "end": 76,
+            "source": "synthetic:PRJ-004-email-approval",
+            "synthetic": true,
+            "channel": "email",
+            "author": "Delta engineering review board",
+            "date": "2026-05-14T14:00:00Z",
+            "thread_id": "PRJ-004-email-recovery",
+            "decision_status": "approved"
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-004-teams-schedule",
+            "title": "Delta / teams / schedule",
+            "quote": "Project Delta: schedule register updated after DEC-004.",
+            "start": 0,
+            "end": 55,
+            "source": "synthetic:PRJ-004-teams-schedule",
+            "synthetic": true,
+            "channel": "teams",
+            "author": "Schedule controller",
+            "date": "2026-05-15T16:00:00Z",
+            "thread_id": "PRJ-004-teams-recovery",
+            "decision_status": "recorded"
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-004-status",
+            "title": "Delta / status",
+            "quote": "Current Project Delta status: commissioning is delayed 2 weeks.",
+            "start": 0,
+            "end": 63,
+            "source": "synthetic:PRJ-004-status",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "bounded_investigation",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "cached": false,
+        "path": "investigator",
+        "retrieval_ms": 406.15,
+        "total_ms": 406.50789998471737,
+        "graph_paths": [],
+        "rewritten_query": "Investigate Project Delta: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "corpus_version": "76226b6b650b",
+        "ranked": [
+          "PRJ-004-email-approval",
+          "PRJ-004-teams-schedule",
+          "PRJ-004-status"
+        ],
+        "limitations": [
+          "Exact excerpts establish provenance, not independent truth.",
+          "A proposal was found in the conversation context. It was not treated as an approval."
+        ],
+        "investigation": {
+          "policy": "Evidence-driven deterministic controller; no LLM planner",
+          "steps": [
+            {
+              "tool": "search_sources",
+              "label": "Find the initial evidence",
+              "query": "Investigate Project Delta: why was commissioning delayed, who approved the change, and was the schedule updated?",
+              "source_ids": [
+                "PRJ-004-teams-schedule",
+                "PRJ-004-email-approval",
+                "PRJ-004-status",
+                "PRJ-004-email-proposal",
+                "PRJ-004-routine_2"
+              ],
+              "duration_ms": 406.15
+            }
+          ],
+          "stop_reason": "action_budget",
+          "gaps": [
+            "The investigation reached its budget. Additional evidence may remain."
+          ],
+          "caveats": [
+            "A proposal was found in the conversation context. It was not treated as an approval."
+          ],
+          "max_actions": 1,
+          "max_seconds": 15,
+          "status": "needs_review",
+          "sources": [
+            "documents",
+            "email",
+            "slack",
+            "teams"
+          ]
+        }
+      },
+      "evidence_recall": 0.42857142857142855,
+      "actions": 1
+    },
+    {
+      "id": "PRJ-005-investigation",
+      "query": "Investigate Project Elm: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-005-email-approval",
+        "PRJ-005-teams-schedule",
+        "PRJ-005-incident",
+        "PRJ-005-status"
+      ],
+      "relevant": [
+        "PRJ-005-incident",
+        "PRJ-005-slack-cause",
+        "PRJ-005-email-approval",
+        "PRJ-005-teams-schedule",
+        "PRJ-005-decision",
+        "PRJ-005-status",
+        "PRJ-005-change"
+      ],
+      "path": "investigator",
+      "recall": 0.5714285714285714,
+      "mrr": 1.0,
+      "ndcg": 0.8687949224876582,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 378.54,
+      "total_ms": 378.9030000043567,
+      "answer": {
+        "answer": "Project Elm: Elm engineering review board approved CR-005 under DEC-005. [1]\nProject Elm: schedule register updated after DEC-005. [2]\nIncident INC-005 on Project Elm: transformer winding insulation failed factory testing. [3]\nCurrent Project Elm status: commissioning is delayed 7 weeks. [4]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-005-email-approval",
+            "title": "Elm / email / approval",
+            "quote": "Project Elm: Elm engineering review board approved CR-005 under DEC-005.",
+            "start": 0,
+            "end": 72,
+            "source": "synthetic:PRJ-005-email-approval",
+            "synthetic": true,
+            "channel": "email",
+            "author": "Elm engineering review board",
+            "date": "2026-05-14T14:00:00Z",
+            "thread_id": "PRJ-005-email-recovery",
+            "decision_status": "approved"
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-005-teams-schedule",
+            "title": "Elm / teams / schedule",
+            "quote": "Project Elm: schedule register updated after DEC-005.",
+            "start": 0,
+            "end": 53,
+            "source": "synthetic:PRJ-005-teams-schedule",
+            "synthetic": true,
+            "channel": "teams",
+            "author": "Schedule controller",
+            "date": "2026-05-15T16:00:00Z",
+            "thread_id": "PRJ-005-teams-recovery",
+            "decision_status": "recorded"
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-005-incident",
+            "title": "Elm / incident",
+            "quote": "Incident INC-005 on Project Elm: transformer winding insulation failed factory testing.",
+            "start": 0,
+            "end": 87,
+            "source": "synthetic:PRJ-005-incident",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-005-status",
+            "title": "Elm / status",
+            "quote": "Current Project Elm status: commissioning is delayed 7 weeks.",
+            "start": 0,
+            "end": 61,
+            "source": "synthetic:PRJ-005-status",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "bounded_investigation",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "cached": false,
+        "path": "investigator",
+        "retrieval_ms": 378.54,
+        "total_ms": 378.84640000993386,
+        "graph_paths": [],
+        "rewritten_query": "Investigate Project Elm: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "corpus_version": "76226b6b650b",
+        "ranked": [
+          "PRJ-005-email-approval",
+          "PRJ-005-teams-schedule",
+          "PRJ-005-incident",
+          "PRJ-005-status"
+        ],
+        "limitations": [
+          "Exact excerpts establish provenance, not independent truth.",
+          "A proposal was found in the conversation context. It was not treated as an approval."
+        ],
+        "investigation": {
+          "policy": "Evidence-driven deterministic controller; no LLM planner",
+          "steps": [
+            {
+              "tool": "search_sources",
+              "label": "Find the initial evidence",
+              "query": "Investigate Project Elm: why was commissioning delayed, who approved the change, and was the schedule updated?",
+              "source_ids": [
+                "PRJ-005-teams-schedule",
+                "PRJ-005-status",
+                "PRJ-005-email-approval",
+                "PRJ-005-email-proposal",
+                "PRJ-005-incident"
+              ],
+              "duration_ms": 378.54
+            }
+          ],
+          "stop_reason": "action_budget",
+          "gaps": [
+            "The investigation reached its budget. Additional evidence may remain."
+          ],
+          "caveats": [
+            "A proposal was found in the conversation context. It was not treated as an approval."
+          ],
+          "max_actions": 1,
+          "max_seconds": 15,
+          "status": "needs_review",
+          "sources": [
+            "documents",
+            "email",
+            "slack",
+            "teams"
+          ]
+        }
+      },
+      "evidence_recall": 0.5714285714285714,
+      "actions": 1
+    },
+    {
+      "id": "PRJ-006-investigation",
+      "query": "Investigate Project Falcon: why was commissioning delayed, who approved the change, and was the schedule updated?",
+      "category": "decision_trace",
+      "ranked": [
+        "PRJ-006-email-approval",
+        "PRJ-006-teams-schedule",
+        "PRJ-006-status"
+      ],
+      "relevant": [
+        "PRJ-006-incident",
+        "PRJ-006-slack-cause",
+        "PRJ-006-email-approval",
+        "PRJ-006-teams-schedule",
+        "PRJ-006-decision",
+        "PRJ-006-status",
+        "PRJ-006-change"
+      ],
+      "path": "investigator",
+      "recall": 0.42857142857142855,
+      "mrr": 1.0,
+      "ndcg": 0.7227265726449519,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 384.38,
+      "total_ms": 384.8530999966897,
+      "answer": {
+        "answer": "Project Falcon: Falcon engineering review board approved CR-006 under DEC-006. [1]\nProject Falcon: schedule register updated after DEC-006. [2]\nCurrent Project Falcon status: commissioning is delayed 4 weeks. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-006-email-approval",
+            "title": "Falcon / email / approval",
+            "quote": "Project Falcon: Falcon engineering review board approved CR-006 under DEC-006.",
+            "start": 0,
+            "end": 78,
+            "source": "synthetic:PRJ-006-email-approval",
+            "synthetic": true,
+            "channel": "email",
+            "author": "Falcon engineering review board",
+            "date": "2026-05-14T14:00:00Z",
+            "thread_id": "PRJ-006-email-recovery",
+            "decision_status": "approved"
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-006-teams-schedule",
+            "title": "Falcon / teams / schedule",
+            "quote": "Project Falcon: schedule register updated after DEC-006.",
+            "start": 0,
+            "end": 56,
+            "source": "synthetic:PRJ-006-teams-schedule",
+            "synthetic": true,
+            "channel": "teams",
+            "author": "Schedule controller",
+            "date": "2026-05-15T16:00:00Z",
+            "thread_id": "PRJ-006-teams-recovery",
+            "decision_status": "recorded"
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-006-status",
+            "title": "Falcon / status",
+            "quote": "Current Project Falcon status: commissioning is delayed 4 weeks.",
+            "start": 0,
+            "end": 64,
+            "source": "synthetic:PRJ-006-status",
+            "synthetic": true,
+            "channel": "documents",
+            "author": null,
+            "date": "2026-06-01",
+            "thread_id": null,
+            "decision_status": "unspecified"
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "bounded_investigation",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "cached": false,
+        "path": "investigator",
+        "retrieval_ms": 384.38,
+        "total_ms": 384.79320000624284,
+        "graph_paths": [],
+        "rewritten_query": "Investigate Project Falcon: why was commissioning delayed, who approved the change, and was the schedule updated?",
+        "corpus_version": "76226b6b650b",
+        "ranked": [
+          "PRJ-006-email-approval",
+          "PRJ-006-teams-schedule",
+          "PRJ-006-status"
+        ],
+        "limitations": [
+          "Exact excerpts establish provenance, not independent truth.",
+          "A proposal was found in the conversation context. It was not treated as an approval."
+        ],
+        "investigation": {
+          "policy": "Evidence-driven deterministic controller; no LLM planner",
+          "steps": [
+            {
+              "tool": "search_sources",
+              "label": "Find the initial evidence",
+              "query": "Investigate Project Falcon: why was commissioning delayed, who approved the change, and was the schedule updated?",
+              "source_ids": [
+                "PRJ-006-teams-schedule",
+                "PRJ-006-email-approval",
+                "PRJ-006-status",
+                "PRJ-006-email-proposal",
+                "PRJ-006-routine_2"
+              ],
+              "duration_ms": 384.38
+            }
+          ],
+          "stop_reason": "action_budget",
+          "gaps": [
+            "The investigation reached its budget. Additional evidence may remain."
+          ],
+          "caveats": [
+            "A proposal was found in the conversation context. It was not treated as an approval."
+          ],
+          "max_actions": 1,
+          "max_seconds": 15,
+          "status": "needs_review",
+          "sources": [
+            "documents",
+            "email",
+            "slack",
+            "teams"
+          ]
+        }
+      },
+      "evidence_recall": 0.42857142857142855,
+      "actions": 1
+    },
+    {
+      "id": "missing-project",
+      "query": "Investigate Project Omega and its approval.",
+      "category": "missing",
+      "ranked": [],
+      "relevant": [],
+      "path": "investigator",
+      "recall": null,
+      "mrr": null,
+      "ndcg": null,
+      "citation_integrity": null,
+      "citation_accuracy": null,
+      "faithfulness_exact_quote": null,
+      "relevance_gold_term_coverage": null,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 0,
+      "total_ms": 0.18130001262761652,
+      "answer": {
+        "answer": "I could not find sufficient evidence in the selected, accessible sources.",
+        "citations": [],
+        "abstained": true,
+        "generation_mode": "bounded_investigation",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "cached": false,
+        "path": "investigator",
+        "retrieval_ms": 0,
+        "total_ms": 0.14459999511018395,
+        "graph_paths": [],
+        "rewritten_query": "Investigate Project Omega and its approval.",
+        "corpus_version": "76226b6b650b",
+        "ranked": [],
+        "limitations": [
+          "Exact excerpts establish provenance, not independent truth."
+        ],
+        "investigation": {
+          "policy": "Evidence-driven deterministic controller; no LLM planner",
+          "steps": [],
+          "stop_reason": "missing_evidence",
+          "gaps": [
+            "The named project was not found in the selected, accessible sources."
+          ],
+          "caveats": [],
+          "max_actions": 1,
+          "max_seconds": 15,
+          "status": "needs_review",
+          "sources": [
+            "documents",
+            "email",
+            "slack",
+            "teams"
+          ]
+        }
+      },
+      "evidence_recall": null,
+      "actions": 0
+    }
+  ]
+}

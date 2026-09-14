@@ -1,0 +1,75 @@
+{
+  "selected": {
+    "name": "reranker",
+    "chunking": "fixed",
+    "hybrid": true,
+    "expansion": false,
+    "rerank": true,
+    "graph": false
+  },
+  "graph_enabled": true,
+  "router_enabled": true,
+  "decisions": [
+    {
+      "candidate": {
+        "name": "semantic",
+        "chunking": "semantic",
+        "hybrid": false,
+        "expansion": false,
+        "rerank": false,
+        "graph": false
+      },
+      "promoted": false,
+      "compared_to": "baseline"
+    },
+    {
+      "candidate": {
+        "name": "hybrid",
+        "chunking": "fixed",
+        "hybrid": true,
+        "expansion": false,
+        "rerank": false,
+        "graph": false
+      },
+      "promoted": true,
+      "compared_to": "baseline"
+    },
+    {
+      "candidate": {
+        "name": "expansion",
+        "chunking": "fixed",
+        "hybrid": true,
+        "expansion": true,
+        "rerank": false,
+        "graph": false
+      },
+      "promoted": false,
+      "compared_to": "hybrid"
+    },
+    {
+      "candidate": {
+        "name": "reranker",
+        "chunking": "fixed",
+        "hybrid": true,
+        "expansion": false,
+        "rerank": true,
+        "graph": false
+      },
+      "promoted": true,
+      "compared_to": "hybrid"
+    },
+    {
+      "candidate": {
+        "name": "graph",
+        "chunking": "fixed",
+        "hybrid": true,
+        "expansion": false,
+        "rerank": false,
+        "graph": true
+      },
+      "promoted": true,
+      "scope": "relationship route only"
+    }
+  ],
+  "frozen_before_test": "2026-09-13T10:19:45.903021+00:00"
+}

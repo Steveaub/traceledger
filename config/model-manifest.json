@@ -1,0 +1,17 @@
+{
+  "embedding": {
+    "repo": "qdrant/all-MiniLM-L6-v2-onnx",
+    "revision": "5f1b8cd78bc4fb444dd171e59b18f3a3af89a079",
+    "license": "apache-2.0"
+  },
+  "reranker": {
+    "repo": "Xenova/ms-marco-MiniLM-L-6-v2",
+    "revision": "a09144355adeed5f58c8ed011d209bf8ee5a1fec",
+    "license": "apache-2.0"
+  },
+  "generator": {
+    "repo": "google/flan-t5-small",
+    "revision": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab",
+    "license": "apache-2.0"
+  }
+}

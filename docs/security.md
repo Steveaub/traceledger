@@ -1,0 +1,14 @@
+# Security boundaries and deployment assumptions
+
+The application defaults to authenticated access. Server-side bearer-token configuration maps each principal to allowed projects. Request bodies cannot supply an ACL. Public references are readable by authenticated principals; synthetic private project records are scoped before vector ranking, BM25 candidate selection, graph traversal, source lookup and cache access. Unauthorized source IDs return 404. The demo explicitly enables unauthenticated access to fictional projects and should remain bound to loopback.
+
+Documents never execute commands, select tools, access the network, or change instructions. Ingestion accepts reviewed local TXT/Markdown/PDF only, caps file/page/text sizes and quarantines common prompt-injection patterns. Retrieval excludes suspicious chunks from answer assembly. This pattern screen is heuristic and will miss obfuscated attacks. The stronger boundary is no tools, no secrets in model context, ACL filtering and literal output validation. Arbitrary paraphrases are rejected even if they might be correct.
+
+Public fetches are offline scripts with fixed sources and timeouts, capped snapshots, and exponential retries; the API cannot fetch arbitrary URLs. Raw HTML scripts and navigation are removed. Browser text is inserted through `textContent`, never source-controlled HTML. CSP disallows inline scripts. Source links only use HTTPS; external links use noopener. API bodies and field lengths are bounded; a per-principal rate limit and serialized CPU inference limit local abuse.
+
+Do not treat this as a penetration-tested enterprise deployment. Configure TLS and external authentication at a proxy, rotate secrets, add durable audit retention, sandbox PDF parsing in an isolated worker, scan uploads for malware, add distributed admission control, and define backup/retention policies before organizational use. Current ACL enforcement covers responses, not process-level timing side channels. The in-memory queue/cache/rate limiter is intended for one worker. Configured ACL changes require restart.
+
+Tests cover forbidden scope, graph edge provenance, shared-equipment traversal leakage, cache isolation and mutation, unknown identifiers, source URI schemes, injected instructions, JavaScript payloads, validation, superseded records and rate limits. Safe spans can still be irrelevant or outdated if document metadata is wrong; citation integrity alone does not solve truthfulness.
+
+
+Evaluation history endpoints require an evaluator role in private mode. Demo mode exposes only runs explicitly marked as demo artifacts. Restricted run files are omitted from release archives. Run IDs are validated before filesystem lookup; comparisons require identical evaluation cohorts. History is append-only through application code, not cryptographically immutable storage.

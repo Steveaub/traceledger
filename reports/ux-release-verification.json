@@ -1,0 +1,20 @@
+{
+  "verified_at": "2026-09-13T17:23:55.647730+00:00",
+  "python_tests_passed": 30,
+  "voice_state_tests_passed": 5,
+  "fresh_model_regression": "passed; held-out recall 0.8611111111111112, MRR 0.8858024691358024 unchanged",
+  "browser_checks": [
+    "desktop workspace and evaluation layout",
+    "mobile workspace and evaluation layout; no page-level horizontal overflow",
+    "answer retrieval and citation-to-source navigation",
+    "evaluation cohort and comparison rendering",
+    "run details and paginated question table",
+    "direct dashboard hash navigation on refresh"
+  ],
+  "demo_history_runs": 4,
+  "microphone_transcription": "not verified with live microphone",
+  "audible_playback": "not independently verified",
+  "docker_runtime": "not executed",
+  "hosted_ci": "not executed",
+  "publication": "not posted or deployed"
+}

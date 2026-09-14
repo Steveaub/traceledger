@@ -1,0 +1,4670 @@
+{
+  "id": "20260913T170609-8b8022d9d482",
+  "started_at": "2026-09-13T17:06:07.672860+00:00",
+  "finished_at": "2026-09-13T17:06:09.289967+00:00",
+  "protocol": "atlas-document-eval-v2",
+  "cohort_id": "fad0edaf51765cb5f0aed6da4d4d18a1350bbc6efafd3807869066af44c1f8e3",
+  "corpus_sha256": "0d0ed2e1611e303c148716295f2cb801e4b931c8da0a3df50c61ef4ada52ab75",
+  "questions_sha256": "dfabb39d00a850c973c3285877c65cb442f8cc91ac4c7cca86c98c202c8347bb",
+  "code_sha256": "1287027023faad83969f8b83bf0dad17525a34df67cd51eb3987c97cec7f0474",
+  "models": {
+    "embedding": {
+      "repo": "qdrant/all-MiniLM-L6-v2-onnx",
+      "revision": "5f1b8cd78bc4fb444dd171e59b18f3a3af89a079",
+      "license": "apache-2.0"
+    },
+    "reranker": {
+      "repo": "Xenova/ms-marco-MiniLM-L-6-v2",
+      "revision": "a09144355adeed5f58c8ed011d209bf8ee5a1fec",
+      "license": "apache-2.0"
+    },
+    "generator": {
+      "repo": "google/flan-t5-small",
+      "revision": "0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab",
+      "license": "apache-2.0"
+    }
+  },
+  "split": "dev",
+  "generation": "evidence",
+  "routing": false,
+  "graph_enabled": false,
+  "cache_policy": "warm sessions; answer cache disabled; query embeddings evicted",
+  "visibility": "demo",
+  "config": {
+    "name": "baseline",
+    "chunking": "fixed",
+    "hybrid": false,
+    "expansion": false,
+    "rerank": false,
+    "graph": false
+  },
+  "summary": {
+    "recall": 0.6666666666666666,
+    "mrr": 0.6589506172839508,
+    "ndcg": 0.5918407783044041,
+    "citation_integrity": 1.0,
+    "citation_accuracy": 0.40340136054421766,
+    "faithfulness_exact_quote": 1.0,
+    "relevance_gold_term_coverage": 0.5740740740740741,
+    "abstention_correct": 0.9122807017543859,
+    "api_cost_usd": 0.0,
+    "queries": 57,
+    "answerable": 54,
+    "retrieval_p50_ms": 20.93779999995604,
+    "retrieval_p95_ms": 22.036719985771924,
+    "total_p95_ms": 22.274399996967986,
+    "compute_cost_usd": null,
+    "recall_bootstrap_95ci": [
+      0.5586033950617283,
+      0.7670138888888888
+    ]
+  },
+  "slices": {
+    "change_impact": {
+      "recall": 0.5,
+      "mrr": 0.4444444444444445,
+      "ndcg": 0.4150604180172513,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.41666666666666663,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.5,
+      "abstention_correct": 0.8333333333333334,
+      "api_cost_usd": 0.0,
+      "queries": 6,
+      "answerable": 6,
+      "retrieval_p50_ms": 20.642849995056167,
+      "retrieval_p95_ms": 20.906350000586826,
+      "total_p95_ms": 21.166074991924688,
+      "compute_cost_usd": null,
+      "recall_bootstrap_95ci": [
+        0.16666666666666666,
+        0.8333333333333334
+      ]
+    },
+    "conflict": {
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.4444444444444444,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1.0,
+      "api_cost_usd": 0.0,
+      "queries": 6,
+      "answerable": 6,
+      "retrieval_p50_ms": 20.80625000235159,
+      "retrieval_p95_ms": 21.580774991889484,
+      "total_p95_ms": 21.743199984484818,
+      "compute_cost_usd": null,
+      "recall_bootstrap_95ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "decision": {
+      "recall": 0.5,
+      "mrr": 0.638888888888889,
+      "ndcg": 0.4616776157804903,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.9333333333333332,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.8333333333333334,
+      "abstention_correct": 0.8333333333333334,
+      "api_cost_usd": 0.0,
+      "queries": 6,
+      "answerable": 6,
+      "retrieval_p50_ms": 20.857899988186546,
+      "retrieval_p95_ms": 21.27920000202721,
+      "total_p95_ms": 21.501524999621324,
+      "compute_cost_usd": null,
+      "recall_bootstrap_95ci": [
+        0.25,
+        0.75
+      ]
+    },
+    "direct": {
+      "recall": 1.0,
+      "mrr": 0.8055555555555555,
+      "ndcg": 0.8551549589285763,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.38888888888888884,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.25,
+      "abstention_correct": 1.0,
+      "api_cost_usd": 0.0,
+      "queries": 6,
+      "answerable": 6,
+      "retrieval_p50_ms": 21.597950006253086,
+      "retrieval_p95_ms": 22.6713000156451,
+      "total_p95_ms": 22.84007499110885,
+      "compute_cost_usd": null,
+      "recall_bootstrap_95ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "exact": {
+      "recall": 1.0,
+      "mrr": 0.8055555555555557,
+      "ndcg": 0.8551549589285763,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1.0,
+      "api_cost_usd": 0.0,
+      "queries": 6,
+      "answerable": 6,
+      "retrieval_p50_ms": 21.05929999379441,
+      "retrieval_p95_ms": 21.854499987966847,
+      "total_p95_ms": 22.12139999755891,
+      "compute_cost_usd": null,
+      "recall_bootstrap_95ci": [
+        1.0,
+        1.0
+      ]
+    },
+    "lesson": {
+      "recall": 0.5,
+      "mrr": 0.25,
+      "ndcg": 0.31546487678572877,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.25,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.5,
+      "abstention_correct": 1.0,
+      "api_cost_usd": 0.0,
+      "queries": 6,
+      "answerable": 6,
+      "retrieval_p50_ms": 21.225699994829483,
+      "retrieval_p95_ms": 21.789650003483985,
+      "total_p95_ms": 21.952024988422636,
+      "compute_cost_usd": null,
+      "recall_bootstrap_95ci": [
+        0.16666666666666666,
+        0.8333333333333334
+      ]
+    },
+    "multi_hop": {
+      "recall": 0.16666666666666666,
+      "mrr": 0.34722222222222227,
+      "ndcg": 0.16666666666666666,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.21250000000000002,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.25,
+      "abstention_correct": 0.6666666666666666,
+      "api_cost_usd": 0.0,
+      "queries": 6,
+      "answerable": 6,
+      "retrieval_p50_ms": 20.83229999698233,
+      "retrieval_p95_ms": 21.353299991460517,
+      "total_p95_ms": 21.66607499384554,
+      "compute_cost_usd": null,
+      "recall_bootstrap_95ci": [
+        0.041666666666666664,
+        0.25
+      ]
+    },
+    "risk": {
+      "recall": 0.8333333333333334,
+      "mrr": 0.638888888888889,
+      "ndcg": 0.6884882922619097,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.3333333333333333,
+      "abstention_correct": 0.8333333333333334,
+      "api_cost_usd": 0.0,
+      "queries": 6,
+      "answerable": 6,
+      "retrieval_p50_ms": 20.56980000634212,
+      "retrieval_p95_ms": 21.378575009293854,
+      "total_p95_ms": 21.62900000985246,
+      "compute_cost_usd": null,
+      "recall_bootstrap_95ci": [
+        0.5,
+        1.0
+      ]
+    },
+    "semantic": {
+      "recall": 0.49999999999999994,
+      "mrr": 1.0,
+      "ndcg": 0.568899217370437,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.5,
+      "abstention_correct": 1.0,
+      "api_cost_usd": 0.0,
+      "queries": 6,
+      "answerable": 6,
+      "retrieval_p50_ms": 21.22125001915265,
+      "retrieval_p95_ms": 22.306699989712797,
+      "total_p95_ms": 22.491000017907936,
+      "compute_cost_usd": null,
+      "recall_bootstrap_95ci": [
+        0.38888888888888884,
+        0.611111111111111
+      ]
+    },
+    "unanswerable": {
+      "recall": null,
+      "mrr": null,
+      "ndcg": null,
+      "citation_integrity": null,
+      "citation_accuracy": null,
+      "faithfulness_exact_quote": null,
+      "relevance_gold_term_coverage": null,
+      "abstention_correct": 1.0,
+      "api_cost_usd": 0.0,
+      "queries": 3,
+      "answerable": 0,
+      "retrieval_p50_ms": 20.791999995708466,
+      "retrieval_p95_ms": 20.975150002050214,
+      "total_p95_ms": 21.577680011978373,
+      "compute_cost_usd": null
+    }
+  },
+  "rows": [
+    {
+      "id": "PRJ-001-direct",
+      "query": "Which equipment and vendor does Project Alpha use?",
+      "category": "direct",
+      "ranked": [
+        "PRJ-001-routine_0",
+        "PRJ-001-charter",
+        "PRJ-001-routine_2",
+        "PRJ-001-minutes",
+        "PRJ-001-routine_1"
+      ],
+      "relevant": [
+        "PRJ-001-charter"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.5,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.659100002376363,
+      "total_ms": 21.229500009212643,
+      "answer": {
+        "answer": "Project Alpha week 1 coordination log: site access, fencing and document control are progressing. [1]\nVendor Northstar Power joined the meeting. [2]\nProject Alpha (PRJ-001) is closed. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-001-routine_0",
+            "title": "Alpha / routine 0",
+            "quote": "Project Alpha week 1 coordination log: site access, fencing and document control are progressing.",
+            "start": 0,
+            "end": 97,
+            "source": "synthetic:PRJ-001-routine_0",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-001-routine_0",
+            "title": "Alpha / routine 0",
+            "quote": " Vendor Northstar Power joined the meeting.",
+            "start": 97,
+            "end": 140,
+            "source": "synthetic:PRJ-001-routine_0",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-001-charter",
+            "title": "Alpha / charter",
+            "quote": "Project Alpha (PRJ-001) is closed.",
+            "start": 0,
+            "end": 34,
+            "source": "synthetic:PRJ-001-charter",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-001-semantic",
+      "query": "What caused Project Alpha to fall behind its commissioning schedule?",
+      "category": "semantic",
+      "ranked": [
+        "PRJ-001-status",
+        "PRJ-001-routine_0",
+        "PRJ-001-routine_2",
+        "PRJ-001-routine_1",
+        "PRJ-012-status"
+      ],
+      "relevant": [
+        "PRJ-001-incident",
+        "PRJ-001-decision",
+        "PRJ-001-status"
+      ],
+      "path": "vector",
+      "recall": 0.3333333333333333,
+      "mrr": 1.0,
+      "ndcg": 0.46927872602275644,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.5,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.965200004866347,
+      "total_ms": 21.13789998111315,
+      "answer": {
+        "answer": "Current Project Alpha status: commissioning is delayed 6 weeks. [1]\nProject Alpha week 1 coordination log: site access, fencing and document control are progressing. [2]\nThere were no changes to the commissioning baseline in this routine log. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-001-status",
+            "title": "Alpha / status",
+            "quote": "Current Project Alpha status: commissioning is delayed 6 weeks.",
+            "start": 0,
+            "end": 63,
+            "source": "synthetic:PRJ-001-status",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-001-routine_0",
+            "title": "Alpha / routine 0",
+            "quote": "Project Alpha week 1 coordination log: site access, fencing and document control are progressing.",
+            "start": 0,
+            "end": 97,
+            "source": "synthetic:PRJ-001-routine_0",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-001-routine_0",
+            "title": "Alpha / routine 0",
+            "quote": " There were no changes to the commissioning baseline in this routine log.",
+            "start": 140,
+            "end": 213,
+            "source": "synthetic:PRJ-001-routine_0",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-001-exact",
+      "query": "What requirement does CR-001 modify?",
+      "category": "exact",
+      "ranked": [
+        "PRJ-001-change",
+        "PRJ-010-change",
+        "PRJ-011-change",
+        "PRJ-002-change",
+        "PRJ-006-change"
+      ],
+      "relevant": [
+        "PRJ-001-change"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.518100005574524,
+      "total_ms": 20.765399996889755,
+      "answer": {
+        "answer": "Change CR-001 on Project Alpha revises acceptance requirement REQ-001. [1]\nCR-001 modifies REQ-001. [2]\nChange CR-010 on Project Juniper revises acceptance requirement REQ-010. [3]\nChange CR-011 on Project Kestrel revises acceptance requirement REQ-011. [4]\nChange CR-002 on Project Beta revises acceptance requirement REQ-002. [5]\nChange CR-006 on Project Falcon revises acceptance requirement REQ-006. [6]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-001-change",
+            "title": "Alpha / change",
+            "quote": "Change CR-001 on Project Alpha revises acceptance requirement REQ-001.",
+            "start": 0,
+            "end": 70,
+            "source": "synthetic:PRJ-001-change",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-001-change",
+            "title": "Alpha / change",
+            "quote": " CR-001 modifies REQ-001.",
+            "start": 70,
+            "end": 95,
+            "source": "synthetic:PRJ-001-change",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-010-change",
+            "title": "Juniper / change",
+            "quote": "Change CR-010 on Project Juniper revises acceptance requirement REQ-010.",
+            "start": 0,
+            "end": 72,
+            "source": "synthetic:PRJ-010-change",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-011-change",
+            "title": "Kestrel / change",
+            "quote": "Change CR-011 on Project Kestrel revises acceptance requirement REQ-011.",
+            "start": 0,
+            "end": 72,
+            "source": "synthetic:PRJ-011-change",
+            "synthetic": true
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-002-change",
+            "title": "Beta / change",
+            "quote": "Change CR-002 on Project Beta revises acceptance requirement REQ-002.",
+            "start": 0,
+            "end": 69,
+            "source": "synthetic:PRJ-002-change",
+            "synthetic": true
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-006-change",
+            "title": "Falcon / change",
+            "quote": "Change CR-006 on Project Falcon revises acceptance requirement REQ-006.",
+            "start": 0,
+            "end": 71,
+            "source": "synthetic:PRJ-006-change",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-001-lesson",
+      "query": "What should we learn from Project Alpha before releasing a purchase order?",
+      "category": "lesson",
+      "ranked": [
+        "PRJ-001-handover",
+        "PRJ-001-lesson",
+        "PRJ-001-minutes",
+        "PRJ-001-status",
+        "PRJ-002-handover"
+      ],
+      "relevant": [
+        "PRJ-001-lesson"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.5,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.1575000139419,
+      "total_ms": 21.311899996362627,
+      "answer": {
+        "answer": "Project Alpha handover checklist: archive drawings, training records, test certificates and lessons learned. [1]\nResolve outstanding change requests and name an operations owner before final acceptance. [2]\nLesson LL-001 from Project Alpha: require witnessed factory acceptance before shipment. [3]\nReuse this lesson at the procurement gate of future projects before purchase-order release. [4]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-001-handover",
+            "title": "Alpha / handover",
+            "quote": "Project Alpha handover checklist: archive drawings, training records, test certificates and lessons learned.",
+            "start": 0,
+            "end": 108,
+            "source": "synthetic:PRJ-001-handover",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-001-handover",
+            "title": "Alpha / handover",
+            "quote": " Resolve outstanding change requests and name an operations owner before final acceptance.",
+            "start": 108,
+            "end": 198,
+            "source": "synthetic:PRJ-001-handover",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-001-lesson",
+            "title": "Alpha / lesson",
+            "quote": "Lesson LL-001 from Project Alpha: require witnessed factory acceptance before shipment.",
+            "start": 0,
+            "end": 87,
+            "source": "synthetic:PRJ-001-lesson",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-001-lesson",
+            "title": "Alpha / lesson",
+            "quote": " Reuse this lesson at the procurement gate of future projects before purchase-order release.",
+            "start": 137,
+            "end": 229,
+            "source": "synthetic:PRJ-001-lesson",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-001-decision",
+      "query": "Why did DEC-001 move the milestone?",
+      "category": "decision",
+      "ranked": [
+        "PRJ-001-decision",
+        "PRJ-010-decision",
+        "PRJ-011-decision",
+        "PRJ-002-decision",
+        "PRJ-002-incident"
+      ],
+      "relevant": [
+        "PRJ-001-decision",
+        "PRJ-001-incident"
+      ],
+      "path": "vector",
+      "recall": 0.5,
+      "mrr": 1.0,
+      "ndcg": 0.6131471927654584,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.6666666666666666,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.483399974182248,
+      "total_ms": 20.725100010167807,
+      "answer": {
+        "answer": "Decision DEC-001 moved MS-001 by 6 weeks because transformer winding insulation failed factory testing. [1]\nDEC-001 responds to INC-001. [2]\nThe commissioning milestone slipped by 3 weeks. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-001-decision",
+            "title": "Alpha / decision",
+            "quote": "Decision DEC-001 moved MS-001 by 6 weeks because transformer winding insulation failed factory testing.",
+            "start": 0,
+            "end": 103,
+            "source": "synthetic:PRJ-001-decision",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-001-decision",
+            "title": "Alpha / decision",
+            "quote": " DEC-001 responds to INC-001.",
+            "start": 103,
+            "end": 132,
+            "source": "synthetic:PRJ-001-decision",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-002-incident",
+            "title": "Beta / incident",
+            "quote": " The commissioning milestone slipped by 3 weeks.",
+            "start": 114,
+            "end": 162,
+            "source": "synthetic:PRJ-002-incident",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-001-risk",
+      "query": "What triggers RISK-001 and what response is planned?",
+      "category": "risk",
+      "ranked": [
+        "PRJ-001-risk",
+        "PRJ-002-risk",
+        "PRJ-010-risk",
+        "PRJ-012-risk",
+        "PRJ-009-risk"
+      ],
+      "relevant": [
+        "PRJ-001-risk"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.5,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.601199998054653,
+      "total_ms": 20.859899988863617,
+      "answer": {
+        "answer": "Risk RISK-001 for Project Alpha: repeat TX-880 acceptance failure could delay energization. [1]\nRISK-001 threatens MS-001. [2]\nResponse: validate firmware interoperability in a hardware-in-the-loop test. [3]\nResponse: validate firmware interoperability in a hardware-in-the-loop test. [4]\nResponse: complete an independent protection coordination review. [5]\nResponse: require witnessed factory acceptance before shipment. [6]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-001-risk",
+            "title": "Alpha / risk",
+            "quote": "Risk RISK-001 for Project Alpha: repeat TX-880 acceptance failure could delay energization.",
+            "start": 0,
+            "end": 91,
+            "source": "synthetic:PRJ-001-risk",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-001-risk",
+            "title": "Alpha / risk",
+            "quote": " RISK-001 threatens MS-001.",
+            "start": 116,
+            "end": 143,
+            "source": "synthetic:PRJ-001-risk",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-002-risk",
+            "title": "Beta / risk",
+            "quote": " Response: validate firmware interoperability in a hardware-in-the-loop test.",
+            "start": 218,
+            "end": 295,
+            "source": "synthetic:PRJ-002-risk",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-010-risk",
+            "title": "Juniper / risk",
+            "quote": " Response: validate firmware interoperability in a hardware-in-the-loop test.",
+            "start": 221,
+            "end": 298,
+            "source": "synthetic:PRJ-010-risk",
+            "synthetic": true
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-012-risk",
+            "title": "Laurel / risk",
+            "quote": " Response: complete an independent protection coordination review.",
+            "start": 219,
+            "end": 285,
+            "source": "synthetic:PRJ-012-risk",
+            "synthetic": true
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-009-risk",
+            "title": "Iris / risk",
+            "quote": " Response: require witnessed factory acceptance before shipment.",
+            "start": 216,
+            "end": 280,
+            "source": "synthetic:PRJ-009-risk",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-001-conflict",
+      "query": "What is the current commissioning delay for Project Alpha?",
+      "category": "conflict",
+      "ranked": [
+        "PRJ-001-status",
+        "PRJ-001-routine_0",
+        "PRJ-001-routine_2",
+        "PRJ-002-status",
+        "PRJ-012-status"
+      ],
+      "relevant": [
+        "PRJ-001-status"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.630400016671047,
+      "total_ms": 20.79449998564087,
+      "answer": {
+        "answer": "Current Project Alpha status: commissioning is delayed 6 weeks. [1]\nProject Alpha week 1 coordination log: site access, fencing and document control are progressing. [2]\nThere were no changes to the commissioning baseline in this routine log. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-001-status",
+            "title": "Alpha / status",
+            "quote": "Current Project Alpha status: commissioning is delayed 6 weeks.",
+            "start": 0,
+            "end": 63,
+            "source": "synthetic:PRJ-001-status",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-001-routine_0",
+            "title": "Alpha / routine 0",
+            "quote": "Project Alpha week 1 coordination log: site access, fencing and document control are progressing.",
+            "start": 0,
+            "end": 97,
+            "source": "synthetic:PRJ-001-routine_0",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-001-routine_0",
+            "title": "Alpha / routine 0",
+            "quote": " There were no changes to the commissioning baseline in this routine log.",
+            "start": 140,
+            "end": 213,
+            "source": "synthetic:PRJ-001-routine_0",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-001-change_impact",
+      "query": "Trace the requirement and incident linked to CR-001.",
+      "category": "change_impact",
+      "ranked": [
+        "PRJ-001-change",
+        "PRJ-002-incident",
+        "PRJ-001-status",
+        "PRJ-012-rfi",
+        "PRJ-010-incident"
+      ],
+      "relevant": [
+        "PRJ-001-change",
+        "PRJ-001-incident"
+      ],
+      "path": "vector",
+      "recall": 0.5,
+      "mrr": 1.0,
+      "ndcg": 0.6131471927654584,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.4,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.5,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.600599993485957,
+      "total_ms": 20.85800000349991,
+      "answer": {
+        "answer": "Change CR-001 on Project Alpha revises acceptance requirement REQ-001. [1]\nCR-001 modifies REQ-001. [2]\nIncident INC-002 on Project Beta: controller firmware dropped synchronization messages. [3]\nThe approved recovery plan tracks CR-001, RISK-001 and MS-001. [4]\nIncident INC-010 on Project Juniper: controller firmware dropped synchronization messages. [5]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-001-change",
+            "title": "Alpha / change",
+            "quote": "Change CR-001 on Project Alpha revises acceptance requirement REQ-001.",
+            "start": 0,
+            "end": 70,
+            "source": "synthetic:PRJ-001-change",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-001-change",
+            "title": "Alpha / change",
+            "quote": " CR-001 modifies REQ-001.",
+            "start": 70,
+            "end": 95,
+            "source": "synthetic:PRJ-001-change",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-002-incident",
+            "title": "Beta / incident",
+            "quote": "Incident INC-002 on Project Beta: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 87,
+            "source": "synthetic:PRJ-002-incident",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-001-status",
+            "title": "Alpha / status",
+            "quote": " The approved recovery plan tracks CR-001, RISK-001 and MS-001.",
+            "start": 63,
+            "end": 126,
+            "source": "synthetic:PRJ-001-status",
+            "synthetic": true
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-010-incident",
+            "title": "Juniper / incident",
+            "quote": "Incident INC-010 on Project Juniper: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 90,
+            "source": "synthetic:PRJ-010-incident",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-001-multi_hop",
+      "query": "Which active projects use the equipment affected by INC-001, and what lesson follows that incident?",
+      "category": "multi_hop",
+      "ranked": [
+        "PRJ-002-incident",
+        "PRJ-001-incident",
+        "PRJ-010-incident",
+        "PRJ-006-incident",
+        "PRJ-001-risk"
+      ],
+      "relevant": [
+        "PRJ-001-incident",
+        "PRJ-001-lesson",
+        "PRJ-005-charter",
+        "PRJ-009-charter"
+      ],
+      "path": "vector",
+      "recall": 0.25,
+      "mrr": 0.5,
+      "ndcg": 0.24630238874073,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.25,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.25,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.849699998507276,
+      "total_ms": 21.156699978746474,
+      "answer": {
+        "answer": "Incident INC-002 on Project Beta: controller firmware dropped synchronization messages. [1]\nINC-002 affected CTRL-420. [2]\nIncident INC-001 on Project Alpha: transformer winding insulation failed factory testing. [3]\nINC-001 affected TX-880. [4]\nIncident INC-010 on Project Juniper: controller firmware dropped synchronization messages. [5]\nINC-010 affected CTRL-420. [6]\nIncident INC-006 on Project Falcon: controller firmware dropped synchronization messages. [7]\nINC-006 affected CTRL-420. [8]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-002-incident",
+            "title": "Beta / incident",
+            "quote": "Incident INC-002 on Project Beta: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 87,
+            "source": "synthetic:PRJ-002-incident",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-002-incident",
+            "title": "Beta / incident",
+            "quote": " INC-002 affected CTRL-420.",
+            "start": 87,
+            "end": 114,
+            "source": "synthetic:PRJ-002-incident",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-001-incident",
+            "title": "Alpha / incident",
+            "quote": "Incident INC-001 on Project Alpha: transformer winding insulation failed factory testing.",
+            "start": 0,
+            "end": 89,
+            "source": "synthetic:PRJ-001-incident",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-001-incident",
+            "title": "Alpha / incident",
+            "quote": " INC-001 affected TX-880.",
+            "start": 89,
+            "end": 114,
+            "source": "synthetic:PRJ-001-incident",
+            "synthetic": true
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-010-incident",
+            "title": "Juniper / incident",
+            "quote": "Incident INC-010 on Project Juniper: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 90,
+            "source": "synthetic:PRJ-010-incident",
+            "synthetic": true
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-010-incident",
+            "title": "Juniper / incident",
+            "quote": " INC-010 affected CTRL-420.",
+            "start": 90,
+            "end": 117,
+            "source": "synthetic:PRJ-010-incident",
+            "synthetic": true
+          },
+          {
+            "id": 7,
+            "doc_id": "PRJ-006-incident",
+            "title": "Falcon / incident",
+            "quote": "Incident INC-006 on Project Falcon: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 89,
+            "source": "synthetic:PRJ-006-incident",
+            "synthetic": true
+          },
+          {
+            "id": 8,
+            "doc_id": "PRJ-006-incident",
+            "title": "Falcon / incident",
+            "quote": " INC-006 affected CTRL-420.",
+            "start": 89,
+            "end": 116,
+            "source": "synthetic:PRJ-006-incident",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-002-direct",
+      "query": "Which equipment and vendor does Project Beta use?",
+      "category": "direct",
+      "ranked": [
+        "PRJ-002-minutes",
+        "PRJ-002-routine_0",
+        "PRJ-002-charter",
+        "PRJ-002-handover",
+        "PRJ-002-routine_1"
+      ],
+      "relevant": [
+        "PRJ-002-charter"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 0.3333333333333333,
+      "ndcg": 0.5,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.5,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.467500017024577,
+      "total_ms": 21.648299996741116,
+      "answer": {
+        "answer": "Project Beta coordination meeting: the team reviewed civil works and cable routing. [1]\nProject Beta week 1 coordination log: site access, fencing and document control are progressing. [2]\nVendor Meridian Controls joined the meeting. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-002-minutes",
+            "title": "Beta / minutes",
+            "quote": "Project Beta coordination meeting: the team reviewed civil works and cable routing.",
+            "start": 0,
+            "end": 83,
+            "source": "synthetic:PRJ-002-minutes",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-002-routine_0",
+            "title": "Beta / routine 0",
+            "quote": "Project Beta week 1 coordination log: site access, fencing and document control are progressing.",
+            "start": 0,
+            "end": 96,
+            "source": "synthetic:PRJ-002-routine_0",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-002-routine_0",
+            "title": "Beta / routine 0",
+            "quote": " Vendor Meridian Controls joined the meeting.",
+            "start": 96,
+            "end": 141,
+            "source": "synthetic:PRJ-002-routine_0",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-002-semantic",
+      "query": "What caused Project Beta to fall behind its commissioning schedule?",
+      "category": "semantic",
+      "ranked": [
+        "PRJ-002-status",
+        "PRJ-001-status",
+        "PRJ-002-routine_0",
+        "PRJ-012-status",
+        "PRJ-002-routine_2"
+      ],
+      "relevant": [
+        "PRJ-002-incident",
+        "PRJ-002-decision",
+        "PRJ-002-status"
+      ],
+      "path": "vector",
+      "recall": 0.3333333333333333,
+      "mrr": 1.0,
+      "ndcg": 0.46927872602275644,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.5,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.07000001706183,
+      "total_ms": 21.23299997765571,
+      "answer": {
+        "answer": "Current Project Beta status: commissioning is delayed 3 weeks. [1]\nProject Beta week 1 coordination log: site access, fencing and document control are progressing. [2]\nThere were no changes to the commissioning baseline in this routine log. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-002-status",
+            "title": "Beta / status",
+            "quote": "Current Project Beta status: commissioning is delayed 3 weeks.",
+            "start": 0,
+            "end": 62,
+            "source": "synthetic:PRJ-002-status",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-002-routine_0",
+            "title": "Beta / routine 0",
+            "quote": "Project Beta week 1 coordination log: site access, fencing and document control are progressing.",
+            "start": 0,
+            "end": 96,
+            "source": "synthetic:PRJ-002-routine_0",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-002-routine_0",
+            "title": "Beta / routine 0",
+            "quote": " There were no changes to the commissioning baseline in this routine log.",
+            "start": 141,
+            "end": 214,
+            "source": "synthetic:PRJ-002-routine_0",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-002-exact",
+      "query": "What requirement does CR-002 modify?",
+      "category": "exact",
+      "ranked": [
+        "PRJ-002-change",
+        "PRJ-001-change",
+        "PRJ-010-change",
+        "PRJ-012-change",
+        "PRJ-011-change"
+      ],
+      "relevant": [
+        "PRJ-002-change"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.92340000672266,
+      "total_ms": 21.174399997107685,
+      "answer": {
+        "answer": "Change CR-002 on Project Beta revises acceptance requirement REQ-002. [1]\nCR-002 modifies REQ-002. [2]\nChange CR-001 on Project Alpha revises acceptance requirement REQ-001. [3]\nChange CR-010 on Project Juniper revises acceptance requirement REQ-010. [4]\nChange CR-012 on Project Laurel revises acceptance requirement REQ-012. [5]\nChange CR-011 on Project Kestrel revises acceptance requirement REQ-011. [6]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-002-change",
+            "title": "Beta / change",
+            "quote": "Change CR-002 on Project Beta revises acceptance requirement REQ-002.",
+            "start": 0,
+            "end": 69,
+            "source": "synthetic:PRJ-002-change",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-002-change",
+            "title": "Beta / change",
+            "quote": " CR-002 modifies REQ-002.",
+            "start": 69,
+            "end": 94,
+            "source": "synthetic:PRJ-002-change",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-001-change",
+            "title": "Alpha / change",
+            "quote": "Change CR-001 on Project Alpha revises acceptance requirement REQ-001.",
+            "start": 0,
+            "end": 70,
+            "source": "synthetic:PRJ-001-change",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-010-change",
+            "title": "Juniper / change",
+            "quote": "Change CR-010 on Project Juniper revises acceptance requirement REQ-010.",
+            "start": 0,
+            "end": 72,
+            "source": "synthetic:PRJ-010-change",
+            "synthetic": true
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-012-change",
+            "title": "Laurel / change",
+            "quote": "Change CR-012 on Project Laurel revises acceptance requirement REQ-012.",
+            "start": 0,
+            "end": 71,
+            "source": "synthetic:PRJ-012-change",
+            "synthetic": true
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-011-change",
+            "title": "Kestrel / change",
+            "quote": "Change CR-011 on Project Kestrel revises acceptance requirement REQ-011.",
+            "start": 0,
+            "end": 72,
+            "source": "synthetic:PRJ-011-change",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-002-lesson",
+      "query": "What should we learn from Project Beta before releasing a purchase order?",
+      "category": "lesson",
+      "ranked": [
+        "PRJ-002-handover",
+        "PRJ-002-status",
+        "PRJ-002-minutes",
+        "PRJ-001-handover",
+        "PRJ-001-lesson"
+      ],
+      "relevant": [
+        "PRJ-002-lesson"
+      ],
+      "path": "vector",
+      "recall": 0.0,
+      "mrr": 0,
+      "ndcg": 0.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.046999987447634,
+      "total_ms": 21.229500009212643,
+      "answer": {
+        "answer": "Project Beta handover checklist: archive drawings, training records, test certificates and lessons learned. [1]\nResolve outstanding change requests and name an operations owner before final acceptance. [2]\nCurrent Project Beta status: commissioning is delayed 3 weeks. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-002-handover",
+            "title": "Beta / handover",
+            "quote": "Project Beta handover checklist: archive drawings, training records, test certificates and lessons learned.",
+            "start": 0,
+            "end": 107,
+            "source": "synthetic:PRJ-002-handover",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-002-handover",
+            "title": "Beta / handover",
+            "quote": " Resolve outstanding change requests and name an operations owner before final acceptance.",
+            "start": 107,
+            "end": 197,
+            "source": "synthetic:PRJ-002-handover",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-002-status",
+            "title": "Beta / status",
+            "quote": "Current Project Beta status: commissioning is delayed 3 weeks.",
+            "start": 0,
+            "end": 62,
+            "source": "synthetic:PRJ-002-status",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-002-decision",
+      "query": "Why did DEC-002 move the milestone?",
+      "category": "decision",
+      "ranked": [
+        "PRJ-002-decision",
+        "PRJ-010-decision",
+        "PRJ-011-decision",
+        "PRJ-007-decision",
+        "PRJ-002-incident"
+      ],
+      "relevant": [
+        "PRJ-002-decision",
+        "PRJ-002-incident"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 0.8503449055347546,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.904899982269853,
+      "total_ms": 21.151699998881668,
+      "answer": {
+        "answer": "Decision DEC-002 moved MS-002 by 3 weeks because controller firmware dropped synchronization messages. [1]\nDEC-002 responds to INC-002. [2]\nThe commissioning milestone slipped by 3 weeks. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-002-decision",
+            "title": "Beta / decision",
+            "quote": "Decision DEC-002 moved MS-002 by 3 weeks because controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 102,
+            "source": "synthetic:PRJ-002-decision",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-002-decision",
+            "title": "Beta / decision",
+            "quote": " DEC-002 responds to INC-002.",
+            "start": 102,
+            "end": 131,
+            "source": "synthetic:PRJ-002-decision",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-002-incident",
+            "title": "Beta / incident",
+            "quote": " The commissioning milestone slipped by 3 weeks.",
+            "start": 114,
+            "end": 162,
+            "source": "synthetic:PRJ-002-incident",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-002-risk",
+      "query": "What triggers RISK-002 and what response is planned?",
+      "category": "risk",
+      "ranked": [
+        "PRJ-002-risk",
+        "PRJ-001-risk",
+        "PRJ-012-risk",
+        "PRJ-010-risk",
+        "PRJ-008-risk"
+      ],
+      "relevant": [
+        "PRJ-002-risk"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.5,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.47010000771843,
+      "total_ms": 21.722500008763745,
+      "answer": {
+        "answer": "Risk RISK-002 for Project Beta: repeat CTRL-420 acceptance failure could delay energization. [1]\nRISK-002 threatens MS-002. [2]\nResponse: require witnessed factory acceptance before shipment. [3]\nResponse: complete an independent protection coordination review. [4]\nResponse: validate firmware interoperability in a hardware-in-the-loop test. [5]\nResponse: complete an independent protection coordination review. [6]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-002-risk",
+            "title": "Beta / risk",
+            "quote": "Risk RISK-002 for Project Beta: repeat CTRL-420 acceptance failure could delay energization.",
+            "start": 0,
+            "end": 92,
+            "source": "synthetic:PRJ-002-risk",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-002-risk",
+            "title": "Beta / risk",
+            "quote": " RISK-002 threatens MS-002.",
+            "start": 117,
+            "end": 144,
+            "source": "synthetic:PRJ-002-risk",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-001-risk",
+            "title": "Alpha / risk",
+            "quote": " Response: require witnessed factory acceptance before shipment.",
+            "start": 217,
+            "end": 281,
+            "source": "synthetic:PRJ-001-risk",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-012-risk",
+            "title": "Laurel / risk",
+            "quote": " Response: complete an independent protection coordination review.",
+            "start": 219,
+            "end": 285,
+            "source": "synthetic:PRJ-012-risk",
+            "synthetic": true
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-010-risk",
+            "title": "Juniper / risk",
+            "quote": " Response: validate firmware interoperability in a hardware-in-the-loop test.",
+            "start": 221,
+            "end": 298,
+            "source": "synthetic:PRJ-010-risk",
+            "synthetic": true
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-008-risk",
+            "title": "Harbor / risk",
+            "quote": " Response: complete an independent protection coordination review.",
+            "start": 219,
+            "end": 285,
+            "source": "synthetic:PRJ-008-risk",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-002-conflict",
+      "query": "What is the current commissioning delay for Project Beta?",
+      "category": "conflict",
+      "ranked": [
+        "PRJ-002-status",
+        "PRJ-001-status",
+        "PRJ-010-status",
+        "PRJ-006-status",
+        "PRJ-012-status"
+      ],
+      "relevant": [
+        "PRJ-002-status"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.691599987912923,
+      "total_ms": 20.813100010855123,
+      "answer": {
+        "answer": "Current Project Beta status: commissioning is delayed 3 weeks. [1]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-002-status",
+            "title": "Beta / status",
+            "quote": "Current Project Beta status: commissioning is delayed 3 weeks.",
+            "start": 0,
+            "end": 62,
+            "source": "synthetic:PRJ-002-status",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-002-change_impact",
+      "query": "Trace the requirement and incident linked to CR-002.",
+      "category": "change_impact",
+      "ranked": [
+        "PRJ-002-incident",
+        "PRJ-002-change",
+        "PRJ-001-change",
+        "PRJ-012-rfi",
+        "PRJ-002-decision"
+      ],
+      "relevant": [
+        "PRJ-002-change",
+        "PRJ-002-incident"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.6,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.81200000247918,
+      "total_ms": 21.06219998677261,
+      "answer": {
+        "answer": "Incident INC-002 on Project Beta: controller firmware dropped synchronization messages. [1]\nChange CR-002 on Project Beta revises acceptance requirement REQ-002. [2]\nCR-002 modifies REQ-002. [3]\nChange CR-001 on Project Alpha revises acceptance requirement REQ-001. [4]\nThe board accepted the schedule change only after reviewing the incident and change CR-002. [5]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-002-incident",
+            "title": "Beta / incident",
+            "quote": "Incident INC-002 on Project Beta: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 87,
+            "source": "synthetic:PRJ-002-incident",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-002-change",
+            "title": "Beta / change",
+            "quote": "Change CR-002 on Project Beta revises acceptance requirement REQ-002.",
+            "start": 0,
+            "end": 69,
+            "source": "synthetic:PRJ-002-change",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-002-change",
+            "title": "Beta / change",
+            "quote": " CR-002 modifies REQ-002.",
+            "start": 69,
+            "end": 94,
+            "source": "synthetic:PRJ-002-change",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-001-change",
+            "title": "Alpha / change",
+            "quote": "Change CR-001 on Project Alpha revises acceptance requirement REQ-001.",
+            "start": 0,
+            "end": 70,
+            "source": "synthetic:PRJ-001-change",
+            "synthetic": true
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-002-decision",
+            "title": "Beta / decision",
+            "quote": " The board accepted the schedule change only after reviewing the incident and change CR-002.",
+            "start": 131,
+            "end": 223,
+            "source": "synthetic:PRJ-002-decision",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-002-multi_hop",
+      "query": "Which active projects use the equipment affected by INC-002, and what lesson follows that incident?",
+      "category": "multi_hop",
+      "ranked": [
+        "PRJ-002-incident",
+        "PRJ-001-incident",
+        "PRJ-010-incident",
+        "PRJ-012-incident",
+        "PRJ-012-lesson"
+      ],
+      "relevant": [
+        "PRJ-002-incident",
+        "PRJ-002-lesson",
+        "PRJ-006-charter",
+        "PRJ-010-charter"
+      ],
+      "path": "vector",
+      "recall": 0.25,
+      "mrr": 1.0,
+      "ndcg": 0.3903800499921017,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.2,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.5,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.461299980524927,
+      "total_ms": 20.752299984451383,
+      "answer": {
+        "answer": "Incident INC-002 on Project Beta: controller firmware dropped synchronization messages. [1]\nINC-002 affected CTRL-420. [2]\nIncident INC-001 on Project Alpha: transformer winding insulation failed factory testing. [3]\nINC-001 affected TX-880. [4]\nIncident INC-010 on Project Juniper: controller firmware dropped synchronization messages. [5]\nINC-010 affected CTRL-420. [6]\nIncident INC-012 on Project Laurel: switchgear relay settings conflicted with the utility study. [7]\nINC-012 affected SWG-610. [8]\nReuse this lesson at the procurement gate of future projects before purchase-order release. [9]\nLesson LL-012 from Project Laurel: complete an independent protection coordination review. [10]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-002-incident",
+            "title": "Beta / incident",
+            "quote": "Incident INC-002 on Project Beta: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 87,
+            "source": "synthetic:PRJ-002-incident",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-002-incident",
+            "title": "Beta / incident",
+            "quote": " INC-002 affected CTRL-420.",
+            "start": 87,
+            "end": 114,
+            "source": "synthetic:PRJ-002-incident",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-001-incident",
+            "title": "Alpha / incident",
+            "quote": "Incident INC-001 on Project Alpha: transformer winding insulation failed factory testing.",
+            "start": 0,
+            "end": 89,
+            "source": "synthetic:PRJ-001-incident",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-001-incident",
+            "title": "Alpha / incident",
+            "quote": " INC-001 affected TX-880.",
+            "start": 89,
+            "end": 114,
+            "source": "synthetic:PRJ-001-incident",
+            "synthetic": true
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-010-incident",
+            "title": "Juniper / incident",
+            "quote": "Incident INC-010 on Project Juniper: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 90,
+            "source": "synthetic:PRJ-010-incident",
+            "synthetic": true
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-010-incident",
+            "title": "Juniper / incident",
+            "quote": " INC-010 affected CTRL-420.",
+            "start": 90,
+            "end": 117,
+            "source": "synthetic:PRJ-010-incident",
+            "synthetic": true
+          },
+          {
+            "id": 7,
+            "doc_id": "PRJ-012-incident",
+            "title": "Laurel / incident",
+            "quote": "Incident INC-012 on Project Laurel: switchgear relay settings conflicted with the utility study.",
+            "start": 0,
+            "end": 96,
+            "source": "synthetic:PRJ-012-incident",
+            "synthetic": true
+          },
+          {
+            "id": 8,
+            "doc_id": "PRJ-012-incident",
+            "title": "Laurel / incident",
+            "quote": " INC-012 affected SWG-610.",
+            "start": 96,
+            "end": 122,
+            "source": "synthetic:PRJ-012-incident",
+            "synthetic": true
+          },
+          {
+            "id": 9,
+            "doc_id": "PRJ-012-lesson",
+            "title": "Laurel / lesson",
+            "quote": " Reuse this lesson at the procurement gate of future projects before purchase-order release.",
+            "start": 141,
+            "end": 233,
+            "source": "synthetic:PRJ-012-lesson",
+            "synthetic": true
+          },
+          {
+            "id": 10,
+            "doc_id": "PRJ-012-lesson",
+            "title": "Laurel / lesson",
+            "quote": "Lesson LL-012 from Project Laurel: complete an independent protection coordination review.",
+            "start": 0,
+            "end": 90,
+            "source": "synthetic:PRJ-012-lesson",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-003-direct",
+      "query": "Which equipment and vendor does Project Cedar use?",
+      "category": "direct",
+      "ranked": [
+        "PRJ-003-charter",
+        "PRJ-003-handover",
+        "PRJ-003-vendor",
+        "PRJ-003-minutes",
+        "PRJ-003-routine_0"
+      ],
+      "relevant": [
+        "PRJ-003-charter"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.5,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 22.774800017941743,
+      "total_ms": 22.942899988265708,
+      "answer": {
+        "answer": "Project Cedar (PRJ-003) is closed. [1]\nProject Cedar handover checklist: archive drawings, training records, test certificates and lessons learned. [2]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-003-charter",
+            "title": "Cedar / charter",
+            "quote": "Project Cedar (PRJ-003) is closed.",
+            "start": 0,
+            "end": 34,
+            "source": "synthetic:PRJ-003-charter",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-003-handover",
+            "title": "Cedar / handover",
+            "quote": "Project Cedar handover checklist: archive drawings, training records, test certificates and lessons learned.",
+            "start": 0,
+            "end": 108,
+            "source": "synthetic:PRJ-003-handover",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-003-semantic",
+      "query": "What caused Project Cedar to fall behind its commissioning schedule?",
+      "category": "semantic",
+      "ranked": [
+        "PRJ-003-status",
+        "PRJ-003-routine_0",
+        "PRJ-003-routine_1",
+        "PRJ-003-routine_2",
+        "PRJ-003-charter"
+      ],
+      "relevant": [
+        "PRJ-003-incident",
+        "PRJ-003-decision",
+        "PRJ-003-status"
+      ],
+      "path": "vector",
+      "recall": 0.3333333333333333,
+      "mrr": 1.0,
+      "ndcg": 0.46927872602275644,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.5,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.946500007994473,
+      "total_ms": 21.112000016728416,
+      "answer": {
+        "answer": "Current Project Cedar status: commissioning is delayed 4 weeks. [1]\nProject Cedar week 1 coordination log: site access, fencing and document control are progressing. [2]\nThere were no changes to the commissioning baseline in this routine log. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-003-status",
+            "title": "Cedar / status",
+            "quote": "Current Project Cedar status: commissioning is delayed 4 weeks.",
+            "start": 0,
+            "end": 63,
+            "source": "synthetic:PRJ-003-status",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-003-routine_0",
+            "title": "Cedar / routine 0",
+            "quote": "Project Cedar week 1 coordination log: site access, fencing and document control are progressing.",
+            "start": 0,
+            "end": 97,
+            "source": "synthetic:PRJ-003-routine_0",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-003-routine_0",
+            "title": "Cedar / routine 0",
+            "quote": " There were no changes to the commissioning baseline in this routine log.",
+            "start": 140,
+            "end": 213,
+            "source": "synthetic:PRJ-003-routine_0",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-003-exact",
+      "query": "What requirement does CR-003 modify?",
+      "category": "exact",
+      "ranked": [
+        "PRJ-003-change",
+        "PRJ-001-change",
+        "PRJ-010-change",
+        "PRJ-007-change",
+        "PRJ-011-change"
+      ],
+      "relevant": [
+        "PRJ-003-change"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.073399995453656,
+      "total_ms": 20.312400010880083,
+      "answer": {
+        "answer": "Change CR-003 on Project Cedar revises acceptance requirement REQ-003. [1]\nCR-003 modifies REQ-003. [2]\nChange CR-001 on Project Alpha revises acceptance requirement REQ-001. [3]\nChange CR-010 on Project Juniper revises acceptance requirement REQ-010. [4]\nChange CR-007 on Project Granite revises acceptance requirement REQ-007. [5]\nChange CR-011 on Project Kestrel revises acceptance requirement REQ-011. [6]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-003-change",
+            "title": "Cedar / change",
+            "quote": "Change CR-003 on Project Cedar revises acceptance requirement REQ-003.",
+            "start": 0,
+            "end": 70,
+            "source": "synthetic:PRJ-003-change",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-003-change",
+            "title": "Cedar / change",
+            "quote": " CR-003 modifies REQ-003.",
+            "start": 70,
+            "end": 95,
+            "source": "synthetic:PRJ-003-change",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-001-change",
+            "title": "Alpha / change",
+            "quote": "Change CR-001 on Project Alpha revises acceptance requirement REQ-001.",
+            "start": 0,
+            "end": 70,
+            "source": "synthetic:PRJ-001-change",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-010-change",
+            "title": "Juniper / change",
+            "quote": "Change CR-010 on Project Juniper revises acceptance requirement REQ-010.",
+            "start": 0,
+            "end": 72,
+            "source": "synthetic:PRJ-010-change",
+            "synthetic": true
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-007-change",
+            "title": "Granite / change",
+            "quote": "Change CR-007 on Project Granite revises acceptance requirement REQ-007.",
+            "start": 0,
+            "end": 72,
+            "source": "synthetic:PRJ-007-change",
+            "synthetic": true
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-011-change",
+            "title": "Kestrel / change",
+            "quote": "Change CR-011 on Project Kestrel revises acceptance requirement REQ-011.",
+            "start": 0,
+            "end": 72,
+            "source": "synthetic:PRJ-011-change",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-003-lesson",
+      "query": "What should we learn from Project Cedar before releasing a purchase order?",
+      "category": "lesson",
+      "ranked": [
+        "PRJ-003-handover",
+        "PRJ-003-status",
+        "PRJ-003-minutes",
+        "PRJ-003-routine_0",
+        "PRJ-003-routine_2"
+      ],
+      "relevant": [
+        "PRJ-003-lesson"
+      ],
+      "path": "vector",
+      "recall": 0.0,
+      "mrr": 0,
+      "ndcg": 0.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.293899975717068,
+      "total_ms": 21.44469998893328,
+      "answer": {
+        "answer": "Project Cedar handover checklist: archive drawings, training records, test certificates and lessons learned. [1]\nResolve outstanding change requests and name an operations owner before final acceptance. [2]\nCurrent Project Cedar status: commissioning is delayed 4 weeks. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-003-handover",
+            "title": "Cedar / handover",
+            "quote": "Project Cedar handover checklist: archive drawings, training records, test certificates and lessons learned.",
+            "start": 0,
+            "end": 108,
+            "source": "synthetic:PRJ-003-handover",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-003-handover",
+            "title": "Cedar / handover",
+            "quote": " Resolve outstanding change requests and name an operations owner before final acceptance.",
+            "start": 108,
+            "end": 198,
+            "source": "synthetic:PRJ-003-handover",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-003-status",
+            "title": "Cedar / status",
+            "quote": "Current Project Cedar status: commissioning is delayed 4 weeks.",
+            "start": 0,
+            "end": 63,
+            "source": "synthetic:PRJ-003-status",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-003-decision",
+      "query": "Why did DEC-003 move the milestone?",
+      "category": "decision",
+      "ranked": [
+        "PRJ-010-decision",
+        "PRJ-003-decision",
+        "PRJ-002-decision",
+        "PRJ-011-decision",
+        "PRJ-001-decision"
+      ],
+      "relevant": [
+        "PRJ-003-decision",
+        "PRJ-003-incident"
+      ],
+      "path": "vector",
+      "recall": 0.5,
+      "mrr": 0.5,
+      "ndcg": 0.38685280723454163,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.12760000070557,
+      "total_ms": 20.33230001688935,
+      "answer": {
+        "answer": "Decision DEC-003 moved MS-003 by 4 weeks because cooling pump seals leaked during endurance testing. [1]\nDEC-003 responds to INC-003. [2]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-003-decision",
+            "title": "Cedar / decision",
+            "quote": "Decision DEC-003 moved MS-003 by 4 weeks because cooling pump seals leaked during endurance testing.",
+            "start": 0,
+            "end": 100,
+            "source": "synthetic:PRJ-003-decision",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-003-decision",
+            "title": "Cedar / decision",
+            "quote": " DEC-003 responds to INC-003.",
+            "start": 100,
+            "end": 129,
+            "source": "synthetic:PRJ-003-decision",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-003-risk",
+      "query": "What triggers RISK-003 and what response is planned?",
+      "category": "risk",
+      "ranked": [
+        "PRJ-002-risk",
+        "PRJ-001-risk",
+        "PRJ-010-risk",
+        "PRJ-008-risk",
+        "PRJ-012-risk"
+      ],
+      "relevant": [
+        "PRJ-003-risk"
+      ],
+      "path": "vector",
+      "recall": 0.0,
+      "mrr": 0,
+      "ndcg": 0.0,
+      "citation_integrity": null,
+      "citation_accuracy": null,
+      "faithfulness_exact_quote": null,
+      "relevance_gold_term_coverage": 0.0,
+      "abstention_correct": 0,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.10400001402013,
+      "total_ms": 21.34850001311861,
+      "answer": {
+        "answer": "I could not find sufficient evidence in the accessible sources.",
+        "citations": [],
+        "abstained": true,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-003-conflict",
+      "query": "What is the current commissioning delay for Project Cedar?",
+      "category": "conflict",
+      "ranked": [
+        "PRJ-003-status",
+        "PRJ-003-routine_0",
+        "PRJ-003-routine_2",
+        "PRJ-003-routine_1",
+        "PRJ-010-status"
+      ],
+      "relevant": [
+        "PRJ-003-status"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.505099983187392,
+      "total_ms": 21.66699999361299,
+      "answer": {
+        "answer": "Current Project Cedar status: commissioning is delayed 4 weeks. [1]\nProject Cedar week 1 coordination log: site access, fencing and document control are progressing. [2]\nThere were no changes to the commissioning baseline in this routine log. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-003-status",
+            "title": "Cedar / status",
+            "quote": "Current Project Cedar status: commissioning is delayed 4 weeks.",
+            "start": 0,
+            "end": 63,
+            "source": "synthetic:PRJ-003-status",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-003-routine_0",
+            "title": "Cedar / routine 0",
+            "quote": "Project Cedar week 1 coordination log: site access, fencing and document control are progressing.",
+            "start": 0,
+            "end": 97,
+            "source": "synthetic:PRJ-003-routine_0",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-003-routine_0",
+            "title": "Cedar / routine 0",
+            "quote": " There were no changes to the commissioning baseline in this routine log.",
+            "start": 140,
+            "end": 213,
+            "source": "synthetic:PRJ-003-routine_0",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-003-change_impact",
+      "query": "Trace the requirement and incident linked to CR-003.",
+      "category": "change_impact",
+      "ranked": [
+        "PRJ-002-incident",
+        "PRJ-001-change",
+        "PRJ-003-change",
+        "PRJ-010-incident",
+        "PRJ-003-decision"
+      ],
+      "relevant": [
+        "PRJ-003-change",
+        "PRJ-003-incident"
+      ],
+      "path": "vector",
+      "recall": 0.5,
+      "mrr": 0.3333333333333333,
+      "ndcg": 0.3065735963827292,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.5,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.93779999995604,
+      "total_ms": 21.200699993642047,
+      "answer": {
+        "answer": "Incident INC-002 on Project Beta: controller firmware dropped synchronization messages. [1]\nChange CR-001 on Project Alpha revises acceptance requirement REQ-001. [2]\nChange CR-003 on Project Cedar revises acceptance requirement REQ-003. [3]\nCR-003 modifies REQ-003. [4]\nIncident INC-010 on Project Juniper: controller firmware dropped synchronization messages. [5]\nThe board accepted the schedule change only after reviewing the incident and change CR-003. [6]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-002-incident",
+            "title": "Beta / incident",
+            "quote": "Incident INC-002 on Project Beta: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 87,
+            "source": "synthetic:PRJ-002-incident",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-001-change",
+            "title": "Alpha / change",
+            "quote": "Change CR-001 on Project Alpha revises acceptance requirement REQ-001.",
+            "start": 0,
+            "end": 70,
+            "source": "synthetic:PRJ-001-change",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-003-change",
+            "title": "Cedar / change",
+            "quote": "Change CR-003 on Project Cedar revises acceptance requirement REQ-003.",
+            "start": 0,
+            "end": 70,
+            "source": "synthetic:PRJ-003-change",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-003-change",
+            "title": "Cedar / change",
+            "quote": " CR-003 modifies REQ-003.",
+            "start": 70,
+            "end": 95,
+            "source": "synthetic:PRJ-003-change",
+            "synthetic": true
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-010-incident",
+            "title": "Juniper / incident",
+            "quote": "Incident INC-010 on Project Juniper: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 90,
+            "source": "synthetic:PRJ-010-incident",
+            "synthetic": true
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-003-decision",
+            "title": "Cedar / decision",
+            "quote": " The board accepted the schedule change only after reviewing the incident and change CR-003.",
+            "start": 129,
+            "end": 221,
+            "source": "synthetic:PRJ-003-decision",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-003-multi_hop",
+      "query": "Which active projects use the equipment affected by INC-003, and what lesson follows that incident?",
+      "category": "multi_hop",
+      "ranked": [
+        "PRJ-002-incident",
+        "PRJ-001-incident",
+        "PRJ-010-incident",
+        "PRJ-003-incident",
+        "PRJ-012-incident"
+      ],
+      "relevant": [
+        "PRJ-003-incident",
+        "PRJ-003-lesson",
+        "PRJ-007-charter",
+        "PRJ-011-charter"
+      ],
+      "path": "vector",
+      "recall": 0.25,
+      "mrr": 0.25,
+      "ndcg": 0.16812753627111746,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.2,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.25,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.382899984018877,
+      "total_ms": 21.697399992262945,
+      "answer": {
+        "answer": "Incident INC-002 on Project Beta: controller firmware dropped synchronization messages. [1]\nINC-002 affected CTRL-420. [2]\nIncident INC-001 on Project Alpha: transformer winding insulation failed factory testing. [3]\nINC-001 affected TX-880. [4]\nIncident INC-010 on Project Juniper: controller firmware dropped synchronization messages. [5]\nINC-010 affected CTRL-420. [6]\nIncident INC-003 on Project Cedar: cooling pump seals leaked during endurance testing. [7]\nINC-003 affected PUMP-310. [8]\nIncident INC-012 on Project Laurel: switchgear relay settings conflicted with the utility study. [9]\nINC-012 affected SWG-610. [10]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-002-incident",
+            "title": "Beta / incident",
+            "quote": "Incident INC-002 on Project Beta: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 87,
+            "source": "synthetic:PRJ-002-incident",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-002-incident",
+            "title": "Beta / incident",
+            "quote": " INC-002 affected CTRL-420.",
+            "start": 87,
+            "end": 114,
+            "source": "synthetic:PRJ-002-incident",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-001-incident",
+            "title": "Alpha / incident",
+            "quote": "Incident INC-001 on Project Alpha: transformer winding insulation failed factory testing.",
+            "start": 0,
+            "end": 89,
+            "source": "synthetic:PRJ-001-incident",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-001-incident",
+            "title": "Alpha / incident",
+            "quote": " INC-001 affected TX-880.",
+            "start": 89,
+            "end": 114,
+            "source": "synthetic:PRJ-001-incident",
+            "synthetic": true
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-010-incident",
+            "title": "Juniper / incident",
+            "quote": "Incident INC-010 on Project Juniper: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 90,
+            "source": "synthetic:PRJ-010-incident",
+            "synthetic": true
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-010-incident",
+            "title": "Juniper / incident",
+            "quote": " INC-010 affected CTRL-420.",
+            "start": 90,
+            "end": 117,
+            "source": "synthetic:PRJ-010-incident",
+            "synthetic": true
+          },
+          {
+            "id": 7,
+            "doc_id": "PRJ-003-incident",
+            "title": "Cedar / incident",
+            "quote": "Incident INC-003 on Project Cedar: cooling pump seals leaked during endurance testing.",
+            "start": 0,
+            "end": 86,
+            "source": "synthetic:PRJ-003-incident",
+            "synthetic": true
+          },
+          {
+            "id": 8,
+            "doc_id": "PRJ-003-incident",
+            "title": "Cedar / incident",
+            "quote": " INC-003 affected PUMP-310.",
+            "start": 86,
+            "end": 113,
+            "source": "synthetic:PRJ-003-incident",
+            "synthetic": true
+          },
+          {
+            "id": 9,
+            "doc_id": "PRJ-012-incident",
+            "title": "Laurel / incident",
+            "quote": "Incident INC-012 on Project Laurel: switchgear relay settings conflicted with the utility study.",
+            "start": 0,
+            "end": 96,
+            "source": "synthetic:PRJ-012-incident",
+            "synthetic": true
+          },
+          {
+            "id": 10,
+            "doc_id": "PRJ-012-incident",
+            "title": "Laurel / incident",
+            "quote": " INC-012 affected SWG-610.",
+            "start": 96,
+            "end": 122,
+            "source": "synthetic:PRJ-012-incident",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-004-direct",
+      "query": "Which equipment and vendor does Project Delta use?",
+      "category": "direct",
+      "ranked": [
+        "PRJ-004-charter",
+        "PRJ-004-minutes",
+        "PRJ-004-handover",
+        "PRJ-004-routine_0",
+        "PRJ-004-routine_1"
+      ],
+      "relevant": [
+        "PRJ-004-charter"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.5,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 22.360800008755177,
+      "total_ms": 22.531599999638274,
+      "answer": {
+        "answer": "Project Delta (PRJ-004) is closed. [1]\nProject Delta coordination meeting: the team reviewed civil works and cable routing. [2]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-004-charter",
+            "title": "Delta / charter",
+            "quote": "Project Delta (PRJ-004) is closed.",
+            "start": 0,
+            "end": 34,
+            "source": "synthetic:PRJ-004-charter",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-004-minutes",
+            "title": "Delta / minutes",
+            "quote": "Project Delta coordination meeting: the team reviewed civil works and cable routing.",
+            "start": 0,
+            "end": 84,
+            "source": "synthetic:PRJ-004-minutes",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-004-semantic",
+      "query": "What caused Project Delta to fall behind its commissioning schedule?",
+      "category": "semantic",
+      "ranked": [
+        "PRJ-004-status",
+        "PRJ-004-routine_0",
+        "PRJ-004-routine_2",
+        "PRJ-004-routine_1",
+        "PRJ-004-incident"
+      ],
+      "relevant": [
+        "PRJ-004-incident",
+        "PRJ-004-decision",
+        "PRJ-004-status"
+      ],
+      "path": "vector",
+      "recall": 0.6666666666666666,
+      "mrr": 1.0,
+      "ndcg": 0.6508205185601091,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.5,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.372500021243468,
+      "total_ms": 21.53959998395294,
+      "answer": {
+        "answer": "Current Project Delta status: commissioning is delayed 2 weeks. [1]\nProject Delta week 1 coordination log: site access, fencing and document control are progressing. [2]\nThere were no changes to the commissioning baseline in this routine log. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-004-status",
+            "title": "Delta / status",
+            "quote": "Current Project Delta status: commissioning is delayed 2 weeks.",
+            "start": 0,
+            "end": 63,
+            "source": "synthetic:PRJ-004-status",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-004-routine_0",
+            "title": "Delta / routine 0",
+            "quote": "Project Delta week 1 coordination log: site access, fencing and document control are progressing.",
+            "start": 0,
+            "end": 97,
+            "source": "synthetic:PRJ-004-routine_0",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-004-routine_0",
+            "title": "Delta / routine 0",
+            "quote": " There were no changes to the commissioning baseline in this routine log.",
+            "start": 138,
+            "end": 211,
+            "source": "synthetic:PRJ-004-routine_0",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-004-exact",
+      "query": "What requirement does CR-004 modify?",
+      "category": "exact",
+      "ranked": [
+        "PRJ-001-change",
+        "PRJ-010-change",
+        "PRJ-004-change",
+        "PRJ-006-change",
+        "PRJ-003-change"
+      ],
+      "relevant": [
+        "PRJ-004-change"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 0.3333333333333333,
+      "ndcg": 0.5,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.195199980866164,
+      "total_ms": 21.474000008311123,
+      "answer": {
+        "answer": "Change CR-001 on Project Alpha revises acceptance requirement REQ-001. [1]\nChange CR-010 on Project Juniper revises acceptance requirement REQ-010. [2]\nChange CR-004 on Project Delta revises acceptance requirement REQ-004. [3]\nCR-004 modifies REQ-004. [4]\nChange CR-006 on Project Falcon revises acceptance requirement REQ-006. [5]\nChange CR-003 on Project Cedar revises acceptance requirement REQ-003. [6]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-001-change",
+            "title": "Alpha / change",
+            "quote": "Change CR-001 on Project Alpha revises acceptance requirement REQ-001.",
+            "start": 0,
+            "end": 70,
+            "source": "synthetic:PRJ-001-change",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-010-change",
+            "title": "Juniper / change",
+            "quote": "Change CR-010 on Project Juniper revises acceptance requirement REQ-010.",
+            "start": 0,
+            "end": 72,
+            "source": "synthetic:PRJ-010-change",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-004-change",
+            "title": "Delta / change",
+            "quote": "Change CR-004 on Project Delta revises acceptance requirement REQ-004.",
+            "start": 0,
+            "end": 70,
+            "source": "synthetic:PRJ-004-change",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-004-change",
+            "title": "Delta / change",
+            "quote": " CR-004 modifies REQ-004.",
+            "start": 70,
+            "end": 95,
+            "source": "synthetic:PRJ-004-change",
+            "synthetic": true
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-006-change",
+            "title": "Falcon / change",
+            "quote": "Change CR-006 on Project Falcon revises acceptance requirement REQ-006.",
+            "start": 0,
+            "end": 71,
+            "source": "synthetic:PRJ-006-change",
+            "synthetic": true
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-003-change",
+            "title": "Cedar / change",
+            "quote": "Change CR-003 on Project Cedar revises acceptance requirement REQ-003.",
+            "start": 0,
+            "end": 70,
+            "source": "synthetic:PRJ-003-change",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-004-lesson",
+      "query": "What should we learn from Project Delta before releasing a purchase order?",
+      "category": "lesson",
+      "ranked": [
+        "PRJ-004-handover",
+        "PRJ-004-lesson",
+        "PRJ-004-minutes",
+        "PRJ-004-risk",
+        "PRJ-004-status"
+      ],
+      "relevant": [
+        "PRJ-004-lesson"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.5,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.463400025619194,
+      "total_ms": 20.62389999628067,
+      "answer": {
+        "answer": "Project Delta handover checklist: archive drawings, training records, test certificates and lessons learned. [1]\nResolve outstanding change requests and name an operations owner before final acceptance. [2]\nLesson LL-004 from Project Delta: complete an independent protection coordination review. [3]\nReuse this lesson at the procurement gate of future projects before purchase-order release. [4]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-004-handover",
+            "title": "Delta / handover",
+            "quote": "Project Delta handover checklist: archive drawings, training records, test certificates and lessons learned.",
+            "start": 0,
+            "end": 108,
+            "source": "synthetic:PRJ-004-handover",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-004-handover",
+            "title": "Delta / handover",
+            "quote": " Resolve outstanding change requests and name an operations owner before final acceptance.",
+            "start": 108,
+            "end": 198,
+            "source": "synthetic:PRJ-004-handover",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-004-lesson",
+            "title": "Delta / lesson",
+            "quote": "Lesson LL-004 from Project Delta: complete an independent protection coordination review.",
+            "start": 0,
+            "end": 89,
+            "source": "synthetic:PRJ-004-lesson",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-004-lesson",
+            "title": "Delta / lesson",
+            "quote": " Reuse this lesson at the procurement gate of future projects before purchase-order release.",
+            "start": 140,
+            "end": 232,
+            "source": "synthetic:PRJ-004-lesson",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-004-decision",
+      "query": "Why did DEC-004 move the milestone?",
+      "category": "decision",
+      "ranked": [
+        "PRJ-010-decision",
+        "PRJ-002-decision",
+        "PRJ-011-decision",
+        "PRJ-007-decision",
+        "PRJ-006-decision"
+      ],
+      "relevant": [
+        "PRJ-004-decision",
+        "PRJ-004-incident"
+      ],
+      "path": "vector",
+      "recall": 0.0,
+      "mrr": 0,
+      "ndcg": 0.0,
+      "citation_integrity": null,
+      "citation_accuracy": null,
+      "faithfulness_exact_quote": null,
+      "relevance_gold_term_coverage": 0.0,
+      "abstention_correct": 0,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.810899994103238,
+      "total_ms": 21.048399998107925,
+      "answer": {
+        "answer": "I could not find sufficient evidence in the accessible sources.",
+        "citations": [],
+        "abstained": true,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-004-risk",
+      "query": "What triggers RISK-004 and what response is planned?",
+      "category": "risk",
+      "ranked": [
+        "PRJ-002-risk",
+        "PRJ-001-risk",
+        "PRJ-004-risk",
+        "PRJ-009-risk",
+        "PRJ-008-risk"
+      ],
+      "relevant": [
+        "PRJ-004-risk"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 0.3333333333333333,
+      "ndcg": 0.5,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.5,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.029500010423362,
+      "total_ms": 20.27589999488555,
+      "answer": {
+        "answer": "Response: validate firmware interoperability in a hardware-in-the-loop test. [1]\nResponse: require witnessed factory acceptance before shipment. [2]\nRisk RISK-004 for Project Delta: repeat SWG-610 acceptance failure could delay energization. [3]\nRISK-004 threatens MS-004. [4]\nResponse: require witnessed factory acceptance before shipment. [5]\nResponse: complete an independent protection coordination review. [6]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-002-risk",
+            "title": "Beta / risk",
+            "quote": " Response: validate firmware interoperability in a hardware-in-the-loop test.",
+            "start": 218,
+            "end": 295,
+            "source": "synthetic:PRJ-002-risk",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-001-risk",
+            "title": "Alpha / risk",
+            "quote": " Response: require witnessed factory acceptance before shipment.",
+            "start": 217,
+            "end": 281,
+            "source": "synthetic:PRJ-001-risk",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-004-risk",
+            "title": "Delta / risk",
+            "quote": "Risk RISK-004 for Project Delta: repeat SWG-610 acceptance failure could delay energization.",
+            "start": 0,
+            "end": 92,
+            "source": "synthetic:PRJ-004-risk",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-004-risk",
+            "title": "Delta / risk",
+            "quote": " RISK-004 threatens MS-004.",
+            "start": 117,
+            "end": 144,
+            "source": "synthetic:PRJ-004-risk",
+            "synthetic": true
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-009-risk",
+            "title": "Iris / risk",
+            "quote": " Response: require witnessed factory acceptance before shipment.",
+            "start": 216,
+            "end": 280,
+            "source": "synthetic:PRJ-009-risk",
+            "synthetic": true
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-008-risk",
+            "title": "Harbor / risk",
+            "quote": " Response: complete an independent protection coordination review.",
+            "start": 219,
+            "end": 285,
+            "source": "synthetic:PRJ-008-risk",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-004-conflict",
+      "query": "What is the current commissioning delay for Project Delta?",
+      "category": "conflict",
+      "ranked": [
+        "PRJ-004-status",
+        "PRJ-004-routine_0",
+        "PRJ-004-routine_2",
+        "PRJ-006-status",
+        "PRJ-004-routine_1"
+      ],
+      "relevant": [
+        "PRJ-004-status"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.920900016790256,
+      "total_ms": 21.08450001105666,
+      "answer": {
+        "answer": "Current Project Delta status: commissioning is delayed 2 weeks. [1]\nProject Delta week 1 coordination log: site access, fencing and document control are progressing. [2]\nThere were no changes to the commissioning baseline in this routine log. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-004-status",
+            "title": "Delta / status",
+            "quote": "Current Project Delta status: commissioning is delayed 2 weeks.",
+            "start": 0,
+            "end": 63,
+            "source": "synthetic:PRJ-004-status",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-004-routine_0",
+            "title": "Delta / routine 0",
+            "quote": "Project Delta week 1 coordination log: site access, fencing and document control are progressing.",
+            "start": 0,
+            "end": 97,
+            "source": "synthetic:PRJ-004-routine_0",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-004-routine_0",
+            "title": "Delta / routine 0",
+            "quote": " There were no changes to the commissioning baseline in this routine log.",
+            "start": 138,
+            "end": 211,
+            "source": "synthetic:PRJ-004-routine_0",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-004-change_impact",
+      "query": "Trace the requirement and incident linked to CR-004.",
+      "category": "change_impact",
+      "ranked": [
+        "PRJ-002-incident",
+        "PRJ-010-incident",
+        "PRJ-001-change",
+        "PRJ-012-rfi",
+        "PRJ-009-risk"
+      ],
+      "relevant": [
+        "PRJ-004-change",
+        "PRJ-004-incident"
+      ],
+      "path": "vector",
+      "recall": 0.0,
+      "mrr": 0,
+      "ndcg": 0.0,
+      "citation_integrity": null,
+      "citation_accuracy": null,
+      "faithfulness_exact_quote": null,
+      "relevance_gold_term_coverage": 0.0,
+      "abstention_correct": 0,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.595100009813905,
+      "total_ms": 20.84770001238212,
+      "answer": {
+        "answer": "I could not find sufficient evidence in the accessible sources.",
+        "citations": [],
+        "abstained": true,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-004-multi_hop",
+      "query": "Which active projects use the equipment affected by INC-004, and what lesson follows that incident?",
+      "category": "multi_hop",
+      "ranked": [
+        "PRJ-002-incident",
+        "PRJ-010-incident",
+        "PRJ-001-incident",
+        "PRJ-006-incident",
+        "PRJ-012-incident"
+      ],
+      "relevant": [
+        "PRJ-004-incident",
+        "PRJ-004-lesson",
+        "PRJ-008-charter",
+        "PRJ-012-charter"
+      ],
+      "path": "vector",
+      "recall": 0.0,
+      "mrr": 0,
+      "ndcg": 0.0,
+      "citation_integrity": null,
+      "citation_accuracy": null,
+      "faithfulness_exact_quote": null,
+      "relevance_gold_term_coverage": 0.0,
+      "abstention_correct": 0,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.57049999712035,
+      "total_ms": 20.87150001898408,
+      "answer": {
+        "answer": "I could not find sufficient evidence in the accessible sources.",
+        "citations": [],
+        "abstained": true,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-005-direct",
+      "query": "Which equipment and vendor does Project Elm use?",
+      "category": "direct",
+      "ranked": [
+        "PRJ-005-charter",
+        "PRJ-005-vendor",
+        "PRJ-005-handover",
+        "PRJ-005-minutes",
+        "PRJ-005-status"
+      ],
+      "relevant": [
+        "PRJ-005-charter"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.5,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.5,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.02379998541437,
+      "total_ms": 21.185799996601418,
+      "answer": {
+        "answer": "Project Elm (PRJ-005) is active. [1]\nNorthstar Power correspondence for Project Elm: replacement materials are reserved. [2]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-005-charter",
+            "title": "Elm / charter",
+            "quote": "Project Elm (PRJ-005) is active.",
+            "start": 0,
+            "end": 32,
+            "source": "synthetic:PRJ-005-charter",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-005-vendor",
+            "title": "Elm / vendor",
+            "quote": "Northstar Power correspondence for Project Elm: replacement materials are reserved.",
+            "start": 0,
+            "end": 83,
+            "source": "synthetic:PRJ-005-vendor",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-005-semantic",
+      "query": "What caused Project Elm to fall behind its commissioning schedule?",
+      "category": "semantic",
+      "ranked": [
+        "PRJ-005-status",
+        "PRJ-005-routine_0",
+        "PRJ-005-routine_1",
+        "PRJ-005-routine_2",
+        "PRJ-005-incident"
+      ],
+      "relevant": [
+        "PRJ-005-incident",
+        "PRJ-005-decision",
+        "PRJ-005-status"
+      ],
+      "path": "vector",
+      "recall": 0.6666666666666666,
+      "mrr": 1.0,
+      "ndcg": 0.6508205185601091,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.5,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 22.514999989653006,
+      "total_ms": 22.699100023601204,
+      "answer": {
+        "answer": "Current Project Elm status: commissioning is delayed 7 weeks. [1]\nProject Elm week 1 coordination log: site access, fencing and document control are progressing. [2]\nThere were no changes to the commissioning baseline in this routine log. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-005-status",
+            "title": "Elm / status",
+            "quote": "Current Project Elm status: commissioning is delayed 7 weeks.",
+            "start": 0,
+            "end": 61,
+            "source": "synthetic:PRJ-005-status",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-005-routine_0",
+            "title": "Elm / routine 0",
+            "quote": "Project Elm week 1 coordination log: site access, fencing and document control are progressing.",
+            "start": 0,
+            "end": 95,
+            "source": "synthetic:PRJ-005-routine_0",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-005-routine_0",
+            "title": "Elm / routine 0",
+            "quote": " There were no changes to the commissioning baseline in this routine log.",
+            "start": 138,
+            "end": 211,
+            "source": "synthetic:PRJ-005-routine_0",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-005-exact",
+      "query": "What requirement does CR-005 modify?",
+      "category": "exact",
+      "ranked": [
+        "PRJ-001-change",
+        "PRJ-005-change",
+        "PRJ-006-change",
+        "PRJ-010-change",
+        "PRJ-007-change"
+      ],
+      "relevant": [
+        "PRJ-005-change"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.95569998002611,
+      "total_ms": 22.210099996300414,
+      "answer": {
+        "answer": "Change CR-001 on Project Alpha revises acceptance requirement REQ-001. [1]\nChange CR-005 on Project Elm revises acceptance requirement REQ-005. [2]\nCR-005 modifies REQ-005. [3]\nChange CR-006 on Project Falcon revises acceptance requirement REQ-006. [4]\nChange CR-010 on Project Juniper revises acceptance requirement REQ-010. [5]\nChange CR-007 on Project Granite revises acceptance requirement REQ-007. [6]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-001-change",
+            "title": "Alpha / change",
+            "quote": "Change CR-001 on Project Alpha revises acceptance requirement REQ-001.",
+            "start": 0,
+            "end": 70,
+            "source": "synthetic:PRJ-001-change",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-005-change",
+            "title": "Elm / change",
+            "quote": "Change CR-005 on Project Elm revises acceptance requirement REQ-005.",
+            "start": 0,
+            "end": 68,
+            "source": "synthetic:PRJ-005-change",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-005-change",
+            "title": "Elm / change",
+            "quote": " CR-005 modifies REQ-005.",
+            "start": 68,
+            "end": 93,
+            "source": "synthetic:PRJ-005-change",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-006-change",
+            "title": "Falcon / change",
+            "quote": "Change CR-006 on Project Falcon revises acceptance requirement REQ-006.",
+            "start": 0,
+            "end": 71,
+            "source": "synthetic:PRJ-006-change",
+            "synthetic": true
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-010-change",
+            "title": "Juniper / change",
+            "quote": "Change CR-010 on Project Juniper revises acceptance requirement REQ-010.",
+            "start": 0,
+            "end": 72,
+            "source": "synthetic:PRJ-010-change",
+            "synthetic": true
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-007-change",
+            "title": "Granite / change",
+            "quote": "Change CR-007 on Project Granite revises acceptance requirement REQ-007.",
+            "start": 0,
+            "end": 72,
+            "source": "synthetic:PRJ-007-change",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-005-lesson",
+      "query": "What should we learn from Project Elm before releasing a purchase order?",
+      "category": "lesson",
+      "ranked": [
+        "PRJ-005-handover",
+        "PRJ-005-lesson",
+        "PRJ-005-status",
+        "PRJ-005-change",
+        "PRJ-005-minutes"
+      ],
+      "relevant": [
+        "PRJ-005-lesson"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.5,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.453199995448813,
+      "total_ms": 21.594499994535,
+      "answer": {
+        "answer": "Project Elm handover checklist: archive drawings, training records, test certificates and lessons learned. [1]\nResolve outstanding change requests and name an operations owner before final acceptance. [2]\nLesson LL-005 from Project Elm: require witnessed factory acceptance before shipment. [3]\nReuse this lesson at the procurement gate of future projects before purchase-order release. [4]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-005-handover",
+            "title": "Elm / handover",
+            "quote": "Project Elm handover checklist: archive drawings, training records, test certificates and lessons learned.",
+            "start": 0,
+            "end": 106,
+            "source": "synthetic:PRJ-005-handover",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-005-handover",
+            "title": "Elm / handover",
+            "quote": " Resolve outstanding change requests and name an operations owner before final acceptance.",
+            "start": 106,
+            "end": 196,
+            "source": "synthetic:PRJ-005-handover",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-005-lesson",
+            "title": "Elm / lesson",
+            "quote": "Lesson LL-005 from Project Elm: require witnessed factory acceptance before shipment.",
+            "start": 0,
+            "end": 85,
+            "source": "synthetic:PRJ-005-lesson",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-005-lesson",
+            "title": "Elm / lesson",
+            "quote": " Reuse this lesson at the procurement gate of future projects before purchase-order release.",
+            "start": 135,
+            "end": 227,
+            "source": "synthetic:PRJ-005-lesson",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-005-decision",
+      "query": "Why did DEC-005 move the milestone?",
+      "category": "decision",
+      "ranked": [
+        "PRJ-010-decision",
+        "PRJ-002-decision",
+        "PRJ-005-decision",
+        "PRJ-007-decision",
+        "PRJ-006-decision"
+      ],
+      "relevant": [
+        "PRJ-005-decision",
+        "PRJ-005-incident"
+      ],
+      "path": "vector",
+      "recall": 0.5,
+      "mrr": 0.3333333333333333,
+      "ndcg": 0.3065735963827292,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.389300003647804,
+      "total_ms": 21.614199999021366,
+      "answer": {
+        "answer": "Decision DEC-005 moved MS-005 by 7 weeks because transformer winding insulation failed factory testing. [1]\nDEC-005 responds to INC-005. [2]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-005-decision",
+            "title": "Elm / decision",
+            "quote": "Decision DEC-005 moved MS-005 by 7 weeks because transformer winding insulation failed factory testing.",
+            "start": 0,
+            "end": 103,
+            "source": "synthetic:PRJ-005-decision",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-005-decision",
+            "title": "Elm / decision",
+            "quote": " DEC-005 responds to INC-005.",
+            "start": 103,
+            "end": 132,
+            "source": "synthetic:PRJ-005-decision",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-005-risk",
+      "query": "What triggers RISK-005 and what response is planned?",
+      "category": "risk",
+      "ranked": [
+        "PRJ-002-risk",
+        "PRJ-005-risk",
+        "PRJ-001-risk",
+        "PRJ-008-risk",
+        "PRJ-010-risk"
+      ],
+      "relevant": [
+        "PRJ-005-risk"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 0.5,
+      "ndcg": 0.6309297535714575,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.5,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.538400014629588,
+      "total_ms": 20.888400002149865,
+      "answer": {
+        "answer": "Response: validate firmware interoperability in a hardware-in-the-loop test. [1]\nRisk RISK-005 for Project Elm: repeat TX-880 acceptance failure could delay energization. [2]\nRISK-005 threatens MS-005. [3]\nResponse: require witnessed factory acceptance before shipment. [4]\nResponse: complete an independent protection coordination review. [5]\nResponse: validate firmware interoperability in a hardware-in-the-loop test. [6]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-002-risk",
+            "title": "Beta / risk",
+            "quote": " Response: validate firmware interoperability in a hardware-in-the-loop test.",
+            "start": 218,
+            "end": 295,
+            "source": "synthetic:PRJ-002-risk",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-005-risk",
+            "title": "Elm / risk",
+            "quote": "Risk RISK-005 for Project Elm: repeat TX-880 acceptance failure could delay energization.",
+            "start": 0,
+            "end": 89,
+            "source": "synthetic:PRJ-005-risk",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-005-risk",
+            "title": "Elm / risk",
+            "quote": " RISK-005 threatens MS-005.",
+            "start": 114,
+            "end": 141,
+            "source": "synthetic:PRJ-005-risk",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-001-risk",
+            "title": "Alpha / risk",
+            "quote": " Response: require witnessed factory acceptance before shipment.",
+            "start": 217,
+            "end": 281,
+            "source": "synthetic:PRJ-001-risk",
+            "synthetic": true
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-008-risk",
+            "title": "Harbor / risk",
+            "quote": " Response: complete an independent protection coordination review.",
+            "start": 219,
+            "end": 285,
+            "source": "synthetic:PRJ-008-risk",
+            "synthetic": true
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-010-risk",
+            "title": "Juniper / risk",
+            "quote": " Response: validate firmware interoperability in a hardware-in-the-loop test.",
+            "start": 221,
+            "end": 298,
+            "source": "synthetic:PRJ-010-risk",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-005-conflict",
+      "query": "What is the current commissioning delay for Project Elm?",
+      "category": "conflict",
+      "ranked": [
+        "PRJ-005-status",
+        "PRJ-005-routine_0",
+        "PRJ-005-routine_2",
+        "PRJ-005-routine_1",
+        "PRJ-012-status"
+      ],
+      "relevant": [
+        "PRJ-005-status"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.60599999479018,
+      "total_ms": 21.768599981442094,
+      "answer": {
+        "answer": "Current Project Elm status: commissioning is delayed 7 weeks. [1]\nProject Elm week 1 coordination log: site access, fencing and document control are progressing. [2]\nThere were no changes to the commissioning baseline in this routine log. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-005-status",
+            "title": "Elm / status",
+            "quote": "Current Project Elm status: commissioning is delayed 7 weeks.",
+            "start": 0,
+            "end": 61,
+            "source": "synthetic:PRJ-005-status",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-005-routine_0",
+            "title": "Elm / routine 0",
+            "quote": "Project Elm week 1 coordination log: site access, fencing and document control are progressing.",
+            "start": 0,
+            "end": 95,
+            "source": "synthetic:PRJ-005-routine_0",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-005-routine_0",
+            "title": "Elm / routine 0",
+            "quote": " There were no changes to the commissioning baseline in this routine log.",
+            "start": 138,
+            "end": 211,
+            "source": "synthetic:PRJ-005-routine_0",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-005-change_impact",
+      "query": "Trace the requirement and incident linked to CR-005.",
+      "category": "change_impact",
+      "ranked": [
+        "PRJ-002-incident",
+        "PRJ-010-incident",
+        "PRJ-005-decision",
+        "PRJ-006-incident",
+        "PRJ-012-rfi"
+      ],
+      "relevant": [
+        "PRJ-005-change",
+        "PRJ-005-incident"
+      ],
+      "path": "vector",
+      "recall": 0.0,
+      "mrr": 0,
+      "ndcg": 0.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.685099996626377,
+      "total_ms": 20.947399985743687,
+      "answer": {
+        "answer": "Incident INC-002 on Project Beta: controller firmware dropped synchronization messages. [1]\nIncident INC-010 on Project Juniper: controller firmware dropped synchronization messages. [2]\nThe board accepted the schedule change only after reviewing the incident and change CR-005. [3]\nIncident INC-006 on Project Falcon: controller firmware dropped synchronization messages. [4]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-002-incident",
+            "title": "Beta / incident",
+            "quote": "Incident INC-002 on Project Beta: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 87,
+            "source": "synthetic:PRJ-002-incident",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-010-incident",
+            "title": "Juniper / incident",
+            "quote": "Incident INC-010 on Project Juniper: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 90,
+            "source": "synthetic:PRJ-010-incident",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-005-decision",
+            "title": "Elm / decision",
+            "quote": " The board accepted the schedule change only after reviewing the incident and change CR-005.",
+            "start": 132,
+            "end": 224,
+            "source": "synthetic:PRJ-005-decision",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-006-incident",
+            "title": "Falcon / incident",
+            "quote": "Incident INC-006 on Project Falcon: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 89,
+            "source": "synthetic:PRJ-006-incident",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-005-multi_hop",
+      "query": "Which active projects use the equipment affected by INC-005, and what lesson follows that incident?",
+      "category": "multi_hop",
+      "ranked": [
+        "PRJ-002-incident",
+        "PRJ-010-incident",
+        "PRJ-001-incident",
+        "PRJ-006-incident",
+        "PRJ-008-incident"
+      ],
+      "relevant": [
+        "PRJ-005-incident",
+        "PRJ-005-lesson",
+        "PRJ-005-charter",
+        "PRJ-009-charter"
+      ],
+      "path": "vector",
+      "recall": 0.0,
+      "mrr": 0,
+      "ndcg": 0.0,
+      "citation_integrity": null,
+      "citation_accuracy": null,
+      "faithfulness_exact_quote": null,
+      "relevance_gold_term_coverage": 0.0,
+      "abstention_correct": 0,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.264500013785437,
+      "total_ms": 21.57209999859333,
+      "answer": {
+        "answer": "I could not find sufficient evidence in the accessible sources.",
+        "citations": [],
+        "abstained": true,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-006-direct",
+      "query": "Which equipment and vendor does Project Falcon use?",
+      "category": "direct",
+      "ranked": [
+        "PRJ-006-charter",
+        "PRJ-006-minutes",
+        "PRJ-006-handover",
+        "PRJ-006-vendor",
+        "PRJ-006-routine_0"
+      ],
+      "relevant": [
+        "PRJ-006-charter"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.5,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.728399995481595,
+      "total_ms": 21.911999996518716,
+      "answer": {
+        "answer": "Project Falcon (PRJ-006) is active. [1]\nProject Falcon coordination meeting: the team reviewed civil works and cable routing. [2]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-006-charter",
+            "title": "Falcon / charter",
+            "quote": "Project Falcon (PRJ-006) is active.",
+            "start": 0,
+            "end": 35,
+            "source": "synthetic:PRJ-006-charter",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-006-minutes",
+            "title": "Falcon / minutes",
+            "quote": "Project Falcon coordination meeting: the team reviewed civil works and cable routing.",
+            "start": 0,
+            "end": 85,
+            "source": "synthetic:PRJ-006-minutes",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-006-semantic",
+      "query": "What caused Project Falcon to fall behind its commissioning schedule?",
+      "category": "semantic",
+      "ranked": [
+        "PRJ-006-status",
+        "PRJ-006-routine_0",
+        "PRJ-006-incident",
+        "PRJ-006-routine_2",
+        "PRJ-006-routine_1"
+      ],
+      "relevant": [
+        "PRJ-006-incident",
+        "PRJ-006-decision",
+        "PRJ-006-status"
+      ],
+      "path": "vector",
+      "recall": 0.6666666666666666,
+      "mrr": 1.0,
+      "ndcg": 0.7039180890341347,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.5,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.68179998989217,
+      "total_ms": 21.866700000828132,
+      "answer": {
+        "answer": "Current Project Falcon status: commissioning is delayed 4 weeks. [1]\nProject Falcon week 1 coordination log: site access, fencing and document control are progressing. [2]\nThere were no changes to the commissioning baseline in this routine log. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-006-status",
+            "title": "Falcon / status",
+            "quote": "Current Project Falcon status: commissioning is delayed 4 weeks.",
+            "start": 0,
+            "end": 64,
+            "source": "synthetic:PRJ-006-status",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-006-routine_0",
+            "title": "Falcon / routine 0",
+            "quote": "Project Falcon week 1 coordination log: site access, fencing and document control are progressing.",
+            "start": 0,
+            "end": 98,
+            "source": "synthetic:PRJ-006-routine_0",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-006-routine_0",
+            "title": "Falcon / routine 0",
+            "quote": " There were no changes to the commissioning baseline in this routine log.",
+            "start": 143,
+            "end": 216,
+            "source": "synthetic:PRJ-006-routine_0",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-006-exact",
+      "query": "What requirement does CR-006 modify?",
+      "category": "exact",
+      "ranked": [
+        "PRJ-006-change",
+        "PRJ-001-change",
+        "PRJ-010-change",
+        "PRJ-003-change",
+        "PRJ-007-change"
+      ],
+      "relevant": [
+        "PRJ-006-change"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.550900011789054,
+      "total_ms": 21.8553000013344,
+      "answer": {
+        "answer": "Change CR-006 on Project Falcon revises acceptance requirement REQ-006. [1]\nCR-006 modifies REQ-006. [2]\nChange CR-001 on Project Alpha revises acceptance requirement REQ-001. [3]\nChange CR-010 on Project Juniper revises acceptance requirement REQ-010. [4]\nChange CR-003 on Project Cedar revises acceptance requirement REQ-003. [5]\nChange CR-007 on Project Granite revises acceptance requirement REQ-007. [6]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-006-change",
+            "title": "Falcon / change",
+            "quote": "Change CR-006 on Project Falcon revises acceptance requirement REQ-006.",
+            "start": 0,
+            "end": 71,
+            "source": "synthetic:PRJ-006-change",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-006-change",
+            "title": "Falcon / change",
+            "quote": " CR-006 modifies REQ-006.",
+            "start": 71,
+            "end": 96,
+            "source": "synthetic:PRJ-006-change",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-001-change",
+            "title": "Alpha / change",
+            "quote": "Change CR-001 on Project Alpha revises acceptance requirement REQ-001.",
+            "start": 0,
+            "end": 70,
+            "source": "synthetic:PRJ-001-change",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-010-change",
+            "title": "Juniper / change",
+            "quote": "Change CR-010 on Project Juniper revises acceptance requirement REQ-010.",
+            "start": 0,
+            "end": 72,
+            "source": "synthetic:PRJ-010-change",
+            "synthetic": true
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-003-change",
+            "title": "Cedar / change",
+            "quote": "Change CR-003 on Project Cedar revises acceptance requirement REQ-003.",
+            "start": 0,
+            "end": 70,
+            "source": "synthetic:PRJ-003-change",
+            "synthetic": true
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-007-change",
+            "title": "Granite / change",
+            "quote": "Change CR-007 on Project Granite revises acceptance requirement REQ-007.",
+            "start": 0,
+            "end": 72,
+            "source": "synthetic:PRJ-007-change",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-006-lesson",
+      "query": "What should we learn from Project Falcon before releasing a purchase order?",
+      "category": "lesson",
+      "ranked": [
+        "PRJ-006-handover",
+        "PRJ-006-minutes",
+        "PRJ-006-status",
+        "PRJ-006-risk",
+        "PRJ-006-change"
+      ],
+      "relevant": [
+        "PRJ-006-lesson"
+      ],
+      "path": "vector",
+      "recall": 0.0,
+      "mrr": 0,
+      "ndcg": 0.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 21.901800006162375,
+      "total_ms": 22.07119998638518,
+      "answer": {
+        "answer": "Project Falcon handover checklist: archive drawings, training records, test certificates and lessons learned. [1]\nResolve outstanding change requests and name an operations owner before final acceptance. [2]\nProject Falcon coordination meeting: the team reviewed civil works and cable routing. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-006-handover",
+            "title": "Falcon / handover",
+            "quote": "Project Falcon handover checklist: archive drawings, training records, test certificates and lessons learned.",
+            "start": 0,
+            "end": 109,
+            "source": "synthetic:PRJ-006-handover",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-006-handover",
+            "title": "Falcon / handover",
+            "quote": " Resolve outstanding change requests and name an operations owner before final acceptance.",
+            "start": 109,
+            "end": 199,
+            "source": "synthetic:PRJ-006-handover",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-006-minutes",
+            "title": "Falcon / minutes",
+            "quote": "Project Falcon coordination meeting: the team reviewed civil works and cable routing.",
+            "start": 0,
+            "end": 85,
+            "source": "synthetic:PRJ-006-minutes",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-006-decision",
+      "query": "Why did DEC-006 move the milestone?",
+      "category": "decision",
+      "ranked": [
+        "PRJ-006-decision",
+        "PRJ-010-decision",
+        "PRJ-007-decision",
+        "PRJ-002-decision",
+        "PRJ-011-decision"
+      ],
+      "relevant": [
+        "PRJ-006-decision",
+        "PRJ-006-incident"
+      ],
+      "path": "vector",
+      "recall": 0.5,
+      "mrr": 1.0,
+      "ndcg": 0.6131471927654584,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 1.0,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.948899997165427,
+      "total_ms": 21.1635000014212,
+      "answer": {
+        "answer": "Decision DEC-006 moved MS-006 by 4 weeks because controller firmware dropped synchronization messages. [1]\nDEC-006 responds to INC-006. [2]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-006-decision",
+            "title": "Falcon / decision",
+            "quote": "Decision DEC-006 moved MS-006 by 4 weeks because controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 102,
+            "source": "synthetic:PRJ-006-decision",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-006-decision",
+            "title": "Falcon / decision",
+            "quote": " DEC-006 responds to INC-006.",
+            "start": 102,
+            "end": 131,
+            "source": "synthetic:PRJ-006-decision",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-006-risk",
+      "query": "What triggers RISK-006 and what response is planned?",
+      "category": "risk",
+      "ranked": [
+        "PRJ-006-risk",
+        "PRJ-008-risk",
+        "PRJ-004-risk",
+        "PRJ-012-risk",
+        "PRJ-001-risk"
+      ],
+      "relevant": [
+        "PRJ-006-risk"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.26109999860637,
+      "total_ms": 20.524999999906868,
+      "answer": {
+        "answer": "Risk RISK-006 for Project Falcon: repeat CTRL-420 acceptance failure could delay energization. [1]\nRISK-006 threatens MS-006. [2]\nResponse: complete an independent protection coordination review. [3]\nResponse: complete an independent protection coordination review. [4]\nResponse: complete an independent protection coordination review. [5]\nResponse: require witnessed factory acceptance before shipment. [6]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-006-risk",
+            "title": "Falcon / risk",
+            "quote": "Risk RISK-006 for Project Falcon: repeat CTRL-420 acceptance failure could delay energization.",
+            "start": 0,
+            "end": 94,
+            "source": "synthetic:PRJ-006-risk",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-006-risk",
+            "title": "Falcon / risk",
+            "quote": " RISK-006 threatens MS-006.",
+            "start": 119,
+            "end": 146,
+            "source": "synthetic:PRJ-006-risk",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-008-risk",
+            "title": "Harbor / risk",
+            "quote": " Response: complete an independent protection coordination review.",
+            "start": 219,
+            "end": 285,
+            "source": "synthetic:PRJ-008-risk",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-004-risk",
+            "title": "Delta / risk",
+            "quote": " Response: complete an independent protection coordination review.",
+            "start": 218,
+            "end": 284,
+            "source": "synthetic:PRJ-004-risk",
+            "synthetic": true
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-012-risk",
+            "title": "Laurel / risk",
+            "quote": " Response: complete an independent protection coordination review.",
+            "start": 219,
+            "end": 285,
+            "source": "synthetic:PRJ-012-risk",
+            "synthetic": true
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-001-risk",
+            "title": "Alpha / risk",
+            "quote": " Response: require witnessed factory acceptance before shipment.",
+            "start": 217,
+            "end": 281,
+            "source": "synthetic:PRJ-001-risk",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-006-conflict",
+      "query": "What is the current commissioning delay for Project Falcon?",
+      "category": "conflict",
+      "ranked": [
+        "PRJ-006-status",
+        "PRJ-006-routine_0",
+        "PRJ-006-routine_2",
+        "PRJ-006-routine_1",
+        "PRJ-006-minutes"
+      ],
+      "relevant": [
+        "PRJ-006-status"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 1.0,
+      "ndcg": 1.0,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.3333333333333333,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.56909998646006,
+      "total_ms": 20.73069999460131,
+      "answer": {
+        "answer": "Current Project Falcon status: commissioning is delayed 4 weeks. [1]\nProject Falcon week 1 coordination log: site access, fencing and document control are progressing. [2]\nThere were no changes to the commissioning baseline in this routine log. [3]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-006-status",
+            "title": "Falcon / status",
+            "quote": "Current Project Falcon status: commissioning is delayed 4 weeks.",
+            "start": 0,
+            "end": 64,
+            "source": "synthetic:PRJ-006-status",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-006-routine_0",
+            "title": "Falcon / routine 0",
+            "quote": "Project Falcon week 1 coordination log: site access, fencing and document control are progressing.",
+            "start": 0,
+            "end": 98,
+            "source": "synthetic:PRJ-006-routine_0",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-006-routine_0",
+            "title": "Falcon / routine 0",
+            "quote": " There were no changes to the commissioning baseline in this routine log.",
+            "start": 143,
+            "end": 216,
+            "source": "synthetic:PRJ-006-routine_0",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-006-change_impact",
+      "query": "Trace the requirement and incident linked to CR-006.",
+      "category": "change_impact",
+      "ranked": [
+        "PRJ-012-rfi",
+        "PRJ-002-incident",
+        "PRJ-006-incident",
+        "PRJ-006-change",
+        "PRJ-008-rfi"
+      ],
+      "relevant": [
+        "PRJ-006-change",
+        "PRJ-006-incident"
+      ],
+      "path": "vector",
+      "recall": 1.0,
+      "mrr": 0.3333333333333333,
+      "ndcg": 0.5706417189553201,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.75,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 1.0,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.53820001310669,
+      "total_ms": 20.809899986488745,
+      "answer": {
+        "answer": "Incident INC-002 on Project Beta: controller firmware dropped synchronization messages. [1]\nIncident INC-006 on Project Falcon: controller firmware dropped synchronization messages. [2]\nChange CR-006 on Project Falcon revises acceptance requirement REQ-006. [3]\nCR-006 modifies REQ-006. [4]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-002-incident",
+            "title": "Beta / incident",
+            "quote": "Incident INC-002 on Project Beta: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 87,
+            "source": "synthetic:PRJ-002-incident",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-006-incident",
+            "title": "Falcon / incident",
+            "quote": "Incident INC-006 on Project Falcon: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 89,
+            "source": "synthetic:PRJ-006-incident",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-006-change",
+            "title": "Falcon / change",
+            "quote": "Change CR-006 on Project Falcon revises acceptance requirement REQ-006.",
+            "start": 0,
+            "end": 71,
+            "source": "synthetic:PRJ-006-change",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-006-change",
+            "title": "Falcon / change",
+            "quote": " CR-006 modifies REQ-006.",
+            "start": 71,
+            "end": 96,
+            "source": "synthetic:PRJ-006-change",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "PRJ-006-multi_hop",
+      "query": "Which active projects use the equipment affected by INC-006, and what lesson follows that incident?",
+      "category": "multi_hop",
+      "ranked": [
+        "PRJ-002-incident",
+        "PRJ-001-incident",
+        "PRJ-006-incident",
+        "PRJ-008-incident",
+        "PRJ-012-incident"
+      ],
+      "relevant": [
+        "PRJ-006-incident",
+        "PRJ-006-lesson",
+        "PRJ-006-charter",
+        "PRJ-010-charter"
+      ],
+      "path": "vector",
+      "recall": 0.25,
+      "mrr": 0.3333333333333333,
+      "ndcg": 0.19519002499605084,
+      "citation_integrity": 1.0,
+      "citation_accuracy": 0.2,
+      "faithfulness_exact_quote": 1.0,
+      "relevance_gold_term_coverage": 0.5,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.81489999545738,
+      "total_ms": 21.128699998371303,
+      "answer": {
+        "answer": "Incident INC-002 on Project Beta: controller firmware dropped synchronization messages. [1]\nINC-002 affected CTRL-420. [2]\nIncident INC-001 on Project Alpha: transformer winding insulation failed factory testing. [3]\nINC-001 affected TX-880. [4]\nIncident INC-006 on Project Falcon: controller firmware dropped synchronization messages. [5]\nINC-006 affected CTRL-420. [6]\nIncident INC-008 on Project Harbor: switchgear relay settings conflicted with the utility study. [7]\nINC-008 affected SWG-610. [8]\nIncident INC-012 on Project Laurel: switchgear relay settings conflicted with the utility study. [9]\nINC-012 affected SWG-610. [10]",
+        "citations": [
+          {
+            "id": 1,
+            "doc_id": "PRJ-002-incident",
+            "title": "Beta / incident",
+            "quote": "Incident INC-002 on Project Beta: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 87,
+            "source": "synthetic:PRJ-002-incident",
+            "synthetic": true
+          },
+          {
+            "id": 2,
+            "doc_id": "PRJ-002-incident",
+            "title": "Beta / incident",
+            "quote": " INC-002 affected CTRL-420.",
+            "start": 87,
+            "end": 114,
+            "source": "synthetic:PRJ-002-incident",
+            "synthetic": true
+          },
+          {
+            "id": 3,
+            "doc_id": "PRJ-001-incident",
+            "title": "Alpha / incident",
+            "quote": "Incident INC-001 on Project Alpha: transformer winding insulation failed factory testing.",
+            "start": 0,
+            "end": 89,
+            "source": "synthetic:PRJ-001-incident",
+            "synthetic": true
+          },
+          {
+            "id": 4,
+            "doc_id": "PRJ-001-incident",
+            "title": "Alpha / incident",
+            "quote": " INC-001 affected TX-880.",
+            "start": 89,
+            "end": 114,
+            "source": "synthetic:PRJ-001-incident",
+            "synthetic": true
+          },
+          {
+            "id": 5,
+            "doc_id": "PRJ-006-incident",
+            "title": "Falcon / incident",
+            "quote": "Incident INC-006 on Project Falcon: controller firmware dropped synchronization messages.",
+            "start": 0,
+            "end": 89,
+            "source": "synthetic:PRJ-006-incident",
+            "synthetic": true
+          },
+          {
+            "id": 6,
+            "doc_id": "PRJ-006-incident",
+            "title": "Falcon / incident",
+            "quote": " INC-006 affected CTRL-420.",
+            "start": 89,
+            "end": 116,
+            "source": "synthetic:PRJ-006-incident",
+            "synthetic": true
+          },
+          {
+            "id": 7,
+            "doc_id": "PRJ-008-incident",
+            "title": "Harbor / incident",
+            "quote": "Incident INC-008 on Project Harbor: switchgear relay settings conflicted with the utility study.",
+            "start": 0,
+            "end": 96,
+            "source": "synthetic:PRJ-008-incident",
+            "synthetic": true
+          },
+          {
+            "id": 8,
+            "doc_id": "PRJ-008-incident",
+            "title": "Harbor / incident",
+            "quote": " INC-008 affected SWG-610.",
+            "start": 96,
+            "end": 122,
+            "source": "synthetic:PRJ-008-incident",
+            "synthetic": true
+          },
+          {
+            "id": 9,
+            "doc_id": "PRJ-012-incident",
+            "title": "Laurel / incident",
+            "quote": "Incident INC-012 on Project Laurel: switchgear relay settings conflicted with the utility study.",
+            "start": 0,
+            "end": 96,
+            "source": "synthetic:PRJ-012-incident",
+            "synthetic": true
+          },
+          {
+            "id": 10,
+            "doc_id": "PRJ-012-incident",
+            "title": "Laurel / incident",
+            "quote": " INC-012 affected SWG-610.",
+            "start": 96,
+            "end": 122,
+            "source": "synthetic:PRJ-012-incident",
+            "synthetic": true
+          }
+        ],
+        "abstained": false,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "absent-0",
+      "query": "What is the CEO's private bank password?",
+      "category": "unanswerable",
+      "ranked": [
+        "PRJ-003-charter",
+        "PRJ-008-charter",
+        "PRJ-004-charter",
+        "PRJ-002-charter",
+        "PRJ-010-charter"
+      ],
+      "relevant": [],
+      "path": "vector",
+      "recall": null,
+      "mrr": null,
+      "ndcg": null,
+      "citation_integrity": null,
+      "citation_accuracy": null,
+      "faithfulness_exact_quote": null,
+      "relevance_gold_term_coverage": null,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.76929999748245,
+      "total_ms": 21.028899995144457,
+      "answer": {
+        "answer": "I could not find sufficient evidence in the accessible sources.",
+        "citations": [],
+        "abstained": true,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "absent-1",
+      "query": "What is the weather forecast for Mars?",
+      "category": "unanswerable",
+      "ranked": [
+        "doe-microgrid-checklist",
+        "doe-microgrid-systems",
+        "PRJ-012-vendor",
+        "PRJ-007-decision",
+        "PRJ-006-routine_0"
+      ],
+      "relevant": [],
+      "path": "vector",
+      "recall": null,
+      "mrr": null,
+      "ndcg": null,
+      "citation_integrity": null,
+      "citation_accuracy": null,
+      "faithfulness_exact_quote": null,
+      "relevance_gold_term_coverage": null,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.995500002754852,
+      "total_ms": 21.619900013320148,
+      "answer": {
+        "answer": "I could not find sufficient evidence in the accessible sources.",
+        "citations": [],
+        "abstained": true,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    },
+    {
+      "id": "absent-2",
+      "query": "Who won the 2050 baseball championship?",
+      "category": "unanswerable",
+      "ranked": [
+        "PRJ-011-decision",
+        "doe-microgrid-systems",
+        "PRJ-003-decision",
+        "PRJ-007-decision",
+        "PRJ-005-decision"
+      ],
+      "relevant": [],
+      "path": "vector",
+      "recall": null,
+      "mrr": null,
+      "ndcg": null,
+      "citation_integrity": null,
+      "citation_accuracy": null,
+      "faithfulness_exact_quote": null,
+      "relevance_gold_term_coverage": null,
+      "abstention_correct": 1,
+      "api_cost_usd": 0.0,
+      "retrieval_ms": 20.791999995708466,
+      "total_ms": 21.197699999902397,
+      "answer": {
+        "answer": "I could not find sufficient evidence in the accessible sources.",
+        "citations": [],
+        "abstained": true,
+        "generation_mode": "extractive_evidence",
+        "api_cost_usd": 0.0,
+        "compute_cost_usd": null,
+        "generation_ms": 0.0,
+        "limitations": [
+          "Extractive evidence; relevance is not guaranteed by quote integrity."
+        ]
+      }
+    }
+  ]
+}
