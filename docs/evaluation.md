@@ -26,3 +26,11 @@ Bootstrap intervals resample queries 1,000 times with seed 42. Correlated templa
 
 ## What remains unmeasured
 Independent human relevance/faithfulness ratings, inter-rater agreement, answer usefulness in real PM workflows, large enterprise retrieval, adversarial prompt-injection coverage beyond the included suite, concurrent throughput, Docker runtime and hosted CI execution. No external LLM judge was called and no paid inference was used.
+
+## Corpus schema and historical fingerprints
+
+The corpus fingerprint covers the ordered, parsed document models serialized with sorted keys. It includes metadata and default values; it is neither a text-only hash nor the hash of the raw JSONL file.
+
+The original 183-document benchmark used a ten-field document schema and fingerprint `0d0ed2e1611e303c148716295f2cb801e4b931c8da0a3df50c61ef4ada52ab75`. Conversation support added four defaults to the document model. Current parsing therefore produces `ef1ee84c6485502137c282f5de998d7ba3b01eb931048cd1d0f07729ca12114d` for that same document set, even when those defaults are absent from JSONL. The legacy fingerprint does **not** reproduce under the current full-schema hash; it reproduces exactly under the original ten-field projection. Historical reports and run identifiers remain unchanged.
+
+Regenerating the 180 synthetic records materializes those defaults without changing any existing field, document text, questions, or universe entries. Parsed before/after fingerprints are identical. The 255-document investigation corpus remains `76226b6b650bae985d59cebc056cc1b43573236e6ddca96113ed6d8e934d489c`. See the [schema audit](../reports/corpus-schema-audit.json). This migration adds no performance result and does not merge historical and current evaluation cohorts.

@@ -1,0 +1,26 @@
+{
+  "purpose": "Schema migration provenance, not a new performance evaluation",
+  "records": 180,
+  "added_default_fields": {
+    "channel": "documents",
+    "thread_id": null,
+    "author": null,
+    "decision_status": "unspecified"
+  },
+  "existing_fields_unchanged": true,
+  "parsed_documents_unchanged": true,
+  "hash_algorithm": "sha256(json.dumps([Document.model_dump() for documents in input order], sort_keys=True).encode())",
+  "document_corpus": {
+    "records": 183,
+    "legacy_10_field_sha256": "0d0ed2e1611e303c148716295f2cb801e4b931c8da0a3df50c61ef4ada52ab75",
+    "current_14_field_before_sha256": "ef1ee84c6485502137c282f5de998d7ba3b01eb931048cd1d0f07729ca12114d",
+    "current_14_field_after_sha256": "ef1ee84c6485502137c282f5de998d7ba3b01eb931048cd1d0f07729ca12114d"
+  },
+  "investigation_corpus": {
+    "records": 255,
+    "current_before_sha256": "76226b6b650bae985d59cebc056cc1b43573236e6ddca96113ed6d8e934d489c",
+    "current_after_sha256": "76226b6b650bae985d59cebc056cc1b43573236e6ddca96113ed6d8e934d489c"
+  },
+  "historical_reports_preserved": true,
+  "limitation": "Legacy 10-field hashes do not equal the current 14-field fingerprint. Reproducing old provenance requires the historical schema; do not relabel old runs as current-schema runs."
+}

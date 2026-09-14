@@ -62,7 +62,7 @@ The interface displays exact source excerpts, fictional/public labels and graph 
 
 ## Real measured results
 
-Executed locally on Windows, Python 3.12, CPU inference with two model threads. Five unique documents per query; model sessions warmed, answer caching disabled. Full per-query data, corpus hashes and model revisions are in [reports](reports/). Hardware/electricity costs are unmeasured; measured external API spend was $0.
+Executed locally on Windows, Python 3.12, CPU inference with two model threads. Five unique documents per query; model sessions warmed, answer caching disabled. Full per-query data, corpus hashes and model revisions are in [reports](reports/). Historical corpus hashes use the original document schema; see [schema provenance](docs/evaluation.md#corpus-schema-and-historical-fingerprints) for the current-schema difference. Hardware/electricity costs are unmeasured; measured external API spend was $0.
 
 | Configuration | Recall@5 | MRR@5 | nDCG@5 | Retrieval p95 ms |
 |---|---:|---:|---:|---:|

@@ -82,3 +82,45 @@ def test_review_digest_ignores_checkout_newlines_but_detects_edits():
 
     assert report_digest(b"a\r\nb\r\n") == report_digest(b"a\nb\n")
     assert report_digest(b"a\nb\n") != report_digest(b"a\nc\n")
+
+
+def test_synthetic_generator_matches_committed_artifacts(tmp_path, monkeypatch):
+    from atlas import corpus
+
+    committed = corpus.DATA / "synthetic"
+    monkeypatch.setattr(corpus, "DATA", tmp_path)
+    corpus.generate()
+    for name in ("documents.jsonl", "questions.jsonl", "universe.json"):
+        assert (tmp_path / "synthetic" / name).read_text(encoding="utf-8") == (
+            committed / name
+        ).read_text(encoding="utf-8")
+
+
+def test_schema_audit_matches_current_and_legacy_fingerprints():
+    import hashlib
+    import json
+    from atlas.corpus import DATA, ROOT
+    from atlas.schema import Document
+
+    def digest(rows):
+        return hashlib.sha256(json.dumps(rows, sort_keys=True).encode()).hexdigest()
+
+    rows = [
+        Document.model_validate_json(line).model_dump()
+        for folder in ("synthetic", "public", "conversations")
+        for line in (DATA / folder / "documents.jsonl")
+        .read_text(encoding="utf-8")
+        .splitlines()
+    ]
+    audit = json.loads(
+        (ROOT / "reports/corpus-schema-audit.json").read_text(encoding="utf-8")
+    )
+    assert digest(rows) == audit["investigation_corpus"]["current_after_sha256"]
+    assert (
+        digest(rows[:183]) == audit["document_corpus"]["current_14_field_after_sha256"]
+    )
+    legacy = [
+        {k: v for k, v in row.items() if k not in audit["added_default_fields"]}
+        for row in rows[:183]
+    ]
+    assert digest(legacy) == audit["document_corpus"]["legacy_10_field_sha256"]
