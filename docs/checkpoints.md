@@ -1,7 +1,7 @@
 # Checkpoint ledger
 
 ## 1 — Product and data
-Recovered the source conversation's architecture, portfolio intent and staged evaluation approach. Wrote the product brief before the first run. Built 180 fictional records, 114 questions, three fetched DOE references and a bounded 40-row RAGBench TechQA diagnostic. Resolved model revisions and saved source hashes. Existing mirrored project files were left untouched.
+Declared the product acceptance criteria before benchmarking. Built 180 fictional records, 114 questions, three fetched DOE references and a bounded 40-row RAGBench TechQA diagnostic. Resolved model revisions and saved source hashes.
 
 ## 2 — Baseline
 Ran fixed-chunk MiniLM dense retrieval and exact evidence answers. Development Recall@5 was 0.667. Source-span integrity was perfect by construction, while citation relevance was low. This distinction is retained throughout the documentation.

@@ -158,7 +158,6 @@ python -m atlas.evaluate --stage baseline
 python -m atlas.evaluate --stage all
 python scripts/public_eval.py
 python scripts/regression.py
-python scripts/render_report.py
 ```
 
 `--stage all` includes local generation and requires the optional dependencies. `--stage external` and `--stage generation` run those diagnostics separately after selection exists. `scripts/regression.py` runs fresh inference against committed quality thresholds; GitHub Actions includes this gate. The CI workflow has been authored, and its commands were exercised locally; hosted CI has not run.
@@ -187,6 +186,6 @@ Independent human annotations; a larger disjoint real-document benchmark; the fu
 
 [Usage examples](docs/usage-examples.md) · [architecture diagrams](docs/architecture.md) · [failure analysis](docs/failure-analysis.md) · [checkpoint ledger](docs/checkpoints.md) · [architecture PNG](docs/images/architecture.png) · [human-review sample and rubric](evaluation/human-review/README.md).
 
-The thirty-answer human-review sample is prepared but unlabelled. No human agreement result is claimed. `scripts/render_report.py` writes generated summaries under `reports/` without replacing this README or the curated failure analysis.
+The thirty-answer human-review sample is prepared but unlabelled. No human agreement result is claimed.
 
 Code and original synthetic records are MIT licensed. Third-party models and datasets retain their own licenses and attribution; see [dataset notes](docs/datasets.md). Built with AI assistance; review and reproduce the system before presenting it as your own engineering work.
