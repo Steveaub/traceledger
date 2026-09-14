@@ -1,4 +1,6 @@
 # TraceLedger
+
+[![Tests and retrieval regression](https://github.com/Steveaub/traceledger/actions/workflows/ci.yml/badge.svg)](https://github.com/Steveaub/traceledger/actions/workflows/ci.yml)
 ### Grounded project intelligence for complex technical programs
 
 Project teams accumulate decisions, risk registers, incident reports and lessons faster than they can reuse them. **TraceLedger retrieves the evidence, connects documented relationships and shows the source behind an answer.** Microgrid projects provide the first demonstration domain; every operational project record is clearly fictional.
@@ -160,7 +162,7 @@ python scripts/public_eval.py
 python scripts/regression.py
 ```
 
-`--stage all` includes local generation and requires the optional dependencies. `--stage external` and `--stage generation` run those diagnostics separately after selection exists. `scripts/regression.py` runs fresh inference against committed quality thresholds; GitHub Actions includes this gate. The CI workflow has been authored, and its commands were exercised locally; hosted CI has not run.
+`--stage all` includes local generation and requires the optional dependencies. `--stage external` and `--stage generation` run those diagnostics separately after selection exists. `scripts/regression.py` runs fresh inference against committed quality thresholds; GitHub Actions includes this gate. Hosted Linux CI passed unit tests, voice tests, formatting/lint, model bootstrap, retrieval regression and investigation regression; see the [verified run](https://github.com/Steveaub/traceledger/actions/runs/34865945827).
 
 Ingest a reviewed local file, then restart to rebuild:
 
@@ -172,7 +174,7 @@ Docker evidence-only demo: `docker compose up --build` after downloading retriev
 
 ### Optional hosted demo
 
-A CPU-only Hugging Face Spaces deployment bundle is provided under [deploy/huggingface](deploy/huggingface). Prepare its allowlisted files with `python scripts/prepare_space.py dist/huggingface-release`, then upload that directory to a Docker Space. The landing page starts the fictional Project Alpha investigation, and the API enforces evidence-only answers. No public instance has been deployed or verified yet. See [hosted security assumptions](docs/security.md#hosted-evidence-only-demo).
+A CPU-only Hugging Face Spaces deployment bundle is provided under [deploy/huggingface](deploy/huggingface). Prepare its allowlisted files with `python scripts/prepare_space.py dist/huggingface-release`, then upload that directory to a Docker Space. The landing page starts the fictional Project Alpha investigation, and the API enforces evidence-only answers. No public instance has been deployed or verified yet. Hugging Face currently requires a PRO subscription to create this Docker Space on cpu-basic; this deployment is not available on an unsubscribed account. See [hosted security assumptions](docs/security.md#hosted-evidence-only-demo).
 
 ## Security and operations
 
