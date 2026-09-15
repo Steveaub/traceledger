@@ -173,7 +173,10 @@ python -m uvicorn atlas.api:app --host 127.0.0.1 --port 8000
 
 On macOS/Linux, use `ATLAS_DEMO=1 python -m uvicorn atlas.api:app --host 127.0.0.1 --port 8000`. Without demo mode, configure `ATLAS_PRINCIPALS_JSON` following [.env.example](.env.example); load it via your shell or deployment environment. The application does not automatically read `.env`.
 
-Optional real local generation:
+### Optional local generation
+
+The app checks optional dependencies and model files at startup. If either is missing, Local AI is disabled; verified source excerpts remain available. After installing the following, restart the server and reload the page. A later AI failure offers an explicit retry using source excerpts.
+
 
 ```bash
 python -m pip install torch --index-url https://download.pytorch.org/whl/cpu

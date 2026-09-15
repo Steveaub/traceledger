@@ -3,6 +3,7 @@ let currentAnswer = '', requestSequence = 0, currentController;
 let investigationMode = false;
 function setExperience(investigate) {
   investigationMode = investigate;
+  if(investigate) $('generation').value='evidence';
   $('quick-mode').setAttribute('aria-pressed',String(!investigate));
   $('investigate-mode').setAttribute('aria-pressed',String(investigate));
   $('experience-note').textContent=investigate?'Follow records and conversation threads. Up to six actions; exact cited excerpts.':'Find supporting passages with the measured retrieval default.';
@@ -137,6 +138,7 @@ $('ask').addEventListener('submit',async event=>{
   const sequence=++requestSequence;const controller=new AbortController();currentController=controller;const started=performance.now();
   window.atlasVoice.reset();currentAnswer='';$('copy-answer').disabled=true;
   $('submit').disabled=true;$('submit').textContent='Finding evidence…';$('answer-card').setAttribute('aria-busy','true');
+  $('retry-evidence').hidden=true;
   $('status').classList.remove('error');$('status').textContent='Searching accessible records and preparing source passages…';
   $('answer').replaceChildren();for(let i=0;i<3;i++){const skeleton=document.createElement('div');skeleton.className='skeleton';$('answer').append(skeleton);}
   $('citations').replaceChildren();$('source-count').textContent='0';$('graph').replaceChildren();$('paths').hidden=true;$('answer-notes').hidden=true;
@@ -154,6 +156,7 @@ $('ask').addEventListener('submit',async event=>{
     if(data.investigation)$('answer-notes').textContent='Evidence-driven retrieval with exact excerpts. Message status is source metadata, not independent verification of authority. Review gaps and original records before acting.';
   } catch(error) {
     if(sequence!==requestSequence)return;
+    if(error.message.startsWith('Local AI unavailable.')) { setGenerationAvailability({available:false,reason:error.message}); $('retry-evidence').hidden=false; }
     $('answer').replaceChildren();$('status').classList.add('error');$('status').textContent=error.name==='AbortError'?'The request timed out. Your question is saved—please try again.':error.message;
   } finally {clearTimeout(timeout);if(sequence===requestSequence){$('submit').disabled=false;setExperience(investigationMode);$('answer-card').setAttribute('aria-busy','false');}}
 });
@@ -164,14 +167,25 @@ loadFeeds();
 window.addEventListener('DOMContentLoaded',()=>{if(location.hash==='#evaluation')switchView('evaluation');});
 window.addEventListener('hashchange',()=>switchView(location.hash==='#evaluation'?'evaluation':'workspace'));
 
+function setGenerationAvailability(status) {
+  const option=$('generation').querySelector('option[value="local"]');
+  if(option) option.disabled=!status.available;
+  if(!status.available) $('generation').value='evidence';
+  $('generation-availability').textContent=status.available?'Optional local AI is installed. Verified source excerpts remain the default.':status.reason;
+}
+$('retry-evidence').addEventListener('click',()=>{
+  $('generation').value='evidence';
+  $('ask').requestSubmit();
+});
 async function initializeHostedDemo() {
   try {
     const health = await window.atlasFetch('/health');
+    setGenerationAvailability(health.local_generation || {available:false,reason:'Local AI availability could not be confirmed. Use verified source excerpts.'});
     if (!health.hosted_demo || requestSequence || $('question').value.trim() || location.hash === '#evaluation') return;
     $('generation').replaceChildren(new Option('Verified source excerpts', 'evidence'));
     $('question').value = 'Investigate Project Alpha: why was commissioning delayed, who approved the change, and was the schedule updated?';
     setExperience(true);
     $('ask').requestSubmit();
-  } catch (_) { /* Existing connection feedback handles an unavailable server. */ }
+  } catch (_) { setGenerationAvailability({available:false,reason:'Could not check local AI availability. Check that the server is running.'}); }
 }
 initializeHostedDemo();

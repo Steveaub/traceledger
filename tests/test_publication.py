@@ -124,3 +124,75 @@ def test_schema_audit_matches_current_and_legacy_fingerprints():
         for row in rows[:183]
     ]
     assert digest(legacy) == audit["document_corpus"]["legacy_10_field_sha256"]
+
+
+def test_optional_generation_missing_dependencies(monkeypatch, tmp_path):
+    import importlib.util
+    from atlas import answer
+
+    monkeypatch.setattr(importlib.util, "find_spec", lambda name: None)
+    monkeypatch.setattr(answer, "ROOT", tmp_path)
+    assert answer.local_generation_status()["available"] is False
+
+
+def test_optional_generation_missing_files(monkeypatch, tmp_path):
+    import importlib.util
+    from atlas import answer
+
+    monkeypatch.setattr(importlib.util, "find_spec", lambda name: object())
+    monkeypatch.setattr(answer, "ROOT", tmp_path)
+    assert answer.local_generation_status()["available"] is False
+    model = tmp_path / "models/generator"
+    model.mkdir(parents=True)
+    for name in (
+        "config.json",
+        "tokenizer_config.json",
+        "spiece.model",
+        "model.safetensors",
+    ):
+        (model / name).write_text("fixture")
+    assert answer.local_generation_status()["available"] is True
+
+
+def test_optional_generation_disabled_but_evidence_works(service, monkeypatch):
+    from atlas import api
+
+    monkeypatch.setenv("ATLAS_DEMO", "1")
+    monkeypatch.delenv("ATLAS_HOSTED_DEMO", raising=False)
+    monkeypatch.setattr(
+        api,
+        "local_generation_status",
+        lambda: {"available": False, "reason": "Optional AI is not installed."},
+    )
+    with TestClient(create_app(service)) as client:
+        assert client.get("/health").json()["local_generation"]["available"] is False
+        body = {"query": "public planning", "mode": "vector", "generation": "local"}
+        assert client.post("/api/query", json=body).status_code == 503
+        body["generation"] = "evidence"
+        assert client.post("/api/query", json=body).status_code == 200
+
+
+def test_optional_generation_runtime_failure_offers_recovery(service, monkeypatch):
+    from atlas import api
+
+    monkeypatch.setenv("ATLAS_DEMO", "1")
+    monkeypatch.delenv("ATLAS_HOSTED_DEMO", raising=False)
+    monkeypatch.setattr(
+        api, "local_generation_status", lambda: {"available": True, "reason": ""}
+    )
+    original = service.query
+
+    def fail_local(request, projects):
+        if request.generation == "local":
+            raise OSError("Broken optional model")
+        return original(request, projects)
+
+    monkeypatch.setattr(service, "query", fail_local)
+    with TestClient(create_app(service)) as client:
+        body = {"query": "public planning", "mode": "vector", "generation": "local"}
+        response = client.post("/api/query", json=body)
+        assert response.status_code == 503
+        assert response.json()["detail"].startswith("Local AI unavailable.")
+        assert client.get("/health").json()["local_generation"]["available"] is False
+        body["generation"] = "evidence"
+        assert client.post("/api/query", json=body).status_code == 200

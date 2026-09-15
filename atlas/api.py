@@ -18,6 +18,7 @@ from atlas.corpus import ROOT, load_docs
 from atlas.retrieval import Encoder, Index
 from atlas.schema import QueryRequest
 from atlas.service import Service
+from atlas.answer import local_generation_status
 from atlas.history import list_runs, read_run, compare_runs
 
 log = logging.getLogger("atlas.audit")
@@ -26,6 +27,8 @@ auth = HTTPBearer(auto_error=False)
 
 
 def create_app(service: Service | None = None) -> FastAPI:
+    generation_status = local_generation_status()
+
     @asynccontextmanager
     async def lifespan(app: FastAPI) -> AsyncIterator[None]:
         if app.state.service is None:
@@ -157,6 +160,12 @@ def create_app(service: Service | None = None) -> FastAPI:
             "status": "ready" if app.state.service else "starting",
             "demo": app.state.demo,
             "hosted_demo": app.state.hosted_demo,
+            "local_generation": {
+                "available": False,
+                "reason": "This demo supports verified source excerpts only.",
+            }
+            if app.state.hosted_demo
+            else generation_status,
         }
 
     @app.post("/api/query")
@@ -165,6 +174,10 @@ def create_app(service: Service | None = None) -> FastAPI:
     ) -> dict[str, Any]:
         if app.state.hosted_demo and body.generation != "evidence":
             raise HTTPException(422, "Hosted demo supports evidence mode only")
+        if body.generation == "local" and not generation_status["available"]:
+            raise HTTPException(
+                503, "Local AI unavailable. " + str(generation_status["reason"])
+            )
         with app.state.service.lock:
             now = time.monotonic()
             for principal_id in list(app.state.requests):
@@ -185,14 +198,23 @@ def create_app(service: Service | None = None) -> FastAPI:
             result = app.state.service.query(body, user["projects"])
         except PermissionError as exc:
             raise HTTPException(403, str(exc)) from exc
-        except (RuntimeError, FileNotFoundError, ImportError) as exc:
+        except (RuntimeError, OSError, ImportError) as exc:
             log.error(
                 json.dumps(
                     {"event": "inference_failed", "exception_type": type(exc).__name__}
                 )
             )
+            if body.generation == "local":
+                generation_status.update(
+                    available=False,
+                    reason="Local AI could not load or run. Use verified source excerpts, or check local AI setup and restart.",
+                )
+                raise HTTPException(
+                    503, "Local AI unavailable. " + generation_status["reason"]
+                ) from exc
             raise HTTPException(
-                503, "Model unavailable; check local installation"
+                503,
+                "Retrieval model unavailable. Run the retrieval model bootstrap and restart the server.",
             ) from exc
         log.info(
             json.dumps(

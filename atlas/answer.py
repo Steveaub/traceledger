@@ -79,6 +79,29 @@ def evidence_answer(query: str, retrieval: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def local_generation_status() -> dict[str, object]:
+    """Check optional prerequisites without importing or loading the model."""
+    from importlib.util import find_spec
+
+    missing = [
+        name
+        for name in ("torch", "transformers", "sentencepiece")
+        if find_spec(name) is None
+    ]
+    folder = ROOT / "models/generator"
+    files = ("config.json", "tokenizer_config.json", "spiece.model")
+    files_ready = all((folder / name).is_file() for name in files) and any(
+        (folder / name).is_file() for name in ("model.safetensors", "pytorch_model.bin")
+    )
+    available = not missing and files_ready
+    return {
+        "available": available,
+        "reason": ""
+        if available
+        else "Optional AI dependencies or model files are missing. Use verified source excerpts, or follow local AI setup and restart.",
+    }
+
+
 class LocalGenerator:
     def __init__(self) -> None:
         import torch
